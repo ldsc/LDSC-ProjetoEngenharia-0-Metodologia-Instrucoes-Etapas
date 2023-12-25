@@ -1,0 +1,395 @@
+Metodologia de Desenvolvimento do Projeto de Engenharia<cha: Metodologia de Desenvolvimento do Projeto de Engenharia>
+
+
+
+
+
+Apresenta-se aqui a metodologia a ser utilizada no 
+desenvolvimento do sistema de software a ser desenvolvido.
+
+
+
+1.1 Introdução a metodologia utilizada<sec:  Introdução a Metodologia Utilizada>
+  Metodologia utilizada
+
+O software a ser desenvolvido utiliza a metodologia de engenharia 
+de software apresentada pelo Prof. André Bueno na disciplina de 
+introdução ao projeto de engenharia, ilustrado de forma compacta 
+na Figura [fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo]
+. Esta metodologia é utilizada nas disciplinas:
+
+• LEP0xxx: Introdução ao Projeto de Engenharia.
+
+• LEP01447 : Programação Orientada a Objeto em C++.
+
+• LEP01446 : Projeto de Software Aplicado à Engenharia (antiga 
+  programação prática).
+
+• Referências: [prog-UML-blaha, prog-UML-Rumbaugh]
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral-Resumido.png>
+
+[Figura 1.1: 
+Etapas de gestão e desenvolvimento do projeto de engenharia - 
+resumo<fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo>
+]
+][float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral-wide.png>
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral.png>
+
+
+[Figura 1.2: 
+Etapas de gestão e desenvolvimento do projeto de engenharia<fig: Etapas de gestão e desenvolvimento do projeto de engenharia>
+]
+]
+
+
+
+1.2 Etapa 0 - Definição do desafio tecnológico<sec: Etapa 0 - Definição do desafio tecnológico>
+
+A primeira etapa do processo de desenvolvimento de nosso produto 
+tecnológico é a definição pelo cliente (um(a) professor(a), um(a) 
+engenheiro(a) de empresa) do problema a ser resolvido, o escopo 
+do problema de engenharia. Deve apresentar o desafio tecnológico 
+o objetivo geral e a solução esperada. Veja Figura [fig: Etapa 0 - Definicação do desafio tecnológico]
+. Veja a seguir as sub-etapas associadas:
+
+• O cliente (professor(a) ou empresa) interessado lê as 
+  informações da metodologia de desenvolvimento adotada na 
+  disciplina de "Introdução ao Projeto de Engenharia".
+
+  – Entrar no link [ProjetoEngenharia-1-TituloProjeto-Modelo] e 
+    ler o documento 
+
+    ∗ [https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo/0-Metodologia-Instrucoes-Etapas/ProjetoEngenharia-1-Metodologia-Instrucoes-Etapas.pdf]
+      .
+
+  – Também pode olhar o modelo padrão para os projetos de 
+    engenharia disponibilizado em
+
+    ∗ [https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo]
+
+  – Se tiver dúvidas sobre a metodologia contactar o professor 
+    coordenador da disciplina
+
+    ∗ e-mail: [||bueno@lenep.uenf.br]
+
+• Estando em acordo com a metodologia empregada o cliente deve 
+  informar o interesse em montar um desafio tecnológico. Neste 
+  caso enviar para o email [||bueno@lenep.uenf.br] os seguintes 
+  dados:
+
+  – Nome do cliente (professor ou responsável na empresa)
+
+    ∗ Telefone
+
+    ∗ E-mail
+
+    ∗ Informar se já tem cadastro no github e login no github.
+
+  – Título do desafio tecnológico
+
+  – Breve resumo/rascunho tecnológico [até 500 palavras]
+
+  – Caso já tenha um ou mais alunos interessados informar o(s) 
+    dado(s) do(s) mesmo(s)
+
+    ∗ Nome do aluno
+
+      ∙ Telefone
+
+      ∙ E-mail
+
+      ∙ Informar se já tem cadastro no github e login no github.
+
+• O coordenador da disciplina analisa os dados e dá um retorno.
+
+  – Caso o rascunho da proposta seja rejeitado, explica os 
+    motivos, possibilitando correções e reenvio do rascunho da 
+    proposta.
+
+  – Caso o rascunho da proposta seja aprovada, informa o 
+    professor/engenheiro (e alunos caso já tenha).
+
+    ∗ O cliente (professor/engenheiro) e alunos devem realizar 
+      seu cadastro no github e informar o professor Bueno.
+
+• O professor Bueno 
+
+  – Clona o modelo de projeto da disciplina, criando um projeto 
+    novo, com o título do projeto informado.
+
+  – Adiciona no projeto o cliente (professor/engenheiro) e alunos 
+    (caso já tenha os alunos).
+
+• O cliente 
+
+  – Baixa o modelo de projeto criado para sua máquina.
+
+    ∗ Se ainda não tem o LyX instalado deve fazer a instalação 
+      para gerar a proposta
+
+    ∗ Outra hipótese é gerar a proposta usando outro editor.
+
+  – Preenche os dados da proposta 
+
+    ∗ Diretório: 
+
+    ∗ 
+      1-DescricaoDaProposta-DefinicaoDoDesafioTecnologico-Escopo-Desafio-Objetivo-SolucaoEsperada-TRL
+
+    ∗ Arquivo:
+
+    ∗ 1-DesafioTecnologico-2-DescricaoDaProposta.lyx (ou 
+      1-DesafioTecnologico-2-DescricaoDaProposta.doc).
+
+  – Gera o pdf associado
+
+  – Envia os arquivos para o servidor do github.
+
+  Nota: Se não tiver nenhum conhecimento de git/github e lyx, 
+  pode acessar diretamente o documento 
+  1-DesafioTecnologico-2-DescricaoDaProposta.doc e editar o 
+  mesmo. Após concluir a descrição da proposta salvar no servidor 
+  e informar o professor Bueno.
+
+  Nota: Note que as propostas podem ser submetidas sem que 
+  tenhamos alunos interessados, neste caso ficam num banco de 
+  dados disponibilizado aos alunos. Na prática a intenção é 
+  termos a disposição dos alunos uma série de desafios 
+  tecnológicos a serem resolvidos, assim a equipe escolhe um 
+  desafio que lhe interessa.
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo.png>
+
+[Figura 1.3: 
+Etapa 0 - Definicação do desafio tecnológico<fig: Etapa 0 - Definicação do desafio tecnológico>
+]
+]
+
+
+
+1.3 Etapa 1 - Elaboração do pré-projeto<sec: Etapa 1 - Elaboração do Pré-Projeto>
+
+A sequência é apresentada na Figura [fig: Etapa 1 - Elaboração do Pré-Projeto]
+.
+
+• Os alunos analisam os diversos desafios tecnológicos que foram 
+  propostos e selecionam um de seu interesse. 
+
+  Nota: Se não tivermos desafios previamente definidos a equipe 
+    deve apresentar sugestões de desafios ao coordenador da 
+    disciplina.
+
+• Os alunos informam o professor coordenador da disciplina:
+
+  – Nome do desafio tecnológico.
+
+  – Nome dos membros da equipe [email, email institucional, 
+    telefone].
+
+• Os alunos fazem seu cadastro no site github [[http://www.github.com]
+  ] caso ainda não tenham.
+
+  Nota: É necessário assistir vídeos e ler material sobre o 
+    software git e o software github. Os mesmos são apresentados 
+    na disciplina. Sugere-se que criem seu próprio repositório e 
+    pratiquem os comandos e ações de uso do git e github antes de 
+    executar os comandos diretamente no projeto da disciplina.
+
+• O professor coordenador da disciplina adiciona os alunos da 
+  equipe no repositório do projeto.
+
+• A seguir os alunos fazem o download do repositório em seus 
+  computadores.
+
+• Elaboram o pré-projeto.
+
+  Nota: requer instalação e leitura do tutorial do editor de 
+    texto LyX ([http://www.lyx.org]) e conhecimento do mecanismo 
+    de trabalho em equipe usando o github.
+
+• Encaminham o pré-projeto.
+
+• O pré-projeto deve ser aprovado pelo cliente que elaborou o 
+  desafio e pelo coordenador da disciplina.
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo-Etapa-1-Elaboracao-Pre-Projeto.png>
+
+[Figura 1.4: 
+Etapa 1 - Elaboração do Pré-Projeto<fig: Etapa 1 - Elaboração do Pré-Projeto>
+]
+]
+
+
+
+1.4 Etapa 2 - Elaboração do projeto - detalhamento e contrato<sec: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato>
+
+A sequência é detalhada na Figura [fig: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato]
+.
+
+• Após aprovação do pré-projeto os alunos detalham o mesmo 
+  gerando o projeto.
+
+  Nota: Alguns itens eventualmente serão opcionais, como exemplo 
+    a parte de criação do orçamento que poderá ser feita de forma 
+    bem simples. Num projeto real a montagem do orçamento deve 
+    ser feita de forma detalhada.
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-2-ElaboracaoDocumentoProjetoEContrato.png>
+
+[Figura 1.5: 
+Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato<fig: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato>
+]
+]
+
+
+
+1.5 Etapa 3 - Modelagem de engenharia<sec: Etapa 3 - Modelagem de Engenharia>
+
+A sequência é detalhada na Figura [fig: Etapa 3 - Modelagem de Engenharia]
+.
+
+• Nesta etapa os alunos devem desenvolver um modelo abrangente do 
+  sistema de software a ser desenvolvido. Passa pelas etapas de:
+
+• Concepção
+
+• Elaboração
+
+• Análise Orientada a Objeto
+
+• Projeto do Sistema
+
+• Projeto Orientado a Objeto
+
+• Realização de Testes Lógicos
+
+• Documentação (geração dos documentos de modelagem e diagramas 
+  associados).
+
+• Geração da lista de características ou features que serão 
+  implementados.
+
+  Nota: É fundamental gerar uma documentação que dê uma visão 
+    clara de todo o sistema, mas, nesta etapa, não é necessário 
+    pormenorizar tanto. Por exemplo, diagramas de máquina de 
+    estado e diagramas de atividades aparecem pouco aqui. O 
+    detalhamento será feito nos ciclos de desenvolvimento.
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-3-ModelagemDeEngenharia.png>
+
+[Figura 1.6: 
+Etapa 3 - Modelagem de Engenharia<fig: Etapa 3 - Modelagem de Engenharia>
+]
+]
+
+
+
+1.6 Etapa 4 - Ciclos de planejamento, detalhamento e 
+  construção/implementação<sec: Etapa 4 - Ciclos de planejamento, detalhamento e construção>
+
+A sequência é detalhada na Figura [fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção]
+.
+
+• A cada ciclo de planejamento, detalhamento e construção, a 
+  equipe seleciona um grupo de funcionalidades/features a serem 
+  implementadas.
+
+  – O conjunto de funcionalidades a serem implementadas devem 
+    "caber" dentro do prazo do ciclo.
+
+• A seguir é feito um planejamento detalhado das características 
+  a serem implementadas, refinando os diagramas e adicionando 
+  novos diagramas, como exemplo diagramas de máquina de estado 
+  mais detalhados e diagramas de atividades.
+
+  Nota: Lembre-se que os diagramas visam dar aos membros da 
+    equipe de engenharia uma visão clara dos 
+    conceitos/classes/funcionalidades a serem implementadas. Não 
+    é necessário exagerar, criando diagramas para conceitos muito 
+    simples ou algoritmos e rotinas amplamente conhecidos.
+
+• A construção ou implementação dos códigos deve ser feita 
+  seguindo-se as normas e procedimentos padrões, com uso de 
+  ferramentas adequadas, como editores, compiladores, debugers e 
+  profillers. Em alguns casos pode-se usar uma IDE como 
+  Qt-Creator, Kdevelop, entre outros.
+
+  – A construção dos códigos deve seguir as melhores práticas, 
+    incluindo:
+
+  – Uso de editores modernos como emacs, vscode, com plugins e 
+    funcionalidades adequadas instaladas.
+
+    Nota: sugere-se selecionar um editor ou IDE e ler seu manual 
+      e tutoriais de uso.
+
+• Após implementar os códigos realizar testes, como testes de 
+  unidade e testes de integração.
+
+  Nota: Não deixe para fazer os testes do sistemas só no final, a 
+    cada ciclo de desenvolvimento as features desenvolvidas devem 
+    ser testadas.
+
+• No final de cada ciclo de planejamento/detalhamento/construção 
+  a equipe deve realizar uma reunião física para discutir o 
+  andamento do projeto.
+
+  – Conversar sobre o que foi feito, o que falta fazer e 
+    correções de rumo(ajustes).
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-4-DesenvolvimentoDoProjeto-ConstrucaoFeaturesEmCiclos.png>
+
+[Figura 1.7: 
+Etapa 4 - Ciclos de planejamento, detalhamento e construção<fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção>
+]
+]
+
+
+
+1.7 Etapa 5 - Entrega do produto<sec: Etapa 5 - Entrega do produto>
+
+A sequência é detalhada na Figura [fig: Etapa 5 - Entrega do produto]
+.
+
+• A versão final do sistema de software deve passar por um 
+  sistema de testes pormenorizados.
+
+• Testar se todas as especificações foram atendidas.
+
+• Testar se todas os requisitos foram atendidos.
+
+• Testar se cada uma das classes desenvolvidas atende seus 
+  requisitos.
+
+• Testar exemplos reais aplicados a engenharia.
+
+• Testar se os manuais estão completos dando os mesmos para um 
+  terceiro ler, instalar e testar o sistema.
+
+  Dica: Uma equipe A pode passar seu manual do usuário para a 
+    equipe B instalar e testar e a equipe B pode passar seu 
+    manual para a equipe A instalar e testar.
+
+• No caso da disciplina a equipe deve entregar a versão final com 
+  15 dias de antecedência e marcar a data da defesa.
+
+  Nota: os 15 dias são necessários pois o professor precisa de 
+    tempo para ler, instalar e testar o sistema (executar os 
+    testes implementados no manual).
+
+[float Figura:
+<Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-5-EntregaDoProduto.png>
+
+[Figura 1.8: 
+Etapa 5 - Entrega do produto<fig: Etapa 5 - Entrega do produto>
+]
+]
+

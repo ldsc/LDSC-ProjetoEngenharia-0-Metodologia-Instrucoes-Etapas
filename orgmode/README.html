@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-08-19 sáb 14:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="&lt;André Duarte Bueno&gt;" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgff9425f">1. ProjetoEngenharia-1-Metodologia-Instrucoes-Etapas</a></li>
+<li><a href="#orga57d0e5">2. Sobre a metodologia</a></li>
+<li><a href="#org4508db5">3. Etapas</a>
+<ul>
+<li><a href="#orgfe14652">3.1. Etapa 0 - Definição do desafio tecnológico</a>
+<ul>
+<li><a href="#orgf55b29b">3.1.1. O cliente (professor(a) ou empresa) interessado lê as   informações da metodologia de desenvolvimento adotada na   disciplina de "Introdução ao Projeto de Engenharia".</a></li>
+<li><a href="#orge5fd8c7">3.1.2. Estando em acordo com a metodologia empregada o cliente deve  informar o interesse em montar um desafio tecnológico. Neste caso enviar para o email [||bueno@lenep.uenf.br] os seguintes dados:</a></li>
+<li><a href="#org1a58351">3.1.3. O coordenador da disciplina analisa os dados e dá um retorno.</a></li>
+<li><a href="#orgbbd74e6">3.1.4. O professor Bueno</a></li>
+<li><a href="#org551f178">3.1.5. O cliente</a></li>
+<li><a href="#org20b603a">3.1.6. O professor Bueno</a></li>
+<li><a href="#org1bb7ad4">3.1.7. O cliente</a></li>
+</ul>
+</li>
+<li><a href="#org2eb29aa">3.2. Etapa 1 - Elaboração do pré-projeto</a>
+<ul>
+<li><a href="#orgb840582">3.2.1. Os alunos analisam os diversos desafios tecnológicos que foram propostos e selecionam um de seu interesse.</a></li>
+<li><a href="#org0992bdd">3.2.2. Os alunos informam o professor coordenador da disciplina:</a></li>
+<li><a href="#orgad43a38">3.2.3. O professor coordenador da disciplina adiciona os alunos da equipe no repositório do projeto.</a></li>
+<li><a href="#org29d03f4">3.2.4. A seguir os alunos fazem o download do repositório em seus computadores.</a></li>
+<li><a href="#org60ff384">3.2.5. Elaboram o pré-projeto.</a></li>
+<li><a href="#org8a0d65c">3.2.6. Encaminham o pré-projeto.</a></li>
+<li><a href="#org0dd0e1d">3.2.7. O pré-projeto deve ser aprovado pelo cliente que elaborou o desafio e pelo coordenador da disciplina.</a></li>
+</ul>
+</li>
+<li><a href="#org2bfb4e6">3.3. Etapa 2 - Elaboração do projeto - detalhamento e contrato\</a>
+<ul>
+<li><a href="#orga56a232">3.3.1. Após aprovação do pré-projeto os alunos detalham o mesmo gerando o projeto.</a></li>
+</ul>
+</li>
+<li><a href="#org2b3f982">3.4. Etapa 3 - Modelagem de engenharia</a>
+<ul>
+<li><a href="#org200ec5d">3.4.1. Nesta etapa os alunos devem desenvolver um modelo abrangente do sistema de software a ser desenvolvido. Passa pelas etapas de:</a></li>
+</ul>
+</li>
+<li><a href="#org9db5624">3.5. Etapa 4 - Ciclos de planejamento, detalhamento e construção/implementação</a></li>
+<li><a href="#org6d19b48">3.6. Etapa 5 - Entrega do produto</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgff9425f" class="outline-2">
+<h2 id="orgff9425f"><span class="section-number-2">1.</span> ProjetoEngenharia-1-Metodologia-Instrucoes-Etapas</h2>
+</div>
+
+<div id="outline-container-orga57d0e5" class="outline-2">
+<h2 id="orga57d0e5"><span class="section-number-2">2.</span> Sobre a metodologia</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Apresenta-se aqui a metodologia a ser utilizada no desenvolvimento do projeto de engenharia.</li>
+</ul>
+
+<p>
+O software a ser desenvolvido utiliza a metodologia de engenharia 
+de software apresentada pelo Prof. André Bueno na disciplina de 
+introdução ao projeto de engenharia.
+Ilustrado de forma compacta 
+na Figura [fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo]
+</p>
+
+<p>
+Esta metodologia é utilizada nas disciplinas:
+</p>
+<ul class="org-ul">
+<li>LEP0xxx: Introdução ao Projeto de Engenharia.</li>
+<li>LEP01447 : Programação Orientada a Objeto em C++.</li>
+<li><p>
+LEP01446 : Projeto de Software Aplicado à Engenharia (antiga programação prática).
+</p>
+
+<p>
+[float Figura:
+</p></li>
+</ul>
+<p>
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral-Resumido.png&gt;
+</p>
+
+<p>
+[Figura 1.1: 
+Etapas de gestão e desenvolvimento do projeto de engenharia - 
+resumo&lt;fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo&gt;
+]
+][float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral-wide.png&gt;
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapas-Geral.png&gt;
+</p>
+
+
+<p>
+[Figura 1.2: 
+Etapas de gestão e desenvolvimento do projeto de engenharia&lt;fig: Etapas de gestão e desenvolvimento do projeto de engenharia&gt;
+]
+]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4508db5" class="outline-2">
+<h2 id="org4508db5"><span class="section-number-2">3.</span> Etapas</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgfe14652" class="outline-3">
+<h3 id="orgfe14652"><span class="section-number-3">3.1.</span> Etapa 0 - Definição do desafio tecnológico</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+&lt;sec: Etapa 0 - Definição do desafio tecnológico&gt;
+</p>
+
+<p>
+A primeira etapa do processo de desenvolvimento de nosso produto 
+tecnológico é a definição pelo cliente (um(a) professor(a), um(a) 
+engenheiro(a) de empresa) do problema a ser resolvido, o escopo 
+do problema de engenharia. Deve apresentar o desafio tecnológico 
+o objetivo geral e a solução esperada.
+Veja a seguir as sub-etapas associadas:
+</p>
+</div>
+
+<div id="outline-container-orgf55b29b" class="outline-4">
+<h4 id="orgf55b29b"><span class="section-number-4">3.1.1.</span> O cliente (professor(a) ou empresa) interessado lê as   informações da metodologia de desenvolvimento adotada na   disciplina de "Introdução ao Projeto de Engenharia".</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+Veja [<a href="https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo/0-Metodologia-Instrucoes-Etapas/ProjetoEngenharia-1-Metodologia-Instrucoes-Etapas.pdf">https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo/0-Metodologia-Instrucoes-Etapas/ProjetoEngenharia-1-Metodologia-Instrucoes-Etapas.pdf</a>]
+</p>
+
+<p>
+– Também pode olhar o modelo padrão para os projetos de engenharia disponibilizado em [<a href="https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo">https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo</a>]
+</p>
+
+<p>
+– Se tiver dúvidas sobre a metodologia contactar o professor     coordenador da disciplina, e-mail: [bueno@lenep.uenf.br]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge5fd8c7" class="outline-4">
+<h4 id="orge5fd8c7"><span class="section-number-4">3.1.2.</span> Estando em acordo com a metodologia empregada o cliente deve  informar o interesse em montar um desafio tecnológico. Neste caso enviar para o email [||bueno@lenep.uenf.br] os seguintes dados:</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+– Nome do cliente (professor ou responsável na empresa)
+</p>
+<ul class="org-ul">
+<li>Telefone</li>
+<li>E-mail</li>
+<li>Informar se já tem cadastro no github e login no github.</li>
+</ul>
+<p>
+– Título do desafio tecnológico
+– Breve resumo/rascunho tecnológico [até 500 palavras]
+</p>
+
+<p>
+– Caso já tenha um ou mais alunos interessados informar o(s) dado(s) do(s) mesmo(s):
+</p>
+<ul class="org-ul">
+<li>Nome do aluno</li>
+<li>Telefone</li>
+<li>E-mail</li>
+<li>Informar se já tem cadastro no github e login no github.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a58351" class="outline-4">
+<h4 id="org1a58351"><span class="section-number-4">3.1.3.</span> O coordenador da disciplina analisa os dados e dá um retorno.</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+ – Caso o rascunho da proposta seja rejeitado, explica os motivos, possibilitando correções e reenvio do rascunho da proposta.
+– Caso o rascunho da proposta seja aprovada, informa o professor/engenheiro (e alunos caso já tenha).
+</p>
+<ul class="org-ul">
+<li>O cliente (professor/engenheiro) e alunos devem realizar seu cadastro no github e informar o professor Bueno.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbbd74e6" class="outline-4">
+<h4 id="orgbbd74e6"><span class="section-number-4">3.1.4.</span> O professor Bueno</h4>
+<div class="outline-text-4" id="text-3-1-4">
+<p>
+– Clona o modelo de projeto da disciplina, criando um projeto novo, com o título do projeto informado.
+– Adiciona no projeto o cliente (professor/engenheiro) e alunos (caso já tenha os alunos).
+</p>
+</div>
+</div>
+<div id="outline-container-org551f178" class="outline-4">
+<h4 id="org551f178"><span class="section-number-4">3.1.5.</span> O cliente</h4>
+<div class="outline-text-4" id="text-3-1-5">
+<p>
+– Baixa o modelo de projeto criado para sua máquina.
+</p>
+<ul class="org-ul">
+<li>Se ainda não tem o LyX instalado deve fazer a instalação para gerar a proposta</li>
+<li>Outra hipótese é gerar a proposta usando outro editor.</li>
+<li>Preenche os dados da proposta</li>
+<li>Diretório: 1-DescricaoDaProposta-DefinicaoDoDesafioTecnologico-Escopo-Desafio-Objetivo-SolucaoEsperada-TRL</li>
+<li>Arquivo:   1-DesafioTecnologico-2-DescricaoDaProposta.lyx (ou 1-DesafioTecnologico-2-DescricaoDaProposta.doc).</li>
+</ul>
+<p>
+– Gera o pdf associado
+– Envia os arquivos para o servidor do github.
+Nota: Se não tiver nenhum conhecimento de git/github e lyx, pode acessar diretamente o documento 1-DesafioTecnologico-2-DescricaoDaProposta.doc e editar o 
+  mesmo. Após concluir a descrição da proposta salvar no servidor e informar o professor Bueno.
+</p>
+
+<p>
+Nota: Note que as propostas podem ser submetidas sem que tenhamos alunos interessados, neste caso ficam num banco de dados disponibilizado aos alunos. Na prática a intenção é 
+  termos a disposição dos alunos uma série de desafios tecnológicos a serem resolvidos, assim a equipe escolhe um desafio que lhe interessa.
+</p>
+
+<ul class="org-ul">
+<li>O cliente (professor/engenheiro) e alunos devem realizar seu cadastro no github e informar o professor Bueno.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org20b603a" class="outline-4">
+<h4 id="org20b603a"><span class="section-number-4">3.1.6.</span> O professor Bueno</h4>
+<div class="outline-text-4" id="text-3-1-6">
+<p>
+– Clona o modelo de projeto da disciplina, criando um projeto novo, com o título do projeto informado.
+– Adiciona no projeto o cliente (professor/engenheiro) e alunos (caso já tenha os alunos).
+</p>
+</div>
+</div>
+<div id="outline-container-org1bb7ad4" class="outline-4">
+<h4 id="org1bb7ad4"><span class="section-number-4">3.1.7.</span> O cliente</h4>
+<div class="outline-text-4" id="text-3-1-7">
+<p>
+– Baixa o modelo de projeto criado para sua máquina.
+</p>
+<ul class="org-ul">
+<li>Se ainda não tem o LyX instalado deve fazer a instalação para gerar a proposta</li>
+<li>Outra hipótese é gerar a proposta usando outro editor.</li>
+<li>Preenche os dados da proposta</li>
+<li>Diretório: 1-DescricaoDaProposta-DefinicaoDoDesafioTecnologico-Escopo-Desafio-Objetivo-SolucaoEsperada-TRL</li>
+<li>Arquivo:   1-DesafioTecnologico-2-DescricaoDaProposta.lyx (ou 1-DesafioTecnologico-2-DescricaoDaProposta.doc).</li>
+</ul>
+<p>
+– Gera o pdf associado
+– Envia os arquivos para o servidor do github.
+Nota: Se não tiver nenhum conhecimento de git/github e lyx, pode acessar diretamente o documento 1-DesafioTecnologico-2-DescricaoDaProposta.doc e editar o 
+  mesmo. Após concluir a descrição da proposta salvar no servidor e informar o professor Bueno.
+</p>
+
+<p>
+Nota: Note que as propostas podem ser submetidas sem que tenhamos alunos interessados, neste caso ficam num banco de dados disponibilizado aos alunos. Na prática a intenção é 
+  termos a disposição dos alunos uma série de desafios tecnológicos a serem resolvidos, assim a equipe escolhe um desafio que lhe interessa.
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo.png&gt;
+</p>
+
+<p>
+[Figura 1.3: 
+Etapa 0 - Definicação do desafio tecnológico&lt;fig: Etapa 0 - Definicação do desafio tecnológico&gt;
+]
+]
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2eb29aa" class="outline-3">
+<h3 id="org2eb29aa"><span class="section-number-3">3.2.</span> Etapa 1 - Elaboração do pré-projeto</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+A sequência é apresentada na Figura [fig: Etapa 1 - Elaboração do Pré-Projeto].
+</p>
+</div>
+
+<div id="outline-container-orgb840582" class="outline-4">
+<h4 id="orgb840582"><span class="section-number-4">3.2.1.</span> Os alunos analisam os diversos desafios tecnológicos que foram propostos e selecionam um de seu interesse.</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Nota: Se não tivermos desafios previamente definidos a equipe deve apresentar sugestões de desafios ao coordenador da disciplina.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0992bdd" class="outline-4">
+<h4 id="org0992bdd"><span class="section-number-4">3.2.2.</span> Os alunos informam o professor coordenador da disciplina:</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+– Nome do desafio tecnológico.
+– Nome dos membros da equipe [email, email institucional, telefone].
+</p>
+<ul class="org-ul">
+<li>Os alunos fazem seu cadastro no site github <a href="http://www.github.com">http://www.github.com</a>]] caso ainda não tenham.</li>
+</ul>
+
+<p>
+Nota: É necessário assistir vídeos e ler material sobre o software git e o software github. Os mesmos são apresentados na disciplina. Sugere-se que criem seu próprio repositório e 
+    pratiquem os comandos e ações de uso do git e github antes de executar os comandos diretamente no projeto da disciplina.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad43a38" class="outline-4">
+<h4 id="orgad43a38"><span class="section-number-4">3.2.3.</span> O professor coordenador da disciplina adiciona os alunos da equipe no repositório do projeto.</h4>
+</div>
+
+<div id="outline-container-org29d03f4" class="outline-4">
+<h4 id="org29d03f4"><span class="section-number-4">3.2.4.</span> A seguir os alunos fazem o download do repositório em seus computadores.</h4>
+</div>
+<div id="outline-container-org60ff384" class="outline-4">
+<h4 id="org60ff384"><span class="section-number-4">3.2.5.</span> Elaboram o pré-projeto.</h4>
+<div class="outline-text-4" id="text-3-2-5">
+<p>
+Nota: requer instalação e leitura do tutorial do editor de texto LyX ([<a href="http://www.lyx.org">http://www.lyx.org</a>]) e conhecimento do mecanismo de trabalho em equipe usando o github.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a0d65c" class="outline-4">
+<h4 id="org8a0d65c"><span class="section-number-4">3.2.6.</span> Encaminham o pré-projeto.</h4>
+</div>
+
+<div id="outline-container-org0dd0e1d" class="outline-4">
+<h4 id="org0dd0e1d"><span class="section-number-4">3.2.7.</span> O pré-projeto deve ser aprovado pelo cliente que elaborou o desafio e pelo coordenador da disciplina.</h4>
+<div class="outline-text-4" id="text-3-2-7">
+<p>
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo-Etapa-1-Elaboracao-Pre-Projeto.png&gt;
+</p>
+
+<p>
+[Figura 1.4: 
+Etapa 1 - Elaboração do Pré-Projeto&lt;fig: Etapa 1 - Elaboração do Pré-Projeto&gt;
+]
+]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2bfb4e6" class="outline-3">
+<h3 id="org2bfb4e6"><span class="section-number-3">3.3.</span> Etapa 2 - Elaboração do projeto - detalhamento e contrato\</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+&lt;sec: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato&gt;
+</p>
+
+<p>
+A sequência é detalhada na Figura [fig: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato].
+</p>
+</div>
+
+<div id="outline-container-orga56a232" class="outline-4">
+<h4 id="orga56a232"><span class="section-number-4">3.3.1.</span> Após aprovação do pré-projeto os alunos detalham o mesmo gerando o projeto.</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+Nota: Alguns itens eventualmente serão opcionais, como exemplo a parte de criação do orçamento que poderá ser feita de forma bem simples. Num projeto real a montagem do orçamento deve  ser feita de forma detalhada.
+</p>
+
+<p>
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-2-ElaboracaoDocumentoProjetoEContrato.png&gt;
+</p>
+
+<p>
+[Figura 1.5: 
+Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato&lt;fig: Etapa 2 - Elaboração do Projeto - Detalhamento e Contrato&gt;
+]
+]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b3f982" class="outline-3">
+<h3 id="org2b3f982"><span class="section-number-3">3.4.</span> Etapa 3 - Modelagem de engenharia</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+A sequência é detalhada na Figura [fig: Etapa 3 - Modelagem de Engenharia].
+</p>
+</div>
+
+<div id="outline-container-org200ec5d" class="outline-4">
+<h4 id="org200ec5d"><span class="section-number-4">3.4.1.</span> Nesta etapa os alunos devem desenvolver um modelo abrangente do sistema de software a ser desenvolvido. Passa pelas etapas de:</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>Concepção</li>
+<li>Elaboração</li>
+<li>Análise Orientada a Objeto</li>
+<li>Projeto do Sistema</li>
+<li>Projeto Orientado a Objeto</li>
+<li>Realização de Testes Lógicos</li>
+<li>Documentação (geração dos documentos de modelagem e diagramas associados).</li>
+<li>Geração da lista de características ou features que serão implementados.</li>
+</ul>
+
+<p>
+Nota: É fundamental gerar uma documentação que dê uma visão clara de todo o sistema, mas, nesta etapa, não é necessário pormenorizar tanto. Por exemplo, diagramas de máquina de estado e diagramas de atividades aparecem pouco aqui. O detalhamento será feito nos ciclos de desenvolvimento.
+</p>
+
+<p>
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-3-ModelagemDeEngenharia.png&gt;
+</p>
+
+<p>
+[Figura 1.6: 
+Etapa 3 - Modelagem de Engenharia&lt;fig: Etapa 3 - Modelagem de Engenharia&gt;
+]
+]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9db5624" class="outline-3">
+<h3 id="org9db5624"><span class="section-number-3">3.5.</span> Etapa 4 - Ciclos de planejamento, detalhamento e construção/implementação</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+A sequência é detalhada na Figura [fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção].
+</p>
+
+<ul class="org-ul">
+<li>A cada ciclo de planejamento, detalhamento e construção, a equipe seleciona um grupo de funcionalidades/features a serem implementadas.</li>
+</ul>
+<p>
+– O conjunto de funcionalidades a serem implementadas devem "caber" dentro do prazo do ciclo.
+</p>
+<ul class="org-ul">
+<li>A seguir é feito um planejamento detalhado das características a serem implementadas, refinando os diagramas e adicionando novos diagramas, como exemplo diagramas de máquina de estado mais detalhados e diagramas de atividades.</li>
+</ul>
+
+<p>
+Nota: Lembre-se que os diagramas visam dar aos membros da equipe de engenharia uma visão clara dos conceitos/classes/funcionalidades a serem implementadas. Não é necessário exagerar, criando diagramas para conceitos muito simples ou algoritmos e rotinas amplamente conhecidos.
+</p>
+
+<ul class="org-ul">
+<li>A construção ou implementação dos códigos deve ser feita seguindo-se as normas e procedimentos padrões, com uso de ferramentas adequadas, como editores, compiladores, debugers e profillers. Em alguns casos pode-se usar uma IDE como Qt-Creator, Kdevelop, entre outros.</li>
+</ul>
+<p>
+– A construção dos códigos deve seguir as melhores práticas, incluindo:
+– Uso de editores modernos como emacs, vscode, com plugins e funcionalidades adequadas instaladas.
+Nota: sugere-se selecionar um editor ou IDE e ler seu manual e tutoriais de uso.
+</p>
+<ul class="org-ul">
+<li>Após implementar os códigos realizar testes, como testes de unidade e testes de integração.</li>
+</ul>
+<p>
+Nota: Não deixe para fazer os testes do sistemas só no final, a cada ciclo de desenvolvimento as features desenvolvidas devem ser testadas.
+</p>
+<ul class="org-ul">
+<li>No final de cada ciclo de planejamento/detalhamento/construção a equipe deve realizar uma reunião física para discutir o andamento do projeto.</li>
+</ul>
+<p>
+– Conversar sobre o que foi feito, o que falta fazer e correções de rumo(ajustes).
+</p>
+
+<p>
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-4-DesenvolvimentoDoProjeto-ConstrucaoFeaturesEmCiclos.png&gt;
+</p>
+
+<p>
+[Figura 1.7: 
+Etapa 4 - Ciclos de planejamento, detalhamento e construção&lt;fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção&gt;
+]
+]
+</p>
+</div>
+</div>
+<div id="outline-container-org6d19b48" class="outline-3">
+<h3 id="org6d19b48"><span class="section-number-3">3.6.</span> Etapa 5 - Entrega do produto</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+A sequência é detalhada na Figura [fig: Etapa 5 - Entrega do produto].
+</p>
+
+<ul class="org-ul">
+<li>A versão final do sistema de software deve passar por um sistema de testes pormenorizados.</li>
+<li>Testar se todas as especificações foram atendidas.</li>
+<li>Testar se todas os requisitos foram atendidos.</li>
+<li>Testar se cada uma das classes desenvolvidas atende seus requisitos.</li>
+<li>Testar exemplos reais aplicados a engenharia.</li>
+<li>Testar se os manuais estão completos dando os mesmos para um terceiro ler, instalar e testar o sistema.</li>
+</ul>
+<p>
+Dica: Uma equipe A pode passar seu manual do usuário para a equipe B instalar e testar e a equipe B pode passar seu manual para a equipe A instalar e testar.
+</p>
+
+<ul class="org-ul">
+<li>No caso da disciplina a equipe deve entregar a versão final com 15 dias de antecedência e marcar a data da defesa.</li>
+</ul>
+
+<p>
+Nota: os 15 dias são necessários pois o professor precisa de tempo para ler, instalar e testar o sistema (executar os testes implementados no manual).
+</p>
+
+<p>
+[float Figura:
+&lt;Arquivo gráfico: /home/andreduartebueno/Dropbox/02-Ensino/1-Apostilas-Livros-Pessoais/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno/imagens/Etapas/ProjetoEngenharia-Etapa-5-EntregaDoProduto.png&gt;
+</p>
+
+<p>
+[Figura 1.8: 
+Etapa 5 - Entrega do produto&lt;fig: Etapa 5 - Entrega do produto&gt;
+]
+]
+</p>
+
+<p>
+<a href="https://lh4.googleusercontent.com/hKp6LVbzBef44HnRvgw_gz31CdUPb33DRzWabPrfrpXVhdjXikMO1CNLj9m5FLDojst2GQVgVyvmn2hNssln5wInvSzqviut9SnSecZegH9Y-z9CQ5FegECrTfdL_kppeg=w1280">etapas processo</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: &lt;André Duarte Bueno&gt;</p>
+<p class="date">Created: 2023-08-19 sáb 14:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

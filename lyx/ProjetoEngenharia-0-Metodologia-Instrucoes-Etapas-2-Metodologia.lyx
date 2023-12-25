@@ -1,0 +1,5492 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+%-----------------------------------------------------------------
+% Para incluir formatações especificas para apresentações
+%-----------------------------------------------------------------
+%https://tex.stackexchange.com/questions/5894/latex-conditional-expression
+% Abaixo inserimos o pacote etoolbox que permite a gestão de if..else
+\usepackage{etoolbox}
+% Cria o flag
+\newtoggle{FormatoApresentacaoTRUE}
+\newtoggle{IncluirBibliografiaNoCapituloTRUE}
+%Seta o flag - deixe true se for para gerar apresentação de aula e false para formato livro
+%\toggletrue{FormatoApresentacaoTRUE}
+\togglefalse{FormatoApresentacaoTRUE}
+%\toggletrue{IncluirBibliografiaNoCapituloTRUE}
+\togglefalse{IncluirBibliografiaNoCapituloTRUE}
+
+% Para usar no meio dos arquivos do lyx crie um comando latex e cole o texto abaixo
+%\iftoggle{FormatoApresentacaoTRUE}{..verdadeiro..}{..falso..}
+%\iftoggle{FormatoApresentacaoTRUE}{\newpage}{}
+
+%---------------------------------------------------------------
+% Para adicionar/excluir uma seção inteira
+%---------------------------------------------------------------
+%https://tex.stackexchange.com/questions/193295/lyx-conditional-sections
+% Abaixo criamos um novo if
+\newif\ifIncluirSecaoProgramacaoAvancada
+%\FormatoApresentacaoWidefalse
+\IncluirSecaoProgramacaoAvancadatrue
+% Para usar
+% \ifIncluirSecaoProgramacaoAvancada no início do blobo
+% \fi para finalizar o bloco
+
+%---------------------------------------------------------------
+%GERAL
+%---------------------------------------------------------------
+\usepackage{verbatim}
+%%\usepackage{algorithm}
+\usepackage{fancyvrb}
+\usepackage{keyval} 
+\usepackage{indentfirst}
+%\usepackage{color}
+\usepackage{xcolor}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+\definecolor{BLACK}{rgb}{0,0,0}%   rgb color model
+\definecolor{BLUE}{rgb}{0,0,1}%   rgb color model
+
+%Informa que vai usar o pacote listings, disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+
+%Define um novo comando, chamado lst
+%observe que lst chama o comando  lstinputlisting.
+\newcommand{\lst}[2]{%
+    \noindent\rule[-1ex]{\textwidth}{0.3mm}\vspace{-1ex}
+    \lstinputlisting[caption={#2},label={#1},stringspaces=false,frame={tb},lineskip=-1pt,extendedchars=true,%
+    basicstyle=\footnotesize\tt,labelstep=1,labelstyle=\tiny,indent=2em,language=Java,breaklines]{#1}
+    \vspace{1ex}%
+}
+
+%\listfiles
+%\usepackage[]{hyperref}
+
+%\usepackage{mathptmx}  % instead of package times
+
+%\usepackage[scaled=0.9]{helvet} % or [scaled=0.92], if you like
+
+%% Pacote de citações para formato abnt
+%%\usepackage[num]{abntcite}
+%%\usepackage[alf]{abntcite}
+
+%%\usepackage[cam,a4,center]{crop}
+%% a4 é o tamanho físico
+%% center é para centralizar
+%% cam inclui quatro marcas diferentes
+
+%%\usepackage[cam,width=20truecm,height=28truecm,center]{crop}
+%\usepackage[cam,width=18truecm,height=26truecm,center]{crop}
+
+%\noindent
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Metodologia de Desenvolvimento do Projeto de Engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "cha: Metodologia de Desenvolvimento do Projeto de Engenharia"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lfoot{Prof.
+ André Duarte Bueno}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cfoot{ }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rfoot{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se aqui a metodologia a ser utilizada no desenvolvimento do projeto
+ de engenharia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introdução a metodologia utilizada
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:  Introdução a Metodologia Utilizada"
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Metodologia utilizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software a ser desenvolvido utiliza a metodologia de engenharia de software
+ apresentada na disciplina de introdução ao projeto de engenharia, ilustrado
+ de forma compacta na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral-Resumido.png
+	lyxscale 50
+	width 100text%
+	height 90theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas de gestão e desenvolvimento do projeto de engenharia - resumo
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta metodologia é utilizada nas disciplinas:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "LEP01348 : Introdução ao Projeto de Engenharia"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conceitos de projeto de engenharia, metodologia científica e gestão.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "LEP01447 : Programação Orientada a Objeto em C++"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/prog-orientada-objeto-c-2024"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conceitos de algoritmos e programação.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "LEP01446 : Projeto de Software Aplicado à Engenharia"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado"
+literal "false"
+
+\end_inset
+
+ (antiga programação prática).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolvimento prático de um projeto completo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia"
+
+\end_inset
+
+ apresenta uma visão mais detalhada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral-wide.png
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral.png
+	lyxscale 50
+	width 100text%
+	height 90theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas de gestão e desenvolvimento do projeto de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapas de gestão e desenvolvimento do projeto de engenharia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entre as referências utilizadas podemos citar:
+\end_layout
+
+\begin_layout Itemize
+UML: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prog-UML-blaha,prog-UML-Rumbaugh"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Projetos: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "projetos-introducao,projetos-pmi,projetos-projetoeletrico1,projetos-Woiler"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Gestão de Projetos: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "projetos-Abrantes,projetos-gestao,projetos-Heldman,projetos-Menezes,projetos-Pahl,projetos-Valeriano,projetos-Rosa"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Produtos: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "projetos-Abrantes"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 0 - Definição do desafio tecnológico
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 0 - Definição do desafio tecnológico"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A primeira etapa do processo de desenvolvimento de nosso produto tecnológico
+ é a definição pelo cliente (um professor, um engenheiro de empresa) do
+ problema a ser resolvido, o escopo do problema de engenharia.
+\end_layout
+
+\begin_layout Itemize
+Deve apresentar o desafio tecnológico o objetivo geral e a solução esperada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 0 - Definicação do desafio tecnológico"
+
+\end_inset
+
+.
+ Veja a seguir as sub-etapas associadas:
+\end_layout
+
+\begin_layout Itemize
+O cliente interessado lê as informações da metodologia de desenvolvimento
+ adotada na disciplina de "Introdução ao Projeto de Engenharia".
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Entrar no link 
+\begin_inset CommandInset href
+LatexCommand href
+target "ProjetoEngenharia-1-TituloProjeto-Modelo"
+literal "false"
+
+\end_inset
+
+ e ler o documento 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Metodologia Projeto Engenharia"
+target "https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo/0-Metodologia-Instrucoes-Etapas/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas.pdf"
+literal "false"
+
+\end_inset
+
+ (atualizar!).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Também pode olhar o modelo padrão para os projetos de engenharia disponibilizado
+ em
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Modelo completo - etapas 0-5"
+target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-Completo"
+literal "false"
+
+\end_inset
+
+.
+ (atualizar!)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Modelo específico - etapas 2-5"
+target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se tiver dúvidas sobre a metodologia contactar o professor coordenador da
+ disciplina
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+name "bueno@lenep.uenf.br"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Estando em acordo com a metodologia empregada o cliente deve informar o
+ interesse em montar um desafio tecnológico.
+ Neste caso enviar para o email 
+\begin_inset CommandInset href
+LatexCommand href
+name "bueno@lenep.uenf.br"
+literal "false"
+
+\end_inset
+
+ os seguintes dados:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assunto do email:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desafio Tecnológico: Titulo
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conteúdo do email:
+\end_layout
+
+\begin_layout Itemize
+Nome do cliente (professor ou responsável na empresa)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Telefone:
+\end_layout
+
+\begin_layout Itemize
+E-mail:
+\end_layout
+
+\begin_layout Itemize
+Informar se já tem cadastro no 
+\emph on
+github 
+\emph default
+(informe o login no github se já tiver).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Título do desafio tecnológico
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Breve resumo/rascunho tecnológico [até 500 palavras]:
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Caso já tenha um ou mais alunos interessados informar o(s) dado(s) do(s)
+ mesmo(s)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nome do aluno
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Telefone
+\end_layout
+
+\begin_layout Itemize
+E-mail
+\end_layout
+
+\begin_layout Itemize
+Informar login do alunos no 
+\emph on
+github
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nota: limite padrão de até 3 alunos por projeto.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+O coordenador da disciplina analisa os dados e dá um retorno.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Caso o rascunho da proposta seja rejeitado, explica os motivos, possibilitando
+ correções e reenvio do rascunho da proposta.
+\end_layout
+
+\begin_layout Itemize
+Um rascunho de proposta que esteja fora do escopo das disciplinas de modelagem
+ computacional será rejeitado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Por exemplo, uma proposta que envolva apenas a parte de experimentos de
+ laboratório sem o desenvolvimento dos softwares associados será rejeitada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Toda proposta deve incluir o desenvolvimento de um software em C++, podendo
+ ser um software educativo (simuladores didáticos), um software que resolva
+ algoritmos de engenharia (algotritmos computacionais), desenvolvimento
+ de uma biblioteca computacional que dê suporte a problemas típicos de engenhari
+a, simuladores de problemas relacionados a engenharia de petróleo, simuladores
+ relacionados a problemas de geologia, geoquímica, geofísica, petrofísica,
+ engenharia de poço, engenharia de elevação e escoamento, engenharia de
+ reservatório; simuladores que tratem de problemas numéricos utilizando
+ volumes finitos, diferenças finitas ou elementos finitos.
+ Simuladores que envolvam o uso de IA - Inteligência Artificial e aplicações.
+ Em resumo, devem tratar da solução de problemas de em engenharia de petróleo
+ e/ou modelagem computacional aplicada.
+\end_layout
+
+\begin_layout Itemize
+Note que a metodologia pode ser utilizada para desenvolver projetos de engenhari
+a que não sejam de software, mas, neste caso, precisa encontrar professores
+ para acompanhar as atividades.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Nota: No PPC - Projeto Pedagógico do Curso de Engenharia de Petróleo, o
+ TCC - Trabalho de Conclusão de Curso, pode ser desenvolvido de diferentes
+ formas: Monografia (indivídual) ou Projeto de Engenharia (indivídual ou
+ grupo).
+ Este documento trata apenas do projeto de engenharia.
+ Se estiver interessado em desenvolver IC - Iniciação Científica e um trabalho
+ no formato de monografia, veja o modelo 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ldsc/ModeloDiretorio-Aluno-Bolsista-TCC-IC-MSC-DSC-Projeto"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Caso o rascunho da proposta seja aprovado, o coordenador da disciplina informa
+ o cliente (e alunos caso já tenha).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O cliente e alunos que ainda não tem cadastro no 
+\emph on
+github, 
+\emph default
+devem se cadastrar
+\emph on
+ 
+\emph default
+e informar ao professor Bueno o login dos membros da equipe.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Enviar email:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assunto: Título do projeto.
+\end_layout
+
+\begin_layout Itemize
+Conteúdo: nome e login no github.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+O coordenador da disciplina
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Clona o modelo de projeto da disciplina, criando um projeto novo, com o
+ título do projeto informado.
+\end_layout
+
+\begin_layout Itemize
+Adiciona no projeto o cliente (professor/engenheiro) e alunos (caso já tenha
+ os alunos).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note que para adicionar o cliente e alunos no projeto é necessário o cadastro
+ prévio dos mesmos no 
+\emph on
+github
+\emph default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Envia para o cliente e alunos o link do 
+\emph on
+github
+\emph default
+, de forma que todos poderão acessar o projeto no modo leitura e escrita.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+O cliente 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Baixa o modelo de projeto criado para sua máquina usando o link informado.
+\end_layout
+
+\begin_layout Itemize
+Acessa o modelo de documento com a descrição do desafio tecnológico.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se ainda não tem o LyX instalado deve fazer a instalação.
+\end_layout
+
+\begin_layout Itemize
+Caso não saiba usar o LyX pode gerar a proposta de desafio tecnológico usando
+ outro editor (como word ou google docs) e repassar para o aluno para que
+ coloque no formato do LyX.
+ Os alunos sabem usar o LyX, vem o mesmo na disciplina de projeto.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Preenche os dados da proposta do desafio tecnológico.
+\end_layout
+
+\begin_layout Itemize
+Gera o pdf associado.
+\end_layout
+
+\begin_layout Itemize
+Envia os arquivos gerados para o servidor do 
+\emph on
+github
+\emph default
+ (lyx e pdf).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Comandos: 
+\end_layout
+
+\begin_layout LyX-Code
+git add .
+ 
+\end_layout
+
+\begin_layout LyX-Code
+git commit -m "gerado o desafio tecnológico titulo" 
+\end_layout
+
+\begin_layout LyX-Code
+git push
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Nota: Se não tiver nenhum conhecimento de 
+\emph on
+git/github 
+\emph default
+e 
+\emph on
+lyx
+\emph default
+, pode acessar diretamente o documento 1-DesafioTecnologico-2-DescricaoDaPropost
+a.lyx e editar o mesmo.
+ Após concluir a descrição da proposta enviar para o coordenador da disciplina.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note que as propostas de desafios tecnológicos podem ser submetidas sem
+ que tenhamos alunos interessados, neste caso ficam num banco de dados disponibi
+lizado aos alunos no site do 
+\emph on
+github
+\emph default
+.
+ Na prática a intenção é termos a disposição dos alunos uma série de desafios
+ tecnológicos a serem resolvidos, assim a equipe de alunos escolhe um desafio
+ que lhe interessa (semelhante a feira de ideias usada na pós-graduação).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Requisitos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O cliente e alunos devem ter ciência:
+\end_layout
+
+\begin_layout Itemize
+Prazo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O prazo total para execução do projeto é de 18 a 24 meses se estiver limitado
+ ao conjunto de disciplinas de modelagem computacional.
+ 
+\end_layout
+
+\begin_layout Itemize
+Projetos de até 36 meses podem ser desenvolvidos se for o trabalho de TCC
+ na forma de projeto de engenharia.
+ Neste caso teremos mais "ciclos de desenvolvimento" (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+
+\end_inset
+
+).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Escopo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O projeto deve estar no escopo do curso, competências e habilidades listadas
+ no PPC (para ter uma ideia rápida olhe a lista de disciplinas da grade,
+ olhe os projetos desenvolvidos pelos professores, olhe as atividades de
+ empresas de engenharia que trabalham com inovação científica e tecnológica).
+\end_layout
+
+\begin_layout Itemize
+O projeto deve ter orientador ou co-orientador do LENEP.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Softwares utilizados:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os documentos do projeto seguem um modelo pré estabelecido que usa o editor
+ de texto 
+\begin_inset CommandInset href
+LatexCommand href
+name "LyX"
+target "http://www.lyx.org"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+O Editor LyX é apresentado aos alunos em sala de aula e temos manuais e
+ vídeos disponibilizadas na internet e google classroom.
+\end_layout
+
+\begin_layout Itemize
+O Editor LyX tem sido usado pelos nossos alunos desde 2004.
+ Seu uso requer leitura e aprendizado do uso do LyX (e conceitos básicos
+ de TeX/LaTeX).
+\end_layout
+
+\begin_layout Itemize
+Requer o conhecimento do mecanismo de trabalho em equipe usando os softwares
+ 
+\emph on
+git
+\emph default
+ e 
+\emph on
+github
+\emph default
+.
+ O software 
+\emph on
+git 
+\emph default
+é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibilizad
+as na internet e google classroom.
+ O software 
+\emph on
+github
+\emph default
+ é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibiliza
+das na internet e google classroom.
+\end_layout
+
+\begin_layout Itemize
+A parte de modelagem envolve o uso do modelador 
+\emph on
+umbrello
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+A parte de desenvolvimento do software requer conhecimentos de C++, da bibliotec
+a padrão de C++ e ferramentas como compiladores (g++, clang), editores específic
+os (
+\emph on
+emacs
+\emph default
+, 
+\emph on
+vscode
+\emph default
+), IDEs.
+\end_layout
+
+\begin_layout Itemize
+Uma lista com todos os softwares é apresentada na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lista-softwares-utilizados"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelagem física-matemática (química-matemática)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os membros da equipe devem compreender os conceitos de matemática, física
+ e de engenharia associados ao desafio tecnológico escolhido.
+\end_layout
+
+\begin_layout Itemize
+No Capítulo de Elaboração os alunos devem desenvolver todo o raciocínio
+ lógico, apresentar as ideias, as equações e modelos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Equipes:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A montagem da equipe é ponto central e deve ser realizada com cuidado.
+ Esteja atento para os seguintes pontos:
+\end_layout
+
+\begin_layout Itemize
+O tema do projeto deve ser de interesse dos membros da equipe.
+\end_layout
+
+\begin_layout Itemize
+Fujam de temas que parecem mais fáceis mas não são interessantes (escolha
+ algo que gosta, tem interesse efetivo, pois como é um trabalho de longo
+ prazo, para se manter motivado o tema tem de ser de seu interesse).
+\end_layout
+
+\begin_layout Itemize
+Os membros da equipe devem conseguir se reunir fisicamente e na forma 
+\emph on
+online
+\emph default
+ para esclarecimento das atividades desenvolvidas e apoio mútuo no esclareciment
+o de dúvidas dos problemas associados (teóricos e práticos).
+\end_layout
+
+\begin_layout Itemize
+Um aluno que tenha reprovado numa das disciplinas poderá continuar na mesma
+ equipe e projeto.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Defesas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O projeto tem defesa em equipe (idea geral) e defesas individuais (para
+ confirmar a efetiva participação e a capacidade de desenvolver novas coisas
+ solicitadas pelo professor).
+\end_layout
+
+\begin_layout Itemize
+O aluno também poderá mudar de equipe e tema, mas isso deve ser evitado
+ pois usualmente gera atrasos.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo.png
+	lyxscale 50
+	width 100text%
+	height 80theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 0 - Definição do desafio tecnológico
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapa 0 - Definicação do desafio tecnológico"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 1 - Elaboração do pré-projeto - esboço
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 1 - Elaboração do Pré-Projeto - esboço"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Após aprovação do desafio tecnológico, criação do projeto no 
+\emph on
+github
+\emph default
+ e adição dos membros, a equipe deve elaborar o pré-projeto.
+ A sequência é apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 1 - Elaboração do Pré-Projeto"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Description
+Nota: este modelo segue como exemplo o modelo de desafio tecnológico adotado
+ pela Petrobras.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo-Etapa-1-Elaboracao-Pre-Projeto.png
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 1 - Elaboração do Pré-Projeto
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapa 1 - Elaboração do Pré-Projeto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A equipe elabora o pré-projeto.
+\end_layout
+
+\begin_layout Itemize
+Os alunos encaminham o pré-projeto.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os encaminhamentos são sempre pelo 
+\emph on
+github
+\emph default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+O pré-projeto deve ser aprovado pelo cliente que elaborou o desafio e pelo
+ coordenador da disciplina.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note que temos um desafio tecnológico definido pelo cliente e pre-aprovado
+ pelo professor e um projeto no github (vazio).
+ 
+\end_layout
+
+\begin_layout Itemize
+Note que os alunos elaboraram um pré-projeto (rascunho de solução preliminar),
+ tendo como base o desafio tecnológico e seu entendimento do que deve ser
+ feito.
+ 
+\end_layout
+
+\begin_layout Itemize
+Note que este pré-projeto deve ser aprovado pelo cliente.
+\end_layout
+
+\begin_layout Itemize
+Esta análise é necessária para evitarmos problemas de entendimento do que
+ deve ser feito.
+ 
+\end_layout
+
+\begin_layout Itemize
+Tanto o cliente quando a equipe de alunos devem estar de acordo com o que
+ será realizado antes da elaboração do projeto detalhado/executivo
+\begin_inset Foot
+status open
+
+\begin_layout Itemize
+Em engenharia um projeto detalhado é chamado de projeto executivo, o mesmo
+ requer muito trabalho para ser elaborado e normalmente é cobrado.
+\end_layout
+
+\end_inset
+
+ e do contrato.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notem que temos alguns requisitos que devem ser aprimorados nas disciplinas
+ e ao longo do deesenvolvimento do projeto para efetiva capacidade de desenvolve
+r as atividades associadas.
+\end_layout
+
+\begin_layout Itemize
+Uso do 
+\emph on
+LyX
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sugere-se ler o tutorial e manual de uso do software.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Uso do 
+\emph on
+git/
+\begin_inset CommandInset href
+LatexCommand href
+name "github"
+target "http://www.github.com||github"
+literal "false"
+
+\end_inset
+
+
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+É necessário assistir vídeos e ler material sobre os softwares 
+\emph on
+git 
+\emph default
+e 
+\emph on
+github
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sugere-se que criem seu próprio repositório e pratiquem os comandos e ações
+ de uso do 
+\emph on
+git 
+\emph default
+e 
+\emph on
+github 
+\emph default
+antes de executar os comandos diretamente no projeto da disciplina.
+\end_layout
+
+\begin_layout Itemize
+Matenham 
+\emph on
+backups 
+\emph default
+dos arquivos.
+\end_layout
+
+\begin_layout Itemize
+Importante executar os comandos com calma, prestando atenção, lendo as mensagens
+ apresentadas.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 2 - Elaboração do contrato - detalhamento do pré-projeto
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 2 - Elaboração do contrato - detalhamento do pré-projeto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aprovado o pré-projeto podemo escrever o projeto em sí, o mesmo inclui mais
+ detalhes, adicionando por exemplo mais detalhes das instituições envolvidas,
+ objetivos específicos, justificativa e resultados esperados, além de cronograma
+ e orçamento.
+ A sequência é detalhada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Elaboração do contrato - detalhamento do pré-projeto"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-2-ElaboracaoDocumentoProjetoEContrato.png
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 2 - Elaboração do contrato - detalhamento do pré-projeto
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Elaboração do contrato - detalhamento do pré-projeto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Após aprovação do pré-projeto os alunos detalham o mesmo gerando o contrato.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os dados do pré-projeto podem ser copiados para o projeto.
+\end_layout
+
+\begin_layout Itemize
+A seguir tudo deve ser mais detalhado.
+\end_layout
+
+\begin_layout Itemize
+As etapas associadas devem ser bem definidas.
+\end_layout
+
+\begin_layout Itemize
+O cronograma deve ser realista.
+\end_layout
+
+\begin_layout Itemize
+O orçamento deve ser bem realizado.
+ Por exemplo, para realização do projeto serão necessários computadores
+ com determinada configuração, os mesmos devem ser orçados.
+ Esta etapa cobre requisitos da grade associados a temas de administração
+ que foram exigidos para aprovação do projeto pedagógico.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 3 - Modelagem de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 3 - Modelagem de Engenharia"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A etapa de modelagem de engenharia é apresentada em detalhes na disciplina,
+ os alunos aprendem os conceitos associados e colocam em prática fazendo
+ modelos e diagramas usando o modelador 
+\begin_inset CommandInset href
+LatexCommand href
+name "Umbrello"
+target "https://apps.kde.org/pt-br/umbrello/"
+literal "false"
+
+\end_inset
+
+.
+ Também é material de trabalhos entregues via 
+\emph on
+google classroom 
+\emph default
+e provas.
+ 
+\end_layout
+
+\begin_layout Standard
+Nesta etapa a equipe usa o modelador 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "umbrello"
+target "https://apps.kde.org/pt-br/umbrello/"
+literal "false"
+
+\end_inset
+
+
+\emph default
+ para desenvolver os modelos de software através da metodologia UML - 
+\emph on
+Unified Modeling Language
+\emph default
+, em português 
+\emph on
+Linguagem de Modelagem Unificada
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Detalhas da UML consulte o site da organização internacional que a regulamenta
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.uml.org/"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A sequência desta etapa é detalhada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 3 - Modelagem de Engenharia"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-3-ModelagemDeEngenharia.png
+	lyxscale 50
+	width 100text%
+	height 80theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 3 - Modelagem de Engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapa 3 - Modelagem de Engenharia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Nesta etapa os alunos devem desenvolver um modelo abrangente do sistema
+ de software a ser desenvolvido.
+ Passa pelas etapas de:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Concepção
+\end_layout
+
+\begin_layout Itemize
+Elaboração
+\end_layout
+
+\begin_layout Itemize
+Análise Orientada a Objeto
+\end_layout
+
+\begin_layout Itemize
+Projeto do Sistema
+\end_layout
+
+\begin_layout Itemize
+Projeto Orientado a Objeto
+\end_layout
+
+\begin_layout Itemize
+Realização de Testes Lógicos
+\end_layout
+
+\begin_layout Itemize
+Documentação (geração dos documentos de modelagem e diagramas associados).
+\end_layout
+
+\begin_layout Itemize
+Geração da Lista de Características ou 
+\emph on
+features
+\emph default
+ que serão implementados.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observações:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Um dos objetivos desta modelagem é o aluno, futuro engenheiro, aprender
+ a lidar com o todo e suas partes, com a separação da estrutura (partes
+ estáticas), e a parte dinâmica (objetos se relacionando).
+ Identificar e ver o sistema dos pontos de vista macro e micro.
+\end_layout
+
+\begin_layout Itemize
+O modelo repassado facilita este trabalho, pois além de já estar formatado
+ contém dicas e sugestões práticas.
+\end_layout
+
+\begin_layout Itemize
+Temos mais de 40 projetos disponibilizadas no site do 
+\begin_inset CommandInset href
+LatexCommand href
+name "ldsc"
+target "https://github.com/ldsc"
+literal "false"
+
+\end_inset
+
+, a grande maioria desenvolvida por ex-alunos.
+\end_layout
+
+\begin_layout Itemize
+É fundamental gerar uma documentação que dê uma visão clara de todo o sistema,
+ mas, nesta etapa, não é necessário pormenorizar tanto.
+ Por exemplo, os diagramas de máquina de estado e diagramas de atividades
+ aparecem pouco aqui.
+ O detalhamento da parte micro será feita nos ciclos de desenvolvimento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Outras imagens detalhando esta etapa estão disponibilizadas 
+\begin_inset CommandInset href
+LatexCommand href
+name "neste link"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia?authuser=0#h.jzh3wtardi2q"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 4 - Ciclos de planejamento, detalhamento e construção/implementação
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta etapa é apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Temos duas atividades principais:
+\end_layout
+
+\begin_layout Itemize
+Ciclo planejamento/detalhamento: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Usa-se o modelador 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "umbrello"
+target "https://apps.kde.org/pt-br/umbrello/"
+literal "false"
+
+\end_inset
+
+
+\emph default
+ para desenvolver os modelos micro do software (ex.: diagramas de atividades).
+\end_layout
+
+\begin_layout Itemize
+É neste momento que os algorítmos de cálculo são detalhados através dos
+ diagramas de atividade (nome classr::nome método).
+\end_layout
+
+\begin_layout Itemize
+Havendo necessidade detalhe o comportamento dos objetos usando diagramas
+ de máquina de estado (nome classe).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ciclo de construção:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note que o modelador UML pode gerar uma casca inicial do software para diferente
+s linguagens de programação, incluindo C++.
+\end_layout
+
+\begin_layout Itemize
+Note que o 
+\emph on
+umbrello
+\emph default
+ pode exportar e importar códigos, sendo possível atualizar os diagramas
+ após alterações nos códigos.
+\end_layout
+
+\begin_layout Itemize
+Usa-se uma IDE ou editor de texto para implementar os códigos.
+\end_layout
+
+\begin_layout Itemize
+Usa-se um compilador.
+\end_layout
+
+\begin_layout Itemize
+Uma lista dos softwares é encontrada na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lista-softwares-utilizados"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-4-DesenvolvimentoDoProjeto-ConstrucaoFeaturesEmCiclos.png
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 4 - Ciclos de planejamento, detalhamento e construção
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A cada ciclo de planejamento, detalhamento e construção, a equipe seleciona
+ um grupo de funcionalidades/
+\emph on
+features
+\emph default
+ a serem implementadas.
+\end_layout
+
+\begin_layout Itemize
+O conjunto de funcionalidades a serem implementadas devem "caber" dentro
+ do prazo do ciclo e estar de acordo com o cronograma.
+\end_layout
+
+\begin_layout Itemize
+A seguir é feito um planejamento detalhado das características a serem implement
+adas, refinando os diagramas e adicionando novos diagramas, como exemplo
+ diagramas de máquina de estado mais detalhados e diagramas de atividades.
+ É neste momento que diversos detalhes micros aparecem e devem ser escritos,
+ tanto a estrutura (diagrama de classes), como a dinâmica através dos diagramas
+ de atividades.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Nota: Lembre-se que os diagramas visam dar aos membros da equipe de engenharia
+ uma visão clara dos conceitos/classes/funcionalidades a serem implementadas.
+ Não é necessário exagerar, criando diagramas para conceitos simples ou
+ algoritmos e rotinas amplamente conhecidos.
+ Uma forma de identificar se determinado diagrama é necessário é verificar
+ se todos os membros da equipe entendem determinado conceito sem os diagramas,
+ caso afirmativo o mesmo é desnecessário.
+ Faça diagramas para partes mais complexas e que requeiram algoritmos mais
+ exigentes.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A construção ou implementação dos códigos deve ser feita seguindo-se as
+ normas e procedimentos padrões, com uso de ferramentas adequadas, como
+ editores, compiladores, debugers e 
+\emph on
+profillers
+\emph default
+.
+ Em alguns casos pode-se usar uma IDE como 
+\emph on
+Qt-Creator
+\emph default
+, 
+\emph on
+Kdevelop
+\emph default
+, entre outros.
+\end_layout
+
+\begin_layout Itemize
+A construção dos códigos deve seguir as melhores práticas.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Na disciplina damos preferência para uso de editores modernos como 
+\begin_inset CommandInset href
+LatexCommand href
+name "emacs"
+target "https://www.gnu.org/software/emacs/"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "vscode"
+target "https://code.visualstudio.com/"
+literal "false"
+
+\end_inset
+
+, com plugins e funcionalidades adequadas instaladas.
+\end_layout
+
+\begin_layout Itemize
+Leia os manuais e tutoriais de uso do editor ou IDE escolhidos.
+\end_layout
+
+\begin_layout Itemize
+Existem centenas de editores e IDEs, só podemos dar ajuda nos padrões utilizados
+ na disciplina.
+ Isto significa que se a equipe/aluno usar outras ferramentas faz isso por
+ sua conta e risco pois não terá nenhum tipo de suporte.
+\end_layout
+
+\begin_layout Itemize
+Os manuais são gerados obrigatoriamente no LyX.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Visa ensinar a usar editores profissionais.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Os modelos UML devem ser gerados em plataforma que permita que alunos que
+ venham a fazer a disciplina no futuro possam manipular os arquivos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A ideia é que teremos diversas versões do software desenvolvidas de forma
+ incremental por diferentes equipes.
+\end_layout
+
+\begin_layout Itemize
+Uma versão dos diagramas no 
+\emph on
+umbrello
+\emph default
+ é necessária para permitir a continuidade do projeto por outras equipes.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Após implementar os códigos realizar testes, como testes de unidade e testes
+ de integração.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Não deixe para fazer os testes do sistemas só no final.
+ 
+\end_layout
+
+\begin_layout Itemize
+A cada ciclo de desenvolvimento as 
+\emph on
+features
+\emph default
+ desenvolvidas devem ser testadas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No final de cada ciclo de planejamento/detalhamento/construção a equipe
+ deve realizar uma reunião física para discutir o andamento do projeto.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conversar sobre o que foi feito, o que falta fazer e correções de rumo (ajustes).
+\end_layout
+
+\begin_layout Itemize
+Fazer uma apresentação informal da evolução.
+\end_layout
+
+\begin_layout Itemize
+Esta reunião deve seguir os procedimentos da 
+\begin_inset CommandInset href
+LatexCommand href
+name "metodologia SCRUM"
+target "https://www.cnnbrasil.com.br/tecnologia/scrum/"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Etapa 5 - Entrega do produto
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Etapa 5 - Entrega do produto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A sequência é detalhada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapa 5 - Entrega do produto"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Etapas/ProjetoEngenharia-Etapa-5-EntregaDoProduto.png
+	lyxscale 50
+	width 100text%
+	height 80theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa 5 - Entrega do produto
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Etapa 5 - Entrega do produto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A versão final do sistema de software deve passar por um sistema de testes
+ pormenorizados.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Testar se todas as especificações foram atendidas.
+\end_layout
+
+\begin_layout Itemize
+Testar se todas os requisitos foram atendidos.
+\end_layout
+
+\begin_layout Itemize
+Testar se cada uma das classes desenvolvidas atende seus requisitos e esta
+ completamente funcional.
+\end_layout
+
+\begin_layout Itemize
+Testar exemplos reais aplicados a engenharia.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No mundo real a quantidade de dados a serem processados numa simulação de
+ engenharia costuma ser enorme.
+ Normalmente os alunos não tem em casa computadores para atender esta demanda.
+ A solução é criar um conjunto de dados reduzido e que possa ser utilizado
+ nos testes.
+ Mas para versão final é necessário rodar o simulador desenvolvido com dados
+ reais.
+ Isto permite verificar a estabilidade do sistema e tempos de procesamento.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Testar se os manuais estão completos dando os mesmos para um terceiro ler,
+ instalar e testar o sistema.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Uma equipe A pode passar seu manual do usuário para a equipe B instalar
+ e testar o software e a equipe B pode passar seu manual para a equipe A
+ instalar e testar.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+No caso da disciplina a equipe deve entregar a versão final com 15 dias
+ de antecedência e marcar a data da defesa.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os 15 dias são necessários pois o professor precisa de tempo para ler, instalar
+ e testar o sistema (executar os testes implementados no manual).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Caso o aluno ou equipe queiram dar continuidade ao projeto para apresentar
+ o mesmo como TCC, devem considerar a adição de novas funcionalidades/
+\emph on
+features
+\emph default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Um exemplo que já tivemos foi de alunos que na disciplina de programação
+ prática entregaram um sistema totalmente funcional e no TCC adicionaram
+ novas funcionalidades e fizeram versões com interface gráfica amigável
+ em Qt.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iftoggle{FormatoApresentacaoTRUE}{
+\backslash
+newpage}{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Cronograma
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Cronograma"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cronograma para 24 meses - projeto disciplinas
+\end_layout
+
+\begin_layout Itemize
+A seguir um exemplo de cronograma.
+ O cronograma efetivo dependerá do projeto e da equipe.
+\end_layout
+
+\begin_layout Itemize
+Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina
+ de Introdução ao Projeto de Engenharia.
+ As demais etapas estão associadas às demais disciplinas (LEP - 01447: Programaç
+ão Orientada a Objeto em C++ e LEP - 01446: Projeto de Software Aplicado
+ à Engenharia).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="13">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mês
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5-7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11-13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14-16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17-19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20-22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23-25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+..36 (TCC)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cronograma para 36 meses - projeto TCC
+\end_layout
+
+\begin_layout Itemize
+A seguir um exemplo de cronograma.
+ O cronograma efetivo dependerá do projeto e da equipe.
+\end_layout
+
+\begin_layout Itemize
+Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina
+ de Introdução ao Projeto de Engenharia.
+ As etapas estão associadas às disciplinas (LEP - 01447: Programação Orientada
+ a Objeto em C++ e LEP - 01446: Projeto de Software Aplicado à Engenharia)
+ podem atingir 24 meses.
+ Adicionando as atividades do TCC podemos ter até 36 meses.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="13">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mês
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5-7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11-13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14-16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17-19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20-22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23-25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+..36 (TCC)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 4.c6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Lista softwares utilizados
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Lista-softwares-utilizados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Na disciplina usamos softwares livres que os alunos podem acessar, instalar
+ e usar, sem problemas com direitos autorais e sem pirataria.
+\end_layout
+
+\begin_layout Itemize
+Exemplos de softwares usados em sala de aula e links para acesso:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Sistema operacional GNU/Linux-Fedora"
+target "https://fedoraproject.org/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sistema operacional simples e fácil de usar e configurar.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Bash - GNU Bourne-Again Shell"
+target "https://www.gnu.org/software/bash/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ambiente de shell mais utilizado no mundo todo, coloca disposição do aluno
+ um conjunto de aplicativos que permitem melhorar sua produtividade e eficiência
+ na gestão de diretórios, arquivos e configurações de sistemas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Git - Distributed revision control system"
+target "https://git-scm.com/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Software mais usado no mundo no no controle de versões de arquivos de projetos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub - Where the world builds software"
+target "https://github.com/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maior site de armazenamento de projetos de engenharia (em especial de softwares).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "LyX - A document processor"
+target "https://www.lyx.org/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Editor de texto profissional que é utilizado por nossos alunos desde 2004.
+\end_layout
+
+\begin_layout Itemize
+Interface para uso simplificado do TeX/LaTeX.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "UML Modeller Umbrello UML Modeller - Free UML diagram editor"
+target "https://uml.sf.net/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modelador UML simples e prático (embora apresente alguns bugs!).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Kate - A versatile text editor"
+target "https://kate-editor.org/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Editor de texto simples e prático que tem como base a biblioteca Qt.
+\end_layout
+
+\begin_layout Itemize
+Também é possível usar o 
+\emph on
+gedit
+\emph default
+ que tem como base a biblioteca GTK.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "emacs"
+target "https://www.gnu.org/software/emacs/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Editor de texto profissional com centenas de recursos avançados.
+\end_layout
+
+\begin_layout Itemize
+Seu uso requer treinamento.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "g++ - GNU Compiler Collection"
+target "https://gcc.gnu.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conjunto de compiladores da GNU, compilador mais utilizado no mundo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Clang"
+target "https://clang.llvm.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fornece um 
+\emph on
+front-end 
+\emph default
+de linguagem e infraestrutura de ferramentas para linguagens de programação
+ da C/C++/Java, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Caso o cliente queira usar ferramentas proprietárias deverá fornecer as
+ mesmas 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deve pagar as licenças associadas com instalação nos equipamentos do LENEP.
+\end_layout
+
+\begin_layout Itemize
+Não fornecemos nenhum suporte para estes softwares.
+\end_layout
+
+\begin_layout Itemize
+As versões finais devem ter documentos gerados em formatos compatíveis com
+ softwares livres, garantindo a viabilidade de continuidade do projeto.
+ Ou seja, temos de garantir que futuras equipes possam modificar/atualizar
+ o projeto mesmo sem ter acesso aos softwares proprietários.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Site com referências
+\end_layout
+
+\begin_layout Itemize
+Referências: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prog-UML-blaha,prog-UML-Rumbaugh"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Você encontra uma lista de referências no 
+\begin_inset CommandInset href
+LatexCommand href
+name "site do professor"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
