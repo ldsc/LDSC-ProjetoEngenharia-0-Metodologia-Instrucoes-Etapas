@@ -36,7 +36,7 @@
     
 * Links:
 - [[https://sites.google.com/view/professorandreduartebueno/][Site do Professor André Duarte Bueno]].
-- [[https://github.com/ldsc][Site do LDSC no github]].
+- [[https://github.com/ldsc][Site do *LDSC - Laboratório de Desenvolvimento de Software Científico e Aplicado* no github]].
 - [[https://uenf.br/cct/lenep][Site do LENEP]].
 
 * Lista de Repositórios do LDSC
@@ -121,6 +121,9 @@
   - meios porosos (rochas reservatório).
   - métodos numéricos.
   - grafos, redes de percolação e redes neurais.
+  - O software [[https://github.com/ldsc/lvp][Software LVP]] faz uso extensivo da lib_ldsc.
+  - Manual técnico: [[https://github.com/ldsc/lib_ldsc/blob/master/doc/ManualTecnico/Doutorado-AndreDuarteBueno.pdf][Tese doutorado Prof. André Duarte Bueno]]
+  - Apresentação:  [[https://github.com/ldsc/lib_ldsc/blob/master/doc/ManualTecnico/ApresentacaoLinhaPesquisaAnaliseDeImagens-ProcParalelo-Bueno-2023-reduzida.pdf][Apresentação linhas de pesquisa que usam a lib_ldsc]]
 - Área:
   - Análise e processamento de imagens.
 * <<3>>Repositórios de softwares desenvolvidos
@@ -155,10 +158,14 @@
 - Link no github:
   - https://github.com/ldsc/simulat
 - Resumo:
-  - Simulador Transferência Calor e Umidade em Telhas Cerâmicas.
+  - Simulador Transferência Calor e Umidade em Telhas Cerâmicas (meios porosos).
   - A partir de propriedades físicas medidas em laboratório permite a simulação dos valores de conteúdo mássico e temperatura de telhas expostas ao meio ambiente.
+  - [[https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno.pdf][Mestrado-AndreDuarteBueno.pdf]].
+  - [[https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno-Apresentacao.pdf][Mestrado-AndreDuarteBueno-Apresentacao.pdf]].    
+  - [[https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno-ImagensSoftwareSimulat.pdf][ImagensSoftwareSimulat]].
 - Área:
-  - Transferência de calor e massa.    
+  - Transferência de calor e massa.
+  - Conforto ambiental.
 ** Título: Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens
 - Link no github:
   - https://github.com/ldsc/Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens
