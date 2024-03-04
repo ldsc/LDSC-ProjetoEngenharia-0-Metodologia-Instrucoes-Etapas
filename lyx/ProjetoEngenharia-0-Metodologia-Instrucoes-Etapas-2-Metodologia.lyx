@@ -613,7 +613,7 @@ A primeira etapa do processo de desenvolvimento de nosso produto tecnológico
 \end_layout
 
 \begin_layout Itemize
-Deve apresentar o desafio tecnológico o objetivo geral e a solução esperada.
+Deve apresentar o desafio tecnológico, o objetivo geral e a solução esperada.
  
 \end_layout
 
@@ -639,7 +639,8 @@ O cliente interessado lê as informações da metodologia de desenvolvimento
 Entrar no link 
 \begin_inset CommandInset href
 LatexCommand href
-target "ProjetoEngenharia-1-TituloProjeto-Modelo"
+name "ProjetoEngenharia-1-TituloProjeto-Modelo"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas/tree/main"
 literal "false"
 
 \end_inset
@@ -651,47 +652,52 @@ literal "false"
 \begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
-name "Metodologia Projeto Engenharia"
-target "https://github.com/ldsc/ProjetoEngenharia-1-TituloProjeto-Modelo/0-Metodologia-Instrucoes-Etapas/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas.pdf"
+name "Metodologia para desenvolvimento do projeto de engenharia (padrão Petrobras)"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas/blob/main/lyx/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-Apresentacao.pdf"
 literal "false"
 
 \end_inset
 
- (atualizar!).
+ (este documento descreve a metodologia utilizada).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Também pode olhar o modelo padrão para os projetos de engenharia disponibilizado
- em
+Também pode olhar o modelo padrão para Proposta de Desafio Tecnológico disponibi
+lizado em
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
-name "Modelo completo - etapas 0-5"
-target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-Completo"
-literal "false"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico"
 
 \end_inset
 
-.
- (atualizar!)
+ (este documento é um modelo para Proposta de Desafio Tecnológico - padrão
+ Petrobras).
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Finalmente temos um modelo para o desenvolvimento do software de engenharia.
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
-name "Modelo específico - etapas 2-5"
-target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto"
 literal "false"
 
 \end_inset
 
-.
+ (inclui diretórios e documentos de suporte para desenvolvimento de todo
+ projeto incluindo os códigos e testes).
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Se tiver dúvidas sobre a metodologia contactar o professor coordenador da
@@ -711,7 +717,6 @@ literal "false"
 .
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 Estando em acordo com a metodologia empregada o cliente deve informar o
@@ -857,15 +862,14 @@ a, simuladores de problemas relacionados a engenharia de petróleo, simuladores
  reservatório; simuladores que tratem de problemas numéricos utilizando
  volumes finitos, diferenças finitas ou elementos finitos.
  Simuladores que envolvam o uso de IA - Inteligência Artificial e aplicações.
- Em resumo, devem tratar da solução de problemas de em engenharia de petróleo
+ Em resumo, devem tratar da solução de problemas de engenharia de petróleo
  e/ou modelagem computacional aplicada.
 \end_layout
 
 \begin_layout Itemize
-Note que a metodologia pode ser utilizada para desenvolver projetos de engenhari
-a que não sejam de software, mas, neste caso, precisa encontrar professores
- para acompanhar as atividades.
- 
+Note que esta metodologia pode ser aproveitada para desenvolver projetos
+ de engenharia que não sejam de software, mas, neste caso, precisa encontrar
+ professores para acompanhar as atividades.
 \end_layout
 
 \begin_deeper
@@ -934,7 +938,16 @@ O coordenador da disciplina
 \begin_deeper
 \begin_layout Itemize
 Clona o modelo de projeto da disciplina, criando um projeto novo, com o
- título do projeto informado.
+ título do projeto informado (armazenado no site 
+\begin_inset CommandInset href
+LatexCommand href
+name "github.com"
+target "https://github.com/ldsc"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -968,7 +981,11 @@ O cliente
 
 \begin_deeper
 \begin_layout Itemize
-Baixa o modelo de projeto criado para sua máquina usando o link informado.
+Baixa o modelo de projeto criado para sua máquina usando o 
+\emph on
+link 
+\emph default
+informado.
 \end_layout
 
 \begin_layout Itemize
@@ -982,8 +999,11 @@ Se ainda não tem o LyX instalado deve fazer a instalação.
 
 \begin_layout Itemize
 Caso não saiba usar o LyX pode gerar a proposta de desafio tecnológico usando
- outro editor (como word ou google docs) e repassar para o aluno para que
- coloque no formato do LyX.
+ outro editor (como word ou 
+\emph on
+google docs
+\emph default
+) e repassar para o aluno para que coloque no formato do LyX.
  Os alunos sabem usar o LyX, vem o mesmo na disciplina de projeto.
 \end_layout
 
@@ -1010,12 +1030,16 @@ Comandos:
 \end_layout
 
 \begin_layout LyX-Code
+cd diretórioComOProjeto
+\end_layout
+
+\begin_layout LyX-Code
 git add .
  
 \end_layout
 
 \begin_layout LyX-Code
-git commit -m "gerado o desafio tecnológico titulo" 
+git commit -m "Gerado o desafio tecnológico: titulo"
 \end_layout
 
 \begin_layout LyX-Code
@@ -1110,8 +1134,8 @@ Softwares utilizados:
 
 \begin_deeper
 \begin_layout Itemize
-Os documentos do projeto seguem um modelo pré estabelecido que usa o editor
- de texto 
+LyX: Os documentos do projeto seguem um modelo pré estabelecido que usa
+ o editor de texto 
 \begin_inset CommandInset href
 LatexCommand href
 name "LyX"
@@ -1124,6 +1148,7 @@ literal "false"
  
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 O Editor LyX é apresentado aos alunos em sala de aula e temos manuais e
  vídeos disponibilizadas na internet e google classroom.
@@ -1135,9 +1160,10 @@ O Editor LyX tem sido usado pelos nossos alunos desde 2004.
  de TeX/LaTeX).
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Requer o conhecimento do mecanismo de trabalho em equipe usando os softwares
- 
+Git/Github: Requer o conhecimento do mecanismo de trabalho em equipe usando
+ os softwares 
 \emph on
 git
 \emph default
@@ -1161,7 +1187,7 @@ das na internet e google classroom.
 \end_layout
 
 \begin_layout Itemize
-A parte de modelagem envolve o uso do modelador 
+Umbello: A parte de modelagem envolve o uso do modelador 
 \emph on
 umbrello
 \emph default
@@ -1169,9 +1195,9 @@ umbrello
 \end_layout
 
 \begin_layout Itemize
-A parte de desenvolvimento do software requer conhecimentos de C++, da bibliotec
-a padrão de C++ e ferramentas como compiladores (g++, clang), editores específic
-os (
+Compilador: A parte de desenvolvimento do software requer conhecimentos
+ de C++, da biblioteca padrão de C++ e ferramentas como compiladores (g++,
+ clang), editores específicos (
 \emph on
 emacs
 \emph default
@@ -1195,13 +1221,13 @@ reference "sec:Lista-softwares-utilizados"
 
 \end_deeper
 \begin_layout Itemize
-Modelagem física-matemática (química-matemática)
+Modelagem física-matemática, química-matemática, de engenharia
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Os membros da equipe devem compreender os conceitos de matemática, física
- e de engenharia associados ao desafio tecnológico escolhido.
+Os membros da equipe devem compreender os conceitos de matemática, física,
+ química e de engenharia associados ao desafio tecnológico escolhido.
 \end_layout
 
 \begin_layout Itemize
@@ -1490,8 +1516,8 @@ newpage}{}
 
 \begin_layout Standard
 Notem que temos alguns requisitos que devem ser aprimorados nas disciplinas
- e ao longo do deesenvolvimento do projeto para efetiva capacidade de desenvolve
-r as atividades associadas.
+ e ao longo do desenvolvimento do projeto para efetiva capacidade de desenvolver
+ as atividades associadas.
 \end_layout
 
 \begin_layout Itemize
@@ -1563,6 +1589,16 @@ dos arquivos.
 \begin_layout Itemize
 Importante executar os comandos com calma, prestando atenção, lendo as mensagens
  apresentadas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Uso do github/Projects ou trello:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conceitos de administração/gestão usando metodologia kanbam.
 \end_layout
 
 \end_deeper
@@ -2059,7 +2095,15 @@ umbrello
 \end_layout
 
 \begin_layout Itemize
-Usa-se uma IDE ou editor de texto para implementar os códigos.
+Usa-se uma IDE ou editor de texto para implementar os códigos (ex: 
+\emph on
+vscode
+\emph default
+, 
+\emph on
+emacs
+\emph default
+).
 \end_layout
 
 \begin_layout Itemize
@@ -2154,7 +2198,7 @@ Nota: Lembre-se que os diagramas visam dar aos membros da equipe de engenharia
  algoritmos e rotinas amplamente conhecidos.
  Uma forma de identificar se determinado diagrama é necessário é verificar
  se todos os membros da equipe entendem determinado conceito sem os diagramas,
- caso afirmativo o mesmo é desnecessário.
+ caso afirmativo, o diagrama é desnecessário.
  Faça diagramas para partes mais complexas e que requeiram algoritmos mais
  exigentes.
 \end_layout
@@ -2163,7 +2207,11 @@ Nota: Lembre-se que os diagramas visam dar aos membros da equipe de engenharia
 \begin_layout Itemize
 A construção ou implementação dos códigos deve ser feita seguindo-se as
  normas e procedimentos padrões, com uso de ferramentas adequadas, como
- editores, compiladores, debugers e 
+ editores, compiladores, 
+\emph on
+debuggers 
+\emph default
+e 
 \emph on
 profillers
 \emph default
