@@ -1252,7 +1252,7 @@ Defesas:
 
 \begin_deeper
 \begin_layout Itemize
-O projeto tem defesa em equipe (idea geral) e defesas individuais (para
+O projeto tem defesa em equipe (ideia geral) e defesas individuais (para
  confirmar a efetiva participação e a capacidade de desenvolver novas coisas
  solicitadas pelo professor).
 \end_layout
@@ -1596,10 +1596,9 @@ name "sec: Etapa 2 - Elaboração do contrato - detalhamento do pré-projeto"
 \end_layout
 
 \begin_layout Standard
-Aprovado o pré-projeto podemo escrever o projeto em sí, o mesmo inclui mais
- detalhes, adicionando por exemplo mais detalhes das instituições envolvidas,
- objetivos específicos, justificativa e resultados esperados, além de cronograma
- e orçamento.
+Aprovado o pré-projeto podemos escrever o projeto em sí, o mesmo inclui
+ por exemplo mais detalhes das instituições envolvidas, objetivos específicos,
+ justificativa e resultados esperados, além de cronograma e orçamento.
  A sequência é detalhada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2031,7 +2030,7 @@ literal "false"
 
 \begin_layout Itemize
 É neste momento que os algorítmos de cálculo são detalhados através dos
- diagramas de atividade (nome classr::nome método).
+ diagramas de atividade (nome classe::nome método).
 \end_layout
 
 \begin_layout Itemize
@@ -2251,13 +2250,13 @@ umbrello
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Após implementar os códigos realizar testes, como testes de unidade e testes
- de integração.
+Após implementar os códigos é preciso realizar os testes, como exemplos
+ os testes de unidade e os testes de integração.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Não deixe para fazer os testes do sistemas só no final.
+Não deixe para fazer os testes do sistema só no final.
  
 \end_layout
 
@@ -2452,8 +2451,17 @@ Uma equipe A pode passar seu manual do usuário para a equipe B instalar
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-No caso da disciplina a equipe deve entregar a versão final com 15 dias
- de antecedência e marcar a data da defesa.
+No caso da disciplina 
+\begin_inset CommandInset href
+LatexCommand href
+name "projeto de software aplicado"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado"
+literal "false"
+
+\end_inset
+
+ a equipe deve entregar a versão final com 15 dias de antecedência e marcar
+ a data da defesa.
 \end_layout
 
 \begin_deeper
@@ -5215,7 +5223,7 @@ x
 \end_layout
 
 \begin_layout Section*
-Lista softwares utilizados
+Lista de softwares utilizados
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Lista-softwares-utilizados"
@@ -5231,7 +5239,11 @@ Na disciplina usamos softwares livres que os alunos podem acessar, instalar
 \end_layout
 
 \begin_layout Itemize
-Exemplos de softwares usados em sala de aula e links para acesso:
+Exemplos de softwares usados em sala de aula e 
+\emph on
+links 
+\emph default
+para acesso:
 \end_layout
 
 \begin_layout Itemize
@@ -5266,9 +5278,13 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-Ambiente de shell mais utilizado no mundo todo, coloca disposição do aluno
- um conjunto de aplicativos que permitem melhorar sua produtividade e eficiência
- na gestão de diretórios, arquivos e configurações de sistemas.
+Ambiente de 
+\emph on
+shell 
+\emph default
+mais utilizado no mundo todo, coloca disposição do aluno um conjunto de
+ aplicativos que permitem melhorar sua produtividade e eficiência na gestão
+ de diretórios, arquivos e configurações de sistemas.
 \end_layout
 
 \end_deeper
@@ -5286,7 +5302,7 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-Software mais usado no mundo no no controle de versões de arquivos de projetos.
+Software mais usado no mundo no controle de versões de arquivos de projetos.
 \end_layout
 
 \end_deeper
@@ -5377,6 +5393,28 @@ gedit
 \begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
+name "vscode"
+target "https://code.visualstudio.com/"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Editor de texto profissional com centenas de recursos avançados.
+\end_layout
+
+\begin_layout Itemize
+Seu uso requer treinamento.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
 name "emacs"
 target "https://www.gnu.org/software/emacs/"
 literal "false"
@@ -5458,6 +5496,14 @@ As versões finais devem ter documentos gerados em formatos compatíveis com
  o projeto mesmo sem ter acesso aos softwares proprietários.
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Nota: Só use software proprietário se o mesmo tiver mecanismos para exportar
+ os arquivos em formato que possa ser lido por um software livre.
+ No caso dos diagramas UML os arquivos devem ser compatíveis com o Umbrello.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Section*
 Site com referências
