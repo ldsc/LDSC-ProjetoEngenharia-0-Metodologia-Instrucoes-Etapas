@@ -1591,6 +1591,25 @@ name "fig: Etapa 0 - Definicação do desafio tecnológico"
 
 \end_layout
 
+\begin_layout Description
+Nota: é possível dar continuidade a um projeto antigo, já desenvolvido,
+ neste caso consulte a página 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas"
+
+\end_inset
+
+ e o site 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ldsc"
+
+\end_inset
+
+ para ver lista de projetos existentes.
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open

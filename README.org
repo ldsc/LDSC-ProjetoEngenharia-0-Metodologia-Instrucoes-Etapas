@@ -1,16 +1,18 @@
 #+TITLE:    LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
 
-* Informações:
-- Link: https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
+* Link:
 
-- Repositório com informações sobre a metodologia adotada no desenvolvimento do projeto de engenharia (projeto vinculado as disciplinas de modelagem computacional).
-- Inclui lista de repositórios e projetos desenvolvidos.
+- O repositório https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas contém informações sobre a metodologia adotada no desenvolvimento do projeto de engenharia.
+
+- Este arquivo que você esta lendo contém:
+  - um resumo da metodologia adotada.
+  - uma lista de repositórios e projetos desenvolvidos em anos anteriores.
 
 * Versão: 
 - 1.0.
 
 * Data:
-- 2023/2 - segundo semestre (12/2023).
+- 2024/1 - primeiro semestre.
   
 * Autor de Contato:
 - André Duarte Bueno
@@ -39,10 +41,32 @@
 - [[https://github.com/ldsc][Site do *LDSC - Laboratório de Desenvolvimento de Software Científico e Aplicado* no github]].
 - [[https://uenf.br/cct/lenep][Site do LENEP]].
 
-* TODO
-** Quando a equipe nova seleciona dar continuidade a projeto antigo precisa atualizar a estrutura de diretórios para que reflita o novo modelo padrão.
+* Resumo da metodologia
+
+A metodologia irá cobrir as etapas para o desenvolvimento de um projeto de engenharia completo.
+Fazemos uma relação com o conceito de Nível de Maturidade Tecnológica ou TRL.
+O TRL é utilizado nos projetos da Petrobras (os desafios tecnológicos da Petrobras).
+
+Etapas: 
+0 - O professor ou empresa de engenharia elabora um desafio tecnológico ([[https://docs.google.com/forms/d/e/1FAIpQLSc1NaIUvKIFzECj3KPv6JRiD7kXFFd5MeAY1w-JI_yDjrbZmQ/viewform][formulário desafio tecnológico]]).
+Uma lista de desafios é apresentada nesta [[https://docs.google.com/spreadsheets/d/1mFAjcRhzuePATaSSUSYo3_JaVmPkIi0L7ZfrQe0MMSU/edit?usp=sharing][planilha]].
+Uma lista de projetos antigos é apresentada ao longo deste documento.
+
+1 - A equipe de alunos seleciona o projeto de seu interesse e elabora um pré-projeto (um esboço); Este pré-projeto é então levado ao professor/empresa que montou o desafio e ao professor da disciplina para aprovarem o pré-projeto.  A ideia aqui é ter certeza que os alunos entenderam o que o professor/empresa quer.
+
+2- Os alunos montam o projeto (detalhamento do pré-projeto; documento formal que descreve o que vai ser feito).
+Ex: os contratos de projeto que assinamos com a Petrobras.
+
+3- Os alunos fazem a modelagem de engenharia com acompanhamento dos professores.
+
+4- Os alunos desenvolvem o software em si (ciclos de planejamento/refinar a modelagem; implementar os códigos; realizar testes; montar a documentação).
+
+5- Entrega/defesa do produto final.
+
 
 * Lista de Repositórios do LDSC
+Veja a seguir uma lista de repositórios do LDSC, estão disponíveis repositórios com informações em geral, modelos de documentos e projetos, exemplos de projetos desenvolvidos em anos anteriores.
+
 * <<1>>Repositórios com instruções e modelos
 ** Título: UENF-CCT-LENEP-Repositorio-Documentos
 - Link no github:
@@ -51,6 +75,7 @@
   - Arquivos da UENF, CCT, LENEP para apoio a alunos.
 - Área:
   - Administrativa.
+
 ** Título: LDSC-Ajuda-DocumentosAuxiliares
 - Link no github:
   - https://github.com/ldsc/LDSC-Ajuda-DocumentosAuxiliares
@@ -58,6 +83,7 @@
   - Informações sobre softwares e sistemas utilizados nas disciplinas de modelagem computacional do LENEP/CCT/UENF.
 - Área:
   - Modelagem computacional.
+
 ** Título: LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
 - Link no github:
   - https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
@@ -65,6 +91,7 @@
   - Repositório com informações sobre a metodologia adotada no desenvolvimento do projeto de engenharia vinculado as disciplinas de modelagem computacional.
 - Área:
   - Modelagem computacional.
+
 ** Título: LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico
 - Link no github:
   - https://github.com/ldsc/LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico
@@ -74,6 +101,7 @@
 - Área:
   - Modelagem computacional.
   - Engenharia de petróleo.
+
 ** Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto
 - Link no github:
   - https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto
@@ -84,12 +112,14 @@
   - Projeto de engenharia.
   - Modelagem computacional.
   - Engenharia de petróleo.
+
 ** Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado
 - Link no github:
   - https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado
 - Resumo:
   - Modelo de projeto de engenharia (usado até 2023/2).
   - Não incluia a parte de gestão (metodologia, desafio tecnológico, pré-projeto e projeto).
+
 ** Título: LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal
 - Link no github:
   - https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal
@@ -99,6 +129,7 @@
 - Área:
   - Ensino.
   - Gestão pessoal.
+
 ** Título: LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico
 - Link no github:
   - https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico
@@ -106,6 +137,7 @@
   - Repositório com modelo de arquivo do lyx para confecção do trabalho acadêmico de pequeno porte usando o editor LyX.
 - Área:
   - Ensino.
+
 ** Título: LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto
 - Link no github:
   - https://github.com/ldsc/LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto
@@ -115,6 +147,7 @@
   - Metodologia científica.
   - Organização/gestão pessoal.
 * <<2>>Repositórios de bibliotecas desenvolvidas
+
 ** Título: Biblioteca lib_ldsc
 - Link no github:
   - https://github.com/ldsc/lib_ldsc
@@ -130,6 +163,7 @@
 - Área:
   - Análise e processamento de imagens.
 * <<3>>Repositórios de softwares desenvolvidos
+
 ** Título: Software LVP - Laboratório Virtual de Petrofísica
 - Link no github:
   - https://github.com/ldsc/lvp
@@ -157,6 +191,7 @@
   - Autor: Leandro Puerari.
 - Área:
   - Análise e processamento de imagens.
+
 ** Título: Simulat - Simulador Transferência Calor e Massa em Meios Porosos
 - Link no github:
   - https://github.com/ldsc/simulat
@@ -169,6 +204,7 @@
 - Área:
   - Transferência de calor e massa.
   - Conforto ambiental.
+
 ** Título: Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens
 - Link no github:
   - https://github.com/ldsc/Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens
@@ -179,6 +215,7 @@
   - Autor: João Marcelo.
 - Área:
   - Análise e processamento de imagens. 
+
 ** Título: SAIL - Software de Análise de Imagens Livre
 - Link no github:
   - adicionar...
@@ -190,6 +227,7 @@
   - Dano a formação.
   - Engenharia de reservatório.
   - Petrofísica.
+
 ** Título: TCMP-2D
 - Link no github:
   - https://github.com/ldsc/TCMP-2D
@@ -202,6 +240,7 @@
 
 - Área:
   - Transferência de calor.
+
 ** Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D
@@ -220,6 +259,7 @@
     - [[https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/Apresentacao_Nicholas_TCC2.pptx][Apresentacao]]
 - 
 * <<4>>Repositórios de projetos desenvolvidos
+
 ** Título: ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico
@@ -229,6 +269,7 @@
   - Plotar curvas de IPR para poços verticais em escoamento monofásico de óleo a partir de soluções analı́ticas da E.D.H. considerando regime transiente, pseu-do permanente e permanente a partir do software externo Gnuplot.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade
@@ -237,6 +278,7 @@
   - Desenvolver um projeto de Engenharia de Software que calcule a quantidade de partículas depositadas no meio poroso devido a migração de finos, utili- zando como dados/informações de referência os valores da literatura ou de experimentos laboratoriais, os quais serão inseridos pelo usuário por meio de arquivos .txt. Por meio do software será possível analisar o declínio de perme- abilidade, ou seja o dano à formação, devido a quantidade de partículas retidas no meio poroso e assim evitar prejuízos ecônomicos as indústrias petróliferas, pois será possível realizar uma análise e um estudo prévio do caso.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil
@@ -245,6 +287,7 @@
   - Utilizar correlações empı́ricas para cálculo de parâmetros de um reservatório a partir de propriedades dos fluidos presentes no mesmo – Modelagem BlackOil. – Calcular propriedades dos fluidos a partir de dados externos. – Calcular parâmetros de um reservatório utilizando correlações especı́ficas.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo
@@ -256,6 +299,7 @@
   - Análise Estatística para Identificação do REV: Utiliza dados de porosidade para determinar um volume representativo estatisticamente.
 - Área:
   - Petrofísica.
+
 ** Título: ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida
@@ -263,6 +307,7 @@
   - Em desenvolvimento.
 - Área:
   - Geoquímica.
+
 ** Título: ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr
@@ -271,6 +316,7 @@
   - Determinar, a partir do planejamento fatorial com ponto central, as melhores condições experimentais para a obtenção da fração de hidrocarbonetos satura- dos do petróleo utilizando a técnica de cromatografia em fase líquida clássica em coluna aberta, visando diminuir a quantidade de solvente e adsorvente utilizado, aumentar a porcentagem de recuperação da fração e, como conse- quência, reduzir a quantidade de resíduos líquidos e sólidos gerados ao meio ambiente.
 - Área:
   - Geoquímica.
+
 ** Título: ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao
@@ -279,6 +325,7 @@
   - Criar um software capaz de fornecer ao usuário parâmetros e características do reservatório, através da análise dos dados obtidos em testes de pressão em poços, possibilitando estimar as dimensões do campo e sua potencialidade econômica.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-BancoDeDadosFluidosPerfuracao
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-BancoDeDadosFluidosPerfuracao
@@ -287,6 +334,7 @@
   - Desenvolver um banco de dados contendo informações a respeito defluidos de perfuração desenvolvidos no Laboratório de Fluidos do LENEP-Laboratório de Engenharia e Exploração de Petróleo.
 - Área:
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD
@@ -295,6 +343,7 @@
   - Desenvolver uma solução para o cálculo da trajetória em 2D de um projeto de poço vertical e direcional.
 - Área:
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso
@@ -310,6 +359,7 @@
   - Obter o fator de recuperação total de óleo através dos métodos de recuperação utilizados.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-CalculoIndiceProdutividadePocos
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CalculoIndiceProdutividadePocos
@@ -317,6 +367,7 @@
   - Desenvolver um projeto de engenharia de software para resolver os diferentes modelos matemáticos de previsão de produtividade de poços horizontais e ver- ticais e a influência dos parâmetros de reservatórios nos mesmos para analisar em que situações, em termos de produtividade, qual design de poço seria mais recomendado através das simulações.
 - Área:
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento
@@ -326,6 +377,7 @@
 - Área:
   - Engenharia de elevação e escoamento.
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao
@@ -333,6 +385,7 @@
   - Desenvolver um programa para cálculo dos volumes de fluido de perfuração e cimento, quantidade de tubos e o tempo gasto em uma operação de perfuração de um poço de petróleo.
 - Área:
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-CorrelacoesPVT
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-CorrelacoesPVT
@@ -340,6 +393,7 @@
   - Criar um banco virtual de correlações onde seja possível estimar diversas propriedades relacionadas ao gás e ao óleo presentes em um reservatório. Visando a empregá-lo no ensino e pesquisa.
 - Área
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga
@@ -348,6 +402,7 @@
   - Desenvolver um simulador que calcule as curvas de perfomance de operação de BCS utilizado em elevação artficial de petróleo a partir de parametrizações para escoamento defluidos em bombas centrífugas.
 - Área:
   - Engenharia de elevação e escoamento.
+
 ** Título: ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos
@@ -355,6 +410,7 @@
   - Em desenvolvimento.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-ModelosDeAquiferosAnaliticos
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-ModelosDeAquiferosAnaliticos
@@ -363,6 +419,7 @@
   - No ambiente da Engenharia de Reservatórios, o objeto de estudo é o próprio reservatório de óleo e gás. No entanto, para que esse estudo ocorra de forma eficiente, é necessário que se entenda as características (porosidade, permeabilidade, volume de reservatório, presença e propriedades de aquíferos) e o comportamento sob produção. O objetivo de estudo deste software é analisar aquíferos analíticos com modelos distintos e como sua presença provoca efeitos em reservatórios de óleo e gás.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo
@@ -371,6 +428,7 @@
   - O projeto a ser desenvolvido consiste em um programa que calculará características de um reservatório homogêneo a partir de um fluxo bifásico areal, preverá o desempenho no processo de recuperação secundária do óleo a partir de um sistema estratificado com fluxo bifásico. A presente construção do sistema será utilizado em âmbito acadêmico como software livre, a partir do uso da Programação Orientada a Objeto em C++ e software Gnuplot, para que esteja disponível de fácil acesso a todos. A interface selecionada para o programa é em modo texto, o usuário irá se relacionar a partir do uso do teclado, mouse e monitor em conjunto com a interface do sistema construído. Os dados de entrada, propriedades do reservatório, serão fornecidos em modo .xlsx, na qual poderá ser modificado pelo usuário com base nas informações do reservatório em questão, enquanto que os dados de saída serão em modo arquivo de texto .txt e imagem .png com base nos diferentes modelos de deslocamento possíveis do software.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn
@@ -379,6 +437,7 @@
   - Desenvolver um software para determinar os parâmetros comportamentais de um reservatório de óleo com capa de gás para a caracterização desse reservatório por meio da análise e cálculos a partir de dados de produção.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens
@@ -388,6 +447,7 @@
   - As novas atualizações foram a inclusão de classes como: Analise porosidade, Parametros Morfometricos, Propriedades rocha (homogeneidade e heterogeneidade), Metodo RbSr, Volume representativo do elemento (REV) e SimulacaoFluxoFluidos (liquido e gasoso).
 - Área:
   - Petrofísica.
+
 ** Título: ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais
@@ -397,6 +457,7 @@
   - Desenvolver os cálculos das vazões e pressões com base nos modelos empíricos (Fetkovich, Vogel, Vogel Generalizada e Linear). – Plotar gráficos e permitir que possam ser salvos. – Permitir que o usuário possa entrar com os dados por meio de um arquivo de disco.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas
@@ -405,6 +466,7 @@
   - bter propriedades termodinâmicas de substâncias simples e misturas de substâncias. Estas propriedades incluem fugacidade, densidade, volume específico, volume molar, e o fator de compressibilidade, tanto da fase líquida, quanto da fase vapor (se as duas coexistirem).
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas
@@ -416,6 +478,7 @@
   - Refinar a lógica de cálculo do volume original de fluido para considerar os efeitos das novas classes de injeção.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D
@@ -423,6 +486,7 @@
   - SIMULADOR DE RESERVATÓRIO MONOFÁSICO 2D.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorDeTracoSismico
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorDeTracoSismico
@@ -430,6 +494,7 @@
   - Desenvolver um programa para a gerar um traço sísmico sintético de uma formação arbitrária a partir de dados da formação com espessura da camada, velocidade de propagação da onda acústica e a densidade.
 - Área:
   - Geofísica.
+
 ** Título: ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco
@@ -437,6 +502,7 @@
   - Desenvolver um simulador de hidráulica de poço que execute cálculos e gere gráficos. Para tal, deve-se usar as equações de perda de carga provenientes da mecânica dos fluidos adaptadas à indústria do petróleo.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono
@@ -444,6 +510,7 @@
   - Simulador de Propriedades Mecânicas de Material Submetido ao Processo de Corrosão por Dióxido de Carbono. Desenvolver um programa que receba dados reais ou arbitrários e calcule as propriedades mecânicas do material a partir de onde serão gerados gráficos que poderão ser utilizados para análise de taxas corrosivas.
 - Área:
   - Corrosão.
+
 ** Título: rojetoEngenharia-SimuladorReservatorio2D
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorReservatorio2D
@@ -453,6 +520,7 @@
   - Nota: Continuidade do projeto: https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial
@@ -461,6 +529,7 @@
   - A partir da descoberta de uma acumulação de petróleo diversas informações podem ser obtidas. Das mais importantes, pode-se citar como exemplo a quantidade de hidro- carbonetos que se pode retirar dessa jazida e o tempo em que essa produção se efetuará. Dentro da engenharia de petróleo, engenheiros de reservatório constantemente buscam solucionar problemas envolvendo fluxos monofásicos de fluidos de baixa compressibilidade que partem das as equações fundamentais da mecânica dos fluidos que descrevem o trans- porte de líquidos em meios porosos. A principal equação que rege esse estudo do fluxo em meios porosos é a Equação da Difusividade Hidráulica e ao resolver os problemas de valor inicial e de contorno formados por essa equação, é possível obter os modelos físicos de interesse que são encontrados no campo. A necessidade de monitoramento do comportamento do reservatório é evidente e prever como será o seu comportamento auxilia diretamente na tomada de decisões a respeito das operações realizadas e serve de base para os testes de pressão que visam a obtenção de vários parâmetros do reservatório (fator de película, volume poroso drenado, limites do reservatório, etc).
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO
@@ -469,6 +538,7 @@
   - Realizar a substituição de fluidos para plotar um gráfico de velocidade da onda compressional pela saturação de água e de velocidade da onda cisalhante pela saturação de água.
 - Área:
   - Geofísica
+
 ** Título: ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica
@@ -477,6 +547,7 @@
   - Criar um software capaz de calcular parâmetros e inferir características de um reservatório, através da análise dos dados obtidos em testes de pressão em poços e na testemunhagem do reservatório, possibilitando estimar as dimensões do campo e sua potencialidade econômica. Um diferencial importante nesta versão é a flexíbilidade na entrada de dados do usuário.
 - Área:
   - Petrofísica.
+
 ** Título: ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT
@@ -484,6 +555,7 @@
   - Em desenvolvimento.
 - Área:
   - Equipamentos de laboratório.
+
 ** Título: rojetoEngenharia-SoftwareDeComunicacao-MedidorLCR
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareDeComunicacao-MedidorLCR
@@ -491,6 +563,7 @@
   - Em desenvolvimento.
 - Área:
   - Equipamentos de laboratório.
+
 ** Título: ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo
@@ -499,6 +572,7 @@
 - Área:
   - Engenharia de reservatório.
   - Petrofísica.
+
 ** Título: ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao
@@ -506,6 +580,7 @@
   - Faltando esta informação.
 - Área:
   - Engenharia de poço.
+
 ** Título: ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas
@@ -519,6 +594,7 @@
   - Calcular parâmetros geoquímicos com os dados petroleômicos. – Plotar gráficos e diagramas.
 - Área:
   - Geoquímica.
+
 ** Título: ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica
@@ -531,6 +607,7 @@
   - Plotar as propriedades calculadas.
 - Área:
   - Petrofísica.
+
 ** Título: ProjetoEngenharia-SPTSP-Helmholtz
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SPTSP-Helmholtz
@@ -540,6 +617,7 @@
   - Objetivo geral: – Deselvolver um software que calcula as propriedades termodinâmicas de uma substância pura a partir de equações experimentais.
 - Área:
   - Engenharia de reservatório.
+
 ** Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D
@@ -551,6 +629,7 @@
   - Nota: Também foi o TCC do aluno Nikolas.
 - Área:
   - Transferência de calor.
+
 ** Título: ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos
@@ -560,6 +639,7 @@
 - Área:
   - Geoquímica.
 * <<5>>Repositórios com projetos didáticos
+
 ** Título: ProjetoEngenharia-SistemaAcademico (didático)
 - Link no github:
   - https://github.com/ldsc/ProjetoEngenharia-SistemaAcademico
