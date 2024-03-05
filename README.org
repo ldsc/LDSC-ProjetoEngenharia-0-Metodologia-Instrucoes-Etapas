@@ -39,6 +39,9 @@
 - [[https://github.com/ldsc][Site do *LDSC - Laboratório de Desenvolvimento de Software Científico e Aplicado* no github]].
 - [[https://uenf.br/cct/lenep][Site do LENEP]].
 
+* TODO
+** Quando a equipe nova seleciona dar continuidade a projeto antigo precisa atualizar a estrutura de diretórios para que reflita o novo modelo padrão.
+
 * Lista de Repositórios do LDSC
 * <<1>>Repositórios com instruções e modelos
 ** Título: UENF-CCT-LENEP-Repositorio-Documentos
