@@ -188,50 +188,42 @@ status open
 
 
 \backslash
-fancyhead[LE,RO]{
+fancyhead[LE,RO]{Metodologia para Desenvolvimento do Projeto de Engenharia}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[LO,RE]{LENEP/CCT/UENF}
+\end_layout
+
+\begin_layout Plain Layout
+
+% o Rodapé 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[L]{Professor André Duarte Bueno} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[C]{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[R]{
 \backslash
 thepage}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-fancyhead[LO,RE]{
-\backslash
-slshape 
-\backslash
-rightmark}
-\end_layout
-
-\begin_layout Plain Layout
-
-% o Rodapé não muda
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-iftoggle{FormatoApresentacaoTRUE}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-fancyfoot[L]{} 
-\backslash
-fancyfoot[C]{}}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-fancyfoot[L]{} 
-\backslash
-fancyfoot[R]{André Duarte Bueno}}
 \end_layout
 
 \end_inset

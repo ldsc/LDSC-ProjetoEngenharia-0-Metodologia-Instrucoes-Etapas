@@ -111,6 +111,10 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
+\pdf_title "Metodologia para Desenvolvimento do Projeto de Engenharia"
+\pdf_author "André Duarte Bueno"
+\pdf_subject "Disciplina de introdução ao projeto de engenharia"
+\pdf_keywords "modelagem, projeto, engenharia, administração, TRL, CRL, UML, "
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
@@ -191,49 +195,7 @@ status open
 
 
 \backslash
-lhead{
-\backslash
-thechapter}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 pagenumbering{arabic}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lfoot{Prof.
- André Duarte Bueno}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cfoot{ }
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-rfoot{
-\backslash
-thepage}
 \end_layout
 
 \end_inset
@@ -850,38 +812,33 @@ literal "false"
 \begin_layout Itemize
 Estando em acordo com a metodologia empregada o cliente deve informar o
  interesse em montar um desafio tecnológico.
- Neste caso enviar para o email 
+ Neste caso enviar a proposta de desafio usando este 
 \begin_inset CommandInset href
 LatexCommand href
-name "bueno@lenep.uenf.br"
+name "formulário"
+target "https://docs.google.com/forms/d/e/1FAIpQLSc1NaIUvKIFzECj3KPv6JRiD7kXFFd5MeAY1w-JI_yDjrbZmQ/viewform"
 literal "false"
 
 \end_inset
 
- os seguintes dados:
+.
+ Os seguintes dados são solicitados:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Assunto do email:
+Proposta de Desafio Tecnológico
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Proposta de Desafio Tecnológico: Título
+Título do desafio tecnológico: 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Conteúdo do email:
+Nome do cliente (professor ou responsável na empresa):
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Nome do cliente (professor ou responsável na empresa)
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
 Telefone:
 \end_layout
@@ -891,24 +848,13 @@ E-mail:
 \end_layout
 
 \begin_layout Itemize
-Informar se já tem cadastro no 
-\emph on
-github 
-\emph default
-(informe o login no github se já tiver).
+Login cadastrado no sit github (se já tiver; vai precisar!).
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Título do desafio tecnológico
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
 Breve resumo/rascunho tecnológico [até 500 palavras]:
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Caso já tenha um ou mais alunos interessados informar o(s) dado(s) do(s)
  mesmo(s)
@@ -928,7 +874,7 @@ E-mail:
 \end_layout
 
 \begin_layout Itemize
-Informar login do alunos no 
+Informar login do aluno no 
 \emph on
 github
 \emph default
@@ -6023,7 +5969,7 @@ literal "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Itemize

@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-05 ter 14:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</title>
+<meta name="author" content="&lt;André Duarte Bueno&gt;" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8eb5719">1. Link:</a></li>
+<li><a href="#orga623545">2. Versão:</a></li>
+<li><a href="#org11935ab">3. Data:</a></li>
+<li><a href="#org44c447c">4. Autor de Contato:</a></li>
+<li><a href="#orgb89d3c9">5. Áreas de pesquisa vinculadas:</a></li>
+<li><a href="#org546c392">6. Disciplinas vinculadas:</a></li>
+<li><a href="#orga20ab3f">7. Links:</a></li>
+<li><a href="#org6b5fd0b">8. Resumo da metodologia</a></li>
+<li><a href="#org932ce34">9. Lista de Repositórios do LDSC</a></li>
+<li><a href="#org0675b78">10. Repositórios com instruções e modelos</a>
+<ul>
+<li><a href="#org7fa4948">10.1. Título: UENF-CCT-LENEP-Repositorio-Documentos</a></li>
+<li><a href="#orgd766e02">10.2. Título: LDSC-Ajuda-DocumentosAuxiliares</a></li>
+<li><a href="#org8017014">10.3. Título: LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</a></li>
+<li><a href="#org52c32cc">10.4. Título: LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico</a></li>
+<li><a href="#orgdd91d5a">10.5. Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto</a></li>
+<li><a href="#orgbe0c8ac">10.6. Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado</a></li>
+<li><a href="#org94b200a">10.7. Título: LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal</a></li>
+<li><a href="#org5b2bf37">10.8. Título: LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico</a></li>
+<li><a href="#org35806cb">10.9. Título: LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto</a></li>
+</ul>
+</li>
+<li><a href="#orgdeef986">11. Repositórios de bibliotecas desenvolvidas</a>
+<ul>
+<li><a href="#org16eb7e5">11.1. Título: Biblioteca lib<sub>ldsc</sub></a></li>
+</ul>
+</li>
+<li><a href="#org4f0bbc0">12. Repositórios de softwares desenvolvidos</a>
+<ul>
+<li><a href="#org810d321">12.1. Título: Software LVP - Laboratório Virtual de Petrofísica</a></li>
+<li><a href="#org6627858">12.2. Título: Simulat - Simulador Transferência Calor e Massa em Meios Porosos</a></li>
+<li><a href="#org9a78919">12.3. Título: Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens</a></li>
+<li><a href="#orged0b569">12.4. Título: SAIL - Software de Análise de Imagens Livre</a></li>
+<li><a href="#org0c3f485">12.5. Título: TCMP-2D</a></li>
+<li><a href="#orged5791c">12.6. Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</a></li>
+</ul>
+</li>
+<li><a href="#org8770a8f">13. Repositórios de projetos desenvolvidos</a>
+<ul>
+<li><a href="#org47b3f44">13.1. Título: ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico</a></li>
+<li><a href="#org16b1896">13.2. Título: ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade</a></li>
+<li><a href="#orge471005">13.3. Título: ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil</a></li>
+<li><a href="#org6b9a7fa">13.4. Título: ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo</a></li>
+<li><a href="#org26e13cb">13.5. Título: ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida</a></li>
+<li><a href="#orgec0a34e">13.6. Título: ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr</a></li>
+<li><a href="#org73d7bd0">13.7. Título: ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao</a></li>
+<li><a href="#orgf94bd02">13.8. Título: ProjetoEngenharia-BancoDeDadosFluidosPerfuracao</a></li>
+<li><a href="#orgc1db4a3">13.9. Título: ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD</a></li>
+<li><a href="#org0715c49">13.10. Título: ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso</a></li>
+<li><a href="#org17cc19f">13.11. Título: ProjetoEngenharia-CalculoIndiceProdutividadePocos</a></li>
+<li><a href="#orgacbba61">13.12. Título: ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento</a></li>
+<li><a href="#org6138ab6">13.13. Título: ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao</a></li>
+<li><a href="#org9b635e6">13.14. Título: ProjetoEngenharia-CorrelacoesPVT</a></li>
+<li><a href="#org8bff0f4">13.15. Título: ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga</a></li>
+<li><a href="#org9f5933b">13.16. Título: ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos</a></li>
+<li><a href="#org049fe3e">13.17. Título: ProjetoEngenharia-ModelosDeAquiferosAnaliticos</a></li>
+<li><a href="#org3669c99">13.18. Título: ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo</a></li>
+<li><a href="#org63bf2a2">13.19. Título: ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn</a></li>
+<li><a href="#org4238522">13.20. Título: ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens</a></li>
+<li><a href="#org7aefa29">13.21. Título: ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais</a></li>
+<li><a href="#org8c865fb">13.22. Título: ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas</a></li>
+<li><a href="#orgf5b362c">13.23. Título: ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas</a></li>
+<li><a href="#org91029fb">13.24. Título: ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D</a></li>
+<li><a href="#orge117cf7">13.25. Título: ProjetoEngenharia-SimuladorDeTracoSismico</a></li>
+<li><a href="#org697106b">13.26. Título: ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco</a></li>
+<li><a href="#orgb023f85">13.27. Título: ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono</a></li>
+<li><a href="#orgc1f92ce">13.28. Título: rojetoEngenharia-SimuladorReservatorio2D</a></li>
+<li><a href="#orgddb5b71">13.29. Título: ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial</a></li>
+<li><a href="#org9e20694">13.30. Título: ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO</a></li>
+<li><a href="#org4c3b2c2">13.31. Título: ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica</a></li>
+<li><a href="#orga27d2fd">13.32. Título: ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT</a></li>
+<li><a href="#orge60f553">13.33. Título: rojetoEngenharia-SoftwareDeComunicacao-MedidorLCR</a></li>
+<li><a href="#orgf17cdb9">13.34. Título: ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo</a></li>
+<li><a href="#orgccb193e">13.35. Título: ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao</a></li>
+<li><a href="#org8730bf3">13.36. Título: ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas</a></li>
+<li><a href="#org43f22b5">13.37. Título: ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica</a></li>
+<li><a href="#org50f846a">13.38. Título: ProjetoEngenharia-SPTSP-Helmholtz</a></li>
+<li><a href="#org318b25f">13.39. Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</a></li>
+<li><a href="#org664367e">13.40. Título: ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos</a></li>
+</ul>
+</li>
+<li><a href="#orga7cc6a0">14. Repositórios com projetos didáticos</a>
+<ul>
+<li><a href="#orge5b99f5">14.1. Título: ProjetoEngenharia-SistemaAcademico (didático)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8eb5719" class="outline-2">
+<h2 id="org8eb5719"><span class="section-number-2">1.</span> Link:</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>O repositório <a href="https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas">https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</a> contém informações sobre a metodologia adotada no desenvolvimento do projeto de engenharia. Projeto vinculado as disciplinas de modelagem computacional.</li>
+
+<li>Este arquivo que você esta lendo contém:
+<ul class="org-ul">
+<li>um resumo da metodologia adotada.</li>
+<li>uma lista de repositórios e projetos desenvolvidos em anos anteriores.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga623545" class="outline-2">
+<h2 id="orga623545"><span class="section-number-2">2.</span> Versão:</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>1.0.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org11935ab" class="outline-2">
+<h2 id="org11935ab"><span class="section-number-2">3.</span> Data:</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>2024/1 - primeiro semestre.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org44c447c" class="outline-2">
+<h2 id="org44c447c"><span class="section-number-2">4.</span> Autor de Contato:</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>André Duarte Bueno</li>
+<li><a href="mailto:andreduartebueno@gmail.com">andreduartebueno@gmail.com</a></li>
+<li><a href="mailto:bueno@lenep.uenf.br">bueno@lenep.uenf.br</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb89d3c9" class="outline-2">
+<h2 id="orgb89d3c9"><span class="section-number-2">5.</span> Áreas de pesquisa vinculadas:</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Modelagem Computacional (Algoritmos).</li>
+<li>Modelagem de Software (UML).</li>
+<li>Programação Orientada a Objeto.</li>
+<li>Programação em C++.</li>
+<li>Programação Paralela e Concorrente.</li>
+<li>Engenharia de Petróleo.</li>
+<li>Gestão de Projetos de Engenharia (métodos tradicionais e ágeis).</li>
+<li>Administração (gestão de projetos e processos).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org546c392" class="outline-2">
+<h2 id="org546c392"><span class="section-number-2">6.</span> Disciplinas vinculadas:</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><a href="https://sites.google.com/view/professorandreduartebueno/ensino/fundamentos-de-programa%C3%A7%C3%A3o-em-c">Disciplina Fundamentos de Ciência da Computação</a>.</li>
+<li><a href="https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia">Disciplina Introdução ao Projeto de Engenharia</a>.</li>
+<li><a href="https://sites.google.com/view/professorandreduartebueno/ensino/prog-orientada-objeto-c-2024">Disciplina Programação Orientada a Objeto com C++</a>.</li>
+<li><a href="https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado">Disciplina Projeto de Software Aplicado</a>.</li>
+<li><a href="https://sites.google.com/view/professorandreduartebueno/ensino/programa%C3%A7%C3%A3o-paralela-e-concorrente">Disciplina Programação Paralela e Concorrente</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga20ab3f" class="outline-2">
+<h2 id="orga20ab3f"><span class="section-number-2">7.</span> Links:</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="https://sites.google.com/view/professorandreduartebueno/">Site do Professor André Duarte Bueno</a>.</li>
+<li><a href="https://github.com/ldsc">Site do <b>LDSC - Laboratório de Desenvolvimento de Software Científico e Aplicado</b> no github</a>.</li>
+<li><a href="https://uenf.br/cct/lenep">Site do LENEP</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6b5fd0b" class="outline-2">
+<h2 id="org6b5fd0b"><span class="section-number-2">8.</span> Resumo da metodologia</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+A metodologia irá cobrir as etapas para o desenvolvimento de um projeto de engenharia completo.
+Fazemos uma relação com o conceito de Nível de Maturidade Tecnológica ou TRL.
+O TRL é utilizado nos projetos da Petrobras (os desafios tecnológicos da Petrobras).
+</p>
+
+<p>
+Etapas: 
+0 - O professor ou empresa de engenharia elabora um desafio tecnológico (<a href="https://docs.google.com/forms/d/e/1FAIpQLSc1NaIUvKIFzECj3KPv6JRiD7kXFFd5MeAY1w-JI_yDjrbZmQ/viewform">formulário desafio tecnológico</a>).
+Uma lista de desafios é apresentada nesta <a href="https://docs.google.com/spreadsheets/d/1mFAjcRhzuePATaSSUSYo3_JaVmPkIi0L7ZfrQe0MMSU/edit?usp=sharing">planilha</a>.
+Uma lista de projetos antigos é apresentada ao longo deste documento.
+</p>
+
+<p>
+1 - A equipe de alunos seleciona o projeto de seu interesse e elabora um pré-projeto (um esboço); Este pré-projeto é então levado ao professor/empresa que montou o desafio e ao professor da disciplina para aprovarem o pré-projeto.  A ideia aqui é ter certeza que os alunos entenderam o que o professor/empresa quer.
+</p>
+
+<p>
+2- Os alunos montam o projeto (detalhamento do pré-projeto; documento formal que descreve o que vai ser feito).
+Ex: os contratos de projeto que assinamos com a Petrobras.
+</p>
+
+<p>
+3- Os alunos fazem a modelagem de engenharia com acompanhamento dos professores.
+</p>
+
+<p>
+4- Os alunos desenvolvem o software em si (ciclos de planejamento/refinar a modelagem; implementar os códigos; realizar testes; montar a documentação).
+</p>
+
+<p>
+5- Entrega/defesa do produto final.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org932ce34" class="outline-2">
+<h2 id="org932ce34"><span class="section-number-2">9.</span> Lista de Repositórios do LDSC</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Veja a seguir uma lista de repositórios do LDSC, estão disponíveis repositórios com informações em geral, modelos de documentos e projetos, exemplos de projetos desenvolvidos em anos anteriores.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0675b78" class="outline-2">
+<h2 id="org0675b78"><span class="section-number-2">10.</span> <a id="orgf8655b8"></a>Repositórios com instruções e modelos</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org7fa4948" class="outline-3">
+<h3 id="org7fa4948"><span class="section-number-3">10.1.</span> Título: UENF-CCT-LENEP-Repositorio-Documentos</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/UENF-CCT-LENEP-Repositorio-Documentos">https://github.com/ldsc/UENF-CCT-LENEP-Repositorio-Documentos</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Arquivos da UENF, CCT, LENEP para apoio a alunos.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Administrativa.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd766e02" class="outline-3">
+<h3 id="orgd766e02"><span class="section-number-3">10.2.</span> Título: LDSC-Ajuda-DocumentosAuxiliares</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-Ajuda-DocumentosAuxiliares">https://github.com/ldsc/LDSC-Ajuda-DocumentosAuxiliares</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Informações sobre softwares e sistemas utilizados nas disciplinas de modelagem computacional do LENEP/CCT/UENF.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Modelagem computacional.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8017014" class="outline-3">
+<h3 id="org8017014"><span class="section-number-3">10.3.</span> Título: LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas">https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Repositório com informações sobre a metodologia adotada no desenvolvimento do projeto de engenharia vinculado as disciplinas de modelagem computacional.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Modelagem computacional.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org52c32cc" class="outline-3">
+<h3 id="org52c32cc"><span class="section-number-3">10.4.</span> Título: LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico">https://github.com/ldsc/LDSC-ProjetoEngenharia-1-PropostaDeDesafio-TituloDoDesafioTecnologico</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Repositório com modelo de proposta de desafio tecnológico.</li>
+<li>A proposta de desafio tecnológico pode ser feita por professores e profissionais da indústria (empresas).</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Modelagem computacional.</li>
+<li>Engenharia de petróleo.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdd91d5a" class="outline-3">
+<h3 id="orgdd91d5a"><span class="section-number-3">10.5.</span> Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto</h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto">https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Modelo de projeto de engenharia (usado a partir de 2024/1 cobrindo as disciplinas de modelagem computacional).</li>
+<li>Inclui um conjunto de diretórios e arquivos dos softwares utilizados (ex.: modelos do lyx, umbrello).</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Projeto de engenharia.</li>
+<li>Modelagem computacional.</li>
+<li>Engenharia de petróleo.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbe0c8ac" class="outline-3">
+<h3 id="orgbe0c8ac"><span class="section-number-3">10.6.</span> Título: LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado</h3>
+<div class="outline-text-3" id="text-10-6">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado">https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloAntigoDesativado</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Modelo de projeto de engenharia (usado até 2023/2).</li>
+<li>Não incluia a parte de gestão (metodologia, desafio tecnológico, pré-projeto e projeto).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org94b200a" class="outline-3">
+<h3 id="org94b200a"><span class="section-number-3">10.7.</span> Título: LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal</h3>
+<div class="outline-text-3" id="text-10-7">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal">https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-01-OrganizacaoPessoal</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Repositório com modelo de arquivo do lyx para confecção do trabalho acadêmico que visa ajudar na organização pessoal dos novos alunos.</li>
+<li>Usado por alunos de Introdução à Engenharia.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Ensino.</li>
+<li>Gestão pessoal.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5b2bf37" class="outline-3">
+<h3 id="org5b2bf37"><span class="section-number-3">10.8.</span> Título: LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico</h3>
+<div class="outline-text-3" id="text-10-8">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico">https://github.com/ldsc/LDSC-Modelo-TrabalhoAcademico-02-ArquivoUnico</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Repositório com modelo de arquivo do lyx para confecção do trabalho acadêmico de pequeno porte usando o editor LyX.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Ensino.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org35806cb" class="outline-3">
+<h3 id="org35806cb"><span class="section-number-3">10.9.</span> Título: LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto</h3>
+<div class="outline-text-3" id="text-10-9">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto">https://github.com/ldsc/LDSC-Modelo-DiretorioAlunoBolsista-TCC-IC-MSC-DSC-Projeto</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Diretório com subdiretórios e arquivos para alunos de IC, MSC, DSC. Inclui modelos para TeX/LaTeX/LyX.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Metodologia científica.</li>
+<li>Organização/gestão pessoal.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdeef986" class="outline-2">
+<h2 id="orgdeef986"><span class="section-number-2">11.</span> <a id="orga823062"></a>Repositórios de bibliotecas desenvolvidas</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org16eb7e5" class="outline-3">
+<h3 id="org16eb7e5"><span class="section-number-3">11.1.</span> Título: Biblioteca lib<sub>ldsc</sub></h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/lib_ldsc">https://github.com/ldsc/lib_ldsc</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>A libldsc é uma biblioteca de classes desenvolvidas em C++ para solução de problemas das áreas de:</li>
+<li>processamento de imagens.</li>
+<li>meios porosos (rochas reservatório).</li>
+<li>métodos numéricos.</li>
+<li>grafos, redes de percolação e redes neurais.</li>
+<li>O software <a href="https://github.com/ldsc/lvp">Software LVP</a> faz uso extensivo da lib<sub>ldsc</sub>.</li>
+<li>Manual técnico: <a href="https://github.com/ldsc/lib_ldsc/blob/master/doc/ManualTecnico/Doutorado-AndreDuarteBueno.pdf">Tese doutorado Prof. André Duarte Bueno</a></li>
+<li>Apresentação:  <a href="https://github.com/ldsc/lib_ldsc/blob/master/doc/ManualTecnico/ApresentacaoLinhaPesquisaAnaliseDeImagens-ProcParalelo-Bueno-2023-reduzida.pdf">Apresentação linhas de pesquisa que usam a lib<sub>ldsc</sub></a></li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Análise e processamento de imagens.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f0bbc0" class="outline-2">
+<h2 id="org4f0bbc0"><span class="section-number-2">12.</span> <a id="org8077c62"></a>Repositórios de softwares desenvolvidos</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org810d321" class="outline-3">
+<h3 id="org810d321"><span class="section-number-3">12.1.</span> Título: Software LVP - Laboratório Virtual de Petrofísica</h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/lvp">https://github.com/ldsc/lvp</a></li>
+</ul></li>
+<li><p>
+Resumo:
+</p>
+<ul class="org-ul">
+<li>O software LVP oferece ao usuário diversas funcionalidades de simulação e determinação de propriedades petrofísicas através da análise de imagens de meios porosos. O propósito inicial no desenvolvimento deste software foi o de facilitar, através de uma interface gráfica amigável e avançada, a utilização dos modelos e algoritmos desenvolvidos como parte de um trabalho de mestrado, e posteriormente de doutorado, realizado na UENF/LENEP pelo aluno Leandro Puerari. Devido ao fato dos trabalhos terem como base a biblioteca para análise de imagens de meios porosos lib<sub>ldsc</sub>, diversas outras funcionalidades implementadas nesta biblioteca foram disponibilizadas no LVP.</li>
+<li>Dentre as funcionalidades podemos destacar:</li>
+<li>Aplicação de filtros em imagens 2D e 3D, incluindo: conectividade, imagem de distância ao fundo, inversão da imagem, passa-baixa e passa-alta;</li>
+<li>Aplicação dos filtros morfológicos: fechamento, abertura, dilatação e erosão;</li>
+<li>Visualização plano a plano de imagens tridimensionais permitindo escolher o eixo de visualização;</li>
+<li>Visualização de imagens tridimensionais e bidimensionais;</li>
+<li>Determinação de correlações frequencial e espacial;</li>
+<li>Determinação da distribuição de tamanho de poros e sólidos;</li>
+<li>Cálculo da permeabilidade intrínseca;</li>
+<li>Cálculo da permeabilidade relativa;</li>
+</ul>
+<p>
+Visualização das curvas de permeabilidade relativa;
+</p>
+<ul class="org-ul">
+<li>Visualização dos gráficos de correlações;</li>
+<li>Cálculo da porosidade;</li>
+<li>Rotação de imagens tridimensionais;</li>
+<li>Corte de imagens tridimensionais;</li>
+<li>Determinação das configurações de equilíbrio;</li>
+<li>Reconstruções tridimensionais através dos métodos esferas sobrepostas, gaussiana truncada e gaussiana truncada revisada;</li>
+<li>Segmentação de poros e gargantas, através de operações morfológicas;</li>
+<li>Criação de redes de percolação representativas ao meio poroso;</li>
+<li>Cálculo da permeabilidade intrínseca nas redes de percolação.</li>
+<li>Autor: Leandro Puerari.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Análise e processamento de imagens.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6627858" class="outline-3">
+<h3 id="org6627858"><span class="section-number-3">12.2.</span> Título: Simulat - Simulador Transferência Calor e Massa em Meios Porosos</h3>
+<div class="outline-text-3" id="text-12-2">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/simulat">https://github.com/ldsc/simulat</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Simulador Transferência Calor e Umidade em Telhas Cerâmicas (meios porosos).</li>
+<li>A partir de propriedades físicas medidas em laboratório permite a simulação dos valores de conteúdo mássico e temperatura de telhas expostas ao meio ambiente.</li>
+<li><a href="https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno.pdf">Mestrado-AndreDuarteBueno.pdf</a>.</li>
+<li><a href="https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno-Apresentacao.pdf">Mestrado-AndreDuarteBueno-Apresentacao.pdf</a>.</li>
+<li><a href="https://github.com/ldsc/simulat/blob/master/doc/ManualTecnico/Mestrado-AndreDuarteBueno-ImagensSoftwareSimulat.pdf">ImagensSoftwareSimulat</a>.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Transferência de calor e massa.</li>
+<li>Conforto ambiental.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9a78919" class="outline-3">
+<h3 id="org9a78919"><span class="section-number-3">12.3.</span> Título: Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens</h3>
+<div class="outline-text-3" id="text-12-3">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens">https://github.com/ldsc/Software-CaracterizacaoDeRochaDigitalUsando-IA-InteligenciaArtificial-SegmentacaoImagens</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Este repositório representa o projeto de dissertação desenvolvido no LENEP/CCT/UENF, como parte das exigências para obtenção do título de Mestre em Engenharia de Reservatório e de Exploração.</li>
+<li>O objetivo geral deste trabalho foi desenvolver métodos de inteligência artificial capazes de reconhecer padrões relevantes para a análise das propriedades petrofísicas em imagens de rochas reservatórios.</li>
+<li>No diretório resultados estão os valores obtidos na aplicação da rede neural sobre às amostras de rocha digital junto com o resultado da binarização de cada um delas.</li>
+<li>Autor: João Marcelo.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Análise e processamento de imagens.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orged0b569" class="outline-3">
+<h3 id="orged0b569"><span class="section-number-3">12.4.</span> Título: SAIL - Software de Análise de Imagens Livre</h3>
+<div class="outline-text-3" id="text-12-4">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li>adicionar&#x2026;</li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Software de Análise de Imagens Livre.</li>
+<li>Autor: Thiago Schauwer.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Análise e processamento de imagens.</li>
+<li>Dano a formação.</li>
+<li>Engenharia de reservatório.</li>
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0c3f485" class="outline-3">
+<h3 id="org0c3f485"><span class="section-number-3">12.5.</span> Título: TCMP-2D</h3>
+<div class="outline-text-3" id="text-12-5">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/TCMP-2D">https://github.com/ldsc/TCMP-2D</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Transferência de Calor em Meios Porosos 2D (Linguagem: C++/Qt; Método Numérico: FTCS/BTCS).</li>
+<li>Autor: Guilherme Lima.</li>
+<li>Publicação:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/TCMP-2D/blob/master/doc/ManualTecnico/ProjetoEngenharia-GuilhermeLima.pdf">TCC</a></li>
+<li><a href="https://github.com/ldsc/TCMP-2D/blob/master/doc/ManualTecnico/R3-SimuladorBidimensionaldeConducaoTransientedeCaloremMeiosPorosos-CCMP-2D.pdf">SimuladorBidimensionaldeConducaoTransientedeCaloremMeiosPorosos-CCMP-2D</a></li>
+</ul></li>
+</ul></li>
+
+<li>Área:
+<ul class="org-ul">
+<li>Transferência de calor.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orged5791c" class="outline-3">
+<h3 id="orged5791c"><span class="section-number-3">12.6.</span> Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</h3>
+<div class="outline-text-3" id="text-12-6">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D">https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Projeto de engenharia - Simulador de condução térmica em objetos 3D com perfis genéricos.</li>
+<li>O seguinte projeto de engenharia deve simular a difusão térmica de qualquer objeto tridimensional, onde o usuário desenha a superfície de alguns perfis e escolhe as temperaturas e suas propriedades termofísicas.</li>
+<li>A equação do Calor será modelada por diferenças finitas pelo modelo BTCS, utilizando fronteiras de Neumann, e a programação utilizará paralelismo e multithreading para acelerar as simulações.</li>
+<li>No quesito prático, o usuário poderá desenhar a superfície a ser simulada, escolher sua temperatura, propriedades termofísicas e se é fonte/sumidouro ou não. Também terá a liberdade de escolher um ponto para analisar os gráficos da evolução térmica no tempo e espaço, salvar as superfícies dos perfis e carregar essas camadas com todas as suas propriedades e modificá-las. Por fim, o projeto será utilizado para estudar a injeção de calor em reservatórios 2D e 3D, e avaliar a distribuição da temperatura ao longo do tempo no reservatório.</li>
+<li>Nota: Também foi o TCC do aluno Nikolas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Transferência de calor.</li>
+</ul></li>
+<li>Autor:
+<ul class="org-ul">
+<li>Nikolas Almeida Pinto.</li>
+<li>Publicação:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/TCC-NikolasAlmeidaPinto.pdf">TCC</a></li>
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D/blob/master/doc/ManualTecnico/Apresentacao_Nicholas_TCC2.pptx">Apresentacao</a></li>
+</ul></li>
+</ul></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8770a8f" class="outline-2">
+<h2 id="org8770a8f"><span class="section-number-2">13.</span> <a id="orgdab90f3"></a>Repositórios de projetos desenvolvidos</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org47b3f44" class="outline-3">
+<h3 id="org47b3f44"><span class="section-number-3">13.1.</span> Título: ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico</h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico">https://github.com/ldsc/ProjetoEngenharia-AnaliseDoEfeitoDePeliculaAPartirIPR-PocosVerticais-EscoamentoMonofasico</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>ANÁLISE DO EFEITO DE PELÍCULA A PARTIR DE CURVAS DE ÍNDICE DE PRODUTIVIDADE (IPR) PARA POÇOS VERTICAIS EM ESCOAMENTO MONOFÁSICO DE ÓLEO.</li>
+<li>Utilizar equações propostas na literatura e em artigos cientı́ficos para o cálculo do efeito de pelı́cula total.</li>
+<li>Plotar curvas de IPR para poços verticais em escoamento monofásico de óleo a partir de soluções analı́ticas da E.D.H. considerando regime transiente, pseu-do permanente e permanente a partir do software externo Gnuplot.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org16b1896" class="outline-3">
+<h3 id="org16b1896"><span class="section-number-3">13.2.</span> Título: ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade</h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade">https://github.com/ldsc/ProjetoEngenharia-AnaliseQuedaPressaoDevidoMigracaoFinosOcasionadaInjecaoAguaBaixaSalinidade</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>ANÁLISE DA QUEDA DE PRESSÃO DEVIDO A MIGRAÇÃO DE FINOS OCASIONADA PELA INJEÇÃO DE ÁGUA DE BAIXA SALINIDADE.</li>
+<li>Desenvolver um projeto de Engenharia de Software que calcule a quantidade de partículas depositadas no meio poroso devido a migração de finos, utili- zando como dados/informações de referência os valores da literatura ou de experimentos laboratoriais, os quais serão inseridos pelo usuário por meio de arquivos .txt. Por meio do software será possível analisar o declínio de perme- abilidade, ou seja o dano à formação, devido a quantidade de partículas retidas no meio poroso e assim evitar prejuízos ecônomicos as indústrias petróliferas, pois será possível realizar uma análise e um estudo prévio do caso.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge471005" class="outline-3">
+<h3 id="orge471005"><span class="section-number-3">13.3.</span> Título: ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil</h3>
+<div class="outline-text-3" id="text-13-3">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil">https://github.com/ldsc/ProjetoEngenharia-AplicacaoCorrelacoesCalculoParametrosReservartorioPropriedadesFluidos-Blackoil</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>DESENVOLVIMENTO DO SOFTWARE APLICAÇÃO DE CORRELAÇÕES PARA CÁLCULO DE PARÂMETROS DE RESERVATÓRIO A PARTIR DE PROPRIEDADES DOS FLUIDOS – MODELAGEM BLACKOIL.</li>
+<li>Utilizar correlações empı́ricas para cálculo de parâmetros de um reservatório a partir de propriedades dos fluidos presentes no mesmo – Modelagem BlackOil. – Calcular propriedades dos fluidos a partir de dados externos. – Calcular parâmetros de um reservatório utilizando correlações especı́ficas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6b9a7fa" class="outline-3">
+<h3 id="org6b9a7fa"><span class="section-number-3">13.4.</span> Título: ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo</h3>
+<div class="outline-text-3" id="text-13-4">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo">https://github.com/ldsc/ProjetoEngenharia-AutomacaoDaDefinicaoDoVolumeElementarRepresentativo</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>O PetroRev é um software desenvolvido em C++ que automatiza o processo de análise de Volume Elementar Representativo (REV) de amostras rochosas digitalizadas por microtomografia de raios X. Esse processo é crucial para determinar um volume estatisticamente representativo para simulações em escala de poros, especialmente focando na propriedade petrofísica da porosidade.</li>
+<li>Pré-processamento de Imagens: Prepara as imagens de microtomografia para análise.</li>
+<li>Segmentação e Identificação de Poros e Sólidos: Identifica áreas porosas e não porosas nas imagens.</li>
+<li>Cálculo de Porosidade em Subamostras: Calcula a porosidade de subamostras para determinar o REV.</li>
+<li>Análise Estatística para Identificação do REV: Utiliza dados de porosidade para determinar um volume representativo estatisticamente.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org26e13cb" class="outline-3">
+<h3 id="org26e13cb"><span class="section-number-3">13.5.</span> Título: ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida</h3>
+<div class="outline-text-3" id="text-13-5">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida">https://github.com/ldsc/ProjetoEngenharia-AvaliacaoCondicaoExperimentalSeparacaoComponentesDoPetroleoPorCromatografiaLiquida</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geoquímica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgec0a34e" class="outline-3">
+<h3 id="orgec0a34e"><span class="section-number-3">13.6.</span> Título: ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr</h3>
+<div class="outline-text-3" id="text-13-6">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr">https://github.com/ldsc/ProjetoEngenharia-AvaliacaoDasCondicoesExperimentaisParaSeparacaoDeComponentesDoPetroleoPorCromatogr</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>AVALIAÇÃO DAS CONDIÇÕES EXPERIMENTAIS PARA SEPARAÇÃO DE COMPONENTES DO PETRÓLEO POR CROMATOGRAFIA LÍQUIDA UTILIZANDO PLANEJAMENTO FATORIAL.</li>
+<li>Determinar, a partir do planejamento fatorial com ponto central, as melhores condições experimentais para a obtenção da fração de hidrocarbonetos satura- dos do petróleo utilizando a técnica de cromatografia em fase líquida clássica em coluna aberta, visando diminuir a quantidade de solvente e adsorvente utilizado, aumentar a porcentagem de recuperação da fração e, como conse- quência, reduzir a quantidade de resíduos líquidos e sólidos gerados ao meio ambiente.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geoquímica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73d7bd0" class="outline-3">
+<h3 id="org73d7bd0"><span class="section-number-3">13.7.</span> Título: ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao</h3>
+<div class="outline-text-3" id="text-13-7">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao">https://github.com/ldsc/ProjetoEngenharia-AvaliacaoFormacoesPorDadosDeTestesDePressao</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>AVALIAÇÃO DE FORMAÇÕES POR DADOS DE TESTES DE PRESSÃO.</li>
+<li>Criar um software capaz de fornecer ao usuário parâmetros e características do reservatório, através da análise dos dados obtidos em testes de pressão em poços, possibilitando estimar as dimensões do campo e sua potencialidade econômica.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf94bd02" class="outline-3">
+<h3 id="orgf94bd02"><span class="section-number-3">13.8.</span> Título: ProjetoEngenharia-BancoDeDadosFluidosPerfuracao</h3>
+<div class="outline-text-3" id="text-13-8">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-BancoDeDadosFluidosPerfuracao">https://github.com/ldsc/ProjetoEngenharia-BancoDeDadosFluidosPerfuracao</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>BANCO DE DADOS DE FLUIDOS DE PERFURAÇÃO.</li>
+<li>Desenvolver um banco de dados contendo informações a respeito defluidos de perfuração desenvolvidos no Laboratório de Fluidos do LENEP-Laboratório de Engenharia e Exploração de Petróleo.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc1db4a3" class="outline-3">
+<h3 id="orgc1db4a3"><span class="section-number-3">13.9.</span> Título: ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD</h3>
+<div class="outline-text-3" id="text-13-9">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD">https://github.com/ldsc/ProjetoEngenharia-CalculoDaTrajetoriaDirecionalParaperfuracaoDePocosDePetroleo-TIPO-1-BUILD-AND-HOLD</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>CÁLCULO DE TRAJETÓRIA DIRECIONAL PARA PERFURAÇÃO DE POÇOS DE PETRÓLEO: TIPO 1 - BUILD AND HOLD.</li>
+<li>Desenvolver uma solução para o cálculo da trajetória em 2D de um projeto de poço vertical e direcional.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0715c49" class="outline-3">
+<h3 id="org0715c49"><span class="section-number-3">13.10.</span> Título: ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso</h3>
+<div class="outline-text-3" id="text-13-10">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso">https://github.com/ldsc/ProjetoEngenharia-CalculoDosFatoresDeRecuperacaoAvancadaDePetroleoAPartirDeTesteDeFluxoEmMeiosPoroso</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>CÁLCULO DOS FATORES DE RECUPERAÇÃO AVANÇADA DE PETROLEO À PARTIR DE TESTES DE FLUXO EM MEIO POROSO.</li>
+<li>Calcular a permeabilidade absoluta de amostras rochosas;</li>
+<li>Obter grfico da permeabilidade absoluta da amostra (plugs );</li>
+<li>Calcular o volume poroso de amostras rochosas;</li>
+<li>Calcular as frações de recuperação de óleo a partir do método utilizado: Secundário e/ou Avançado;</li>
+<li>Possibilitar a inclusão de informações de novosfuidos e amostras (plugs );</li>
+<li>Obter gráficos com as curvas de produção de água e de óleo através da recuperaçao secundária e avançada a partir da entrada de dados pelo usuário (volumes produzidos por minuto);</li>
+<li>Obter as saturações iniciais e finais dos fluidos injetados no meio poroso;</li>
+<li>Obter o fator de recuperação total de óleo através dos métodos de recuperação utilizados.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org17cc19f" class="outline-3">
+<h3 id="org17cc19f"><span class="section-number-3">13.11.</span> Título: ProjetoEngenharia-CalculoIndiceProdutividadePocos</h3>
+<div class="outline-text-3" id="text-13-11">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CalculoIndiceProdutividadePocos">https://github.com/ldsc/ProjetoEngenharia-CalculoIndiceProdutividadePocos</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Desenvolver um projeto de engenharia de software para resolver os diferentes modelos matemáticos de previsão de produtividade de poços horizontais e ver- ticais e a influência dos parâmetros de reservatórios nos mesmos para analisar em que situações, em termos de produtividade, qual design de poço seria mais recomendado através das simulações.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgacbba61" class="outline-3">
+<h3 id="orgacbba61"><span class="section-number-3">13.12.</span> Título: ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento</h3>
+<div class="outline-text-3" id="text-13-12">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento">https://github.com/ldsc/ProjetoEngenharia-CalculoPerdaCargaDistribuidaFluidoNoDecorrerEscoamento</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>CÁLCULO DA PERDA DE CARGA DISTRIBUIDA DE UM FLUIDO NO DECORRER DO ESCOAMENTO.</li>
+<li>Desenvolver um projeto de engenharia de software para calcular a perda de carga distribuída de um fluido no decorrer do escoamento ao longo da tubulação.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de elevação e escoamento.</li>
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6138ab6" class="outline-3">
+<h3 id="org6138ab6"><span class="section-number-3">13.13.</span> Título: ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao</h3>
+<div class="outline-text-3" id="text-13-13">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao">https://github.com/ldsc/ProjetoEngenharia-CalculoVolumesFluidosPerfuracaoCimentacaoTubosETempoPerfuracao</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Desenvolver um programa para cálculo dos volumes de fluido de perfuração e cimento, quantidade de tubos e o tempo gasto em uma operação de perfuração de um poço de petróleo.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9b635e6" class="outline-3">
+<h3 id="org9b635e6"><span class="section-number-3">13.14.</span> Título: ProjetoEngenharia-CorrelacoesPVT</h3>
+<div class="outline-text-3" id="text-13-14">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-CorrelacoesPVT">https://github.com/ldsc/ProjetoEngenharia-CorrelacoesPVT</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Criar um banco virtual de correlações onde seja possível estimar diversas propriedades relacionadas ao gás e ao óleo presentes em um reservatório. Visando a empregá-lo no ensino e pesquisa.</li>
+</ul></li>
+<li>Área
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8bff0f4" class="outline-3">
+<h3 id="org8bff0f4"><span class="section-number-3">13.15.</span> Título: ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga</h3>
+<div class="outline-text-3" id="text-13-15">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga">https://github.com/ldsc/ProjetoEngenharia-ESPPERFORMANCE-SimuladorDeCurvasDeDesempenhoDe-BCS-HEAD-ePerdasCarga</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>ESPPERFORMANCE - SIMULADOR DE CURVAS DE DESEMPENHO DE BCS: HEAD E PERDAS DE CARGA.</li>
+<li>Desenvolver um simulador que calcule as curvas de perfomance de operação de BCS utilizado em elevação artficial de petróleo a partir de parametrizações para escoamento defluidos em bombas centrífugas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de elevação e escoamento.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f5933b" class="outline-3">
+<h3 id="org9f5933b"><span class="section-number-3">13.16.</span> Título: ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos</h3>
+<div class="outline-text-3" id="text-13-16">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos">https://github.com/ldsc/ProjetoEngenharia-FluxoMonofasicoReativoEmMeiosPorosos</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org049fe3e" class="outline-3">
+<h3 id="org049fe3e"><span class="section-number-3">13.17.</span> Título: ProjetoEngenharia-ModelosDeAquiferosAnaliticos</h3>
+<div class="outline-text-3" id="text-13-17">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-ModelosDeAquiferosAnaliticos">https://github.com/ldsc/ProjetoEngenharia-ModelosDeAquiferosAnaliticos</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>MODELOS DE AQUÍFEROS ANALÍTICOS.</li>
+<li>No ambiente da Engenharia de Reservatórios, o objeto de estudo é o próprio reservatório de óleo e gás. No entanto, para que esse estudo ocorra de forma eficiente, é necessário que se entenda as características (porosidade, permeabilidade, volume de reservatório, presença e propriedades de aquíferos) e o comportamento sob produção. O objetivo de estudo deste software é analisar aquíferos analíticos com modelos distintos e como sua presença provoca efeitos em reservatórios de óleo e gás.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3669c99" class="outline-3">
+<h3 id="org3669c99"><span class="section-number-3">13.18.</span> Título: ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo</h3>
+<div class="outline-text-3" id="text-13-18">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo">https://github.com/ldsc/ProjetoEngenharia-ModelosDeDeslocamentoImiscivelParaRecuperacaoSecundariaDePetroleo</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>MODELOS DE DESLOCAMENTO IMISCÍVEL PARA RECUPERAÇÃO SECUNDÁRIA DE PETRÓLEO.</li>
+<li>O projeto a ser desenvolvido consiste em um programa que calculará características de um reservatório homogêneo a partir de um fluxo bifásico areal, preverá o desempenho no processo de recuperação secundária do óleo a partir de um sistema estratificado com fluxo bifásico. A presente construção do sistema será utilizado em âmbito acadêmico como software livre, a partir do uso da Programação Orientada a Objeto em C++ e software Gnuplot, para que esteja disponível de fácil acesso a todos. A interface selecionada para o programa é em modo texto, o usuário irá se relacionar a partir do uso do teclado, mouse e monitor em conjunto com a interface do sistema construído. Os dados de entrada, propriedades do reservatório, serão fornecidos em modo .xlsx, na qual poderá ser modificado pelo usuário com base nas informações do reservatório em questão, enquanto que os dados de saída serão em modo arquivo de texto .txt e imagem .png com base nos diferentes modelos de deslocamento possíveis do software.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org63bf2a2" class="outline-3">
+<h3 id="org63bf2a2"><span class="section-number-3">13.19.</span> Título: ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn</h3>
+<div class="outline-text-3" id="text-13-19">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn">https://github.com/ldsc/ProjetoEngenharia-PrevisaoComportamentoDeReservatoriosDeOleoComCapaDeGasOuGasEmSolucaoEOleo-GasComIn</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>PREVISÃO DE COMPORTAMENTO DE RESERVATÓRIOS DE ÓLEO COM CAPA DE GÁS OU GÁS EM SOLUÇÃO E ÓLEO &amp; GÁS COM INFLUXO DE ÁGUA.</li>
+<li>Desenvolver um software para determinar os parâmetros comportamentais de um reservatório de óleo com capa de gás para a caracterização desse reservatório por meio da análise e cálculos a partir de dados de produção.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4238522" class="outline-3">
+<h3 id="org4238522"><span class="section-number-3">13.20.</span> Título: ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens</h3>
+<div class="outline-text-3" id="text-13-20">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens">https://github.com/ldsc/ProjetoEngenharia-PropriedadesFisicasRochasSedimentaresUtilizandoDadosObtidosPorAnaliseDeImagens</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>DETERMINAÇÃO DE PROPRIEDADES FÍSICAS DE ROCHAS SEDIMENTARES UTILIZANDO DADOS OBTIDOS POR ANÁLISE DE IMAGENS DIGITAIS.</li>
+<li>Desenvolver um software que receba dados obtidos do ImageJ e converta-os em caracterização da rocha em análise.</li>
+<li>As novas atualizações foram a inclusão de classes como: Analise porosidade, Parametros Morfometricos, Propriedades rocha (homogeneidade e heterogeneidade), Metodo RbSr, Volume representativo do elemento (REV) e SimulacaoFluxoFluidos (liquido e gasoso).</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7aefa29" class="outline-3">
+<h3 id="org7aefa29"><span class="section-number-3">13.21.</span> Título: ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais</h3>
+<div class="outline-text-3" id="text-13-21">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais">https://github.com/ldsc/ProjetoEngenharia-SimulacaoDeCurvasIPRUtilizandoModelosEmpiricosEmPocosVerticais</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULADOR DE CURVAS IPR UTILIZANDO MODELOS EMPÍRICOS EM POCOS VERTICAIS.</li>
+<li>Selecionar o tipo de fluido e geometria do reservatório.</li>
+<li>Desenvolver os cálculos das vazões e pressões com base nos modelos empíricos (Fetkovich, Vogel, Vogel Generalizada e Linear). – Plotar gráficos e permitir que possam ser salvos. – Permitir que o usuário possa entrar com os dados por meio de um arquivo de disco.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8c865fb" class="outline-3">
+<h3 id="org8c865fb"><span class="section-number-3">13.22.</span> Título: ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas</h3>
+<div class="outline-text-3" id="text-13-22">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas">https://github.com/ldsc/ProjetoEngenharia-SimulacaoPropriedadesTermodinamicasSubstanciasSimplesECompostas</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULAÇÃO DE PROPRIEDADES TERMODINÂMICAS DE SUBSTÂNCIAS SIMPLES E COMPOSTAS.</li>
+<li>bter propriedades termodinâmicas de substâncias simples e misturas de substâncias. Estas propriedades incluem fugacidade, densidade, volume específico, volume molar, e o fator de compressibilidade, tanto da fase líquida, quanto da fase vapor (se as duas coexistirem).</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf5b362c" class="outline-3">
+<h3 id="orgf5b362c"><span class="section-number-3">13.23.</span> Título: ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas</h3>
+<div class="outline-text-3" id="text-13-23">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas">https://github.com/ldsc/ProjetoEngenharia-SimuladorDeEstimativaDeReservaUtilizandoEBM-EnfoqueReservatoriosGas</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULADOR DE ESTIMATIVA DE RESERVA DE RESERVATÓRIO UTILIZANDO EBM, COM ENFOQUE NOS RESERVATÓRIOS DE GÁS.</li>
+<li>Aperfeiçoar a solução para determinar o volume original de fluido (principalmente gás) no reservatório, incluindo a modelagem de diferentes mecanismos de produção e a injeção de fluidos.</li>
+<li>Implementar classes e métodos para representar a injeção de água, gás, polímero, surfactante, vapor e gás lift no reservatório.</li>
+<li>Aprimorar a flexibilidade do programa para lidar com uma variedade de cenários de produção e injeção.</li>
+<li>Refinar a lógica de cálculo do volume original de fluido para considerar os efeitos das novas classes de injeção.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org91029fb" class="outline-3">
+<h3 id="org91029fb"><span class="section-number-3">13.24.</span> Título: ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D</h3>
+<div class="outline-text-3" id="text-13-24">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D">https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULADOR DE RESERVATÓRIO MONOFÁSICO 2D.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge117cf7" class="outline-3">
+<h3 id="orge117cf7"><span class="section-number-3">13.25.</span> Título: ProjetoEngenharia-SimuladorDeTracoSismico</h3>
+<div class="outline-text-3" id="text-13-25">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorDeTracoSismico">https://github.com/ldsc/ProjetoEngenharia-SimuladorDeTracoSismico</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Desenvolver um programa para a gerar um traço sísmico sintético de uma formação arbitrária a partir de dados da formação com espessura da camada, velocidade de propagação da onda acústica e a densidade.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org697106b" class="outline-3">
+<h3 id="org697106b"><span class="section-number-3">13.26.</span> Título: ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco</h3>
+<div class="outline-text-3" id="text-13-26">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco">https://github.com/ldsc/ProjetoEngenharia-SimuladorHidraulicaPerfuracaoPoco</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Desenvolver um simulador de hidráulica de poço que execute cálculos e gere gráficos. Para tal, deve-se usar as equações de perda de carga provenientes da mecânica dos fluidos adaptadas à indústria do petróleo.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb023f85" class="outline-3">
+<h3 id="orgb023f85"><span class="section-number-3">13.27.</span> Título: ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono</h3>
+<div class="outline-text-3" id="text-13-27">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono">https://github.com/ldsc/ProjetoEngenharia-SimuladorPropriedadesMaterialSubmetidoCorrosaoPorDioxidoDeCarbono</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Simulador de Propriedades Mecânicas de Material Submetido ao Processo de Corrosão por Dióxido de Carbono. Desenvolver um programa que receba dados reais ou arbitrários e calcule as propriedades mecânicas do material a partir de onde serão gerados gráficos que poderão ser utilizados para análise de taxas corrosivas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Corrosão.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc1f92ce" class="outline-3">
+<h3 id="orgc1f92ce"><span class="section-number-3">13.28.</span> Título: rojetoEngenharia-SimuladorReservatorio2D</h3>
+<div class="outline-text-3" id="text-13-28">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorReservatorio2D">https://github.com/ldsc/ProjetoEngenharia-SimuladorReservatorio2D</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+<li>Criar um software capaz de fornecer ao usuário parâmetros e características do reservatório, através da análise dos dados obtidos em testes de pressão em poços, possibilitando estimar as dimensões do campo e sua potencialidade econômica.</li>
+<li>Nota: Continuidade do projeto: <a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D">https://github.com/ldsc/ProjetoEngenharia-SimuladorDeReservatorioMonofasico2D</a></li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgddb5b71" class="outline-3">
+<h3 id="orgddb5b71"><span class="section-number-3">13.29.</span> Título: ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial</h3>
+<div class="outline-text-3" id="text-13-29">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial">https://github.com/ldsc/ProjetoEngenharia-SimuladorSolucoesAnaliticasAdmensionaisEqDifusividadeHidraulicaFluxosLinearERadial</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULADOR DE SOLUÇÕES ANALÍTICAS ADIMENSIONAIS DA EQUAÇÃO DA DIFUSIVIDADE HIDRÁULICA PARA FLUXOS LINEAR E RADIAL.</li>
+<li>A partir da descoberta de uma acumulação de petróleo diversas informações podem ser obtidas. Das mais importantes, pode-se citar como exemplo a quantidade de hidro- carbonetos que se pode retirar dessa jazida e o tempo em que essa produção se efetuará. Dentro da engenharia de petróleo, engenheiros de reservatório constantemente buscam solucionar problemas envolvendo fluxos monofásicos de fluidos de baixa compressibilidade que partem das as equações fundamentais da mecânica dos fluidos que descrevem o trans- porte de líquidos em meios porosos. A principal equação que rege esse estudo do fluxo em meios porosos é a Equação da Difusividade Hidráulica e ao resolver os problemas de valor inicial e de contorno formados por essa equação, é possível obter os modelos físicos de interesse que são encontrados no campo. A necessidade de monitoramento do comportamento do reservatório é evidente e prever como será o seu comportamento auxilia diretamente na tomada de decisões a respeito das operações realizadas e serve de base para os testes de pressão que visam a obtenção de vários parâmetros do reservatório (fator de película, volume poroso drenado, limites do reservatório, etc).</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9e20694" class="outline-3">
+<h3 id="org9e20694"><span class="section-number-3">13.30.</span> Título: ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO</h3>
+<div class="outline-text-3" id="text-13-30">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO">https://github.com/ldsc/ProjetoEngenharia-SimuladorSubstituicaoFluidoEmodelagemAVO</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>DESENVOLVIMENTO DO SOFTWARE SIMULADOR DE SUBSTITUIÇÃO DE FLUIDOS E DE MODELAGEM AVO.</li>
+<li>Realizar a substituição de fluidos para plotar um gráfico de velocidade da onda compressional pela saturação de água e de velocidade da onda cisalhante pela saturação de água.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geofísica</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4c3b2c2" class="outline-3">
+<h3 id="org4c3b2c2"><span class="section-number-3">13.31.</span> Título: ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica</h3>
+<div class="outline-text-3" id="text-13-31">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica">https://github.com/ldsc/ProjetoEngenharia-SoftwareCaracterizacaoDeReservatoriosIntegradoAAnalisePetrofisica</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>DESENVOLVIMENTO DO SOFTWARE CARACTERIZAÇÃO DE RESERVATÓRIOS INTEGRADO À ANÁLISE PETROFÍSICA.</li>
+<li>Criar um software capaz de calcular parâmetros e inferir características de um reservatório, através da análise dos dados obtidos em testes de pressão em poços e na testemunhagem do reservatório, possibilitando estimar as dimensões do campo e sua potencialidade econômica. Um diferencial importante nesta versão é a flexíbilidade na entrada de dados do usuário.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga27d2fd" class="outline-3">
+<h3 id="orga27d2fd"><span class="section-number-3">13.32.</span> Título: ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT</h3>
+<div class="outline-text-3" id="text-13-32">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT">https://github.com/ldsc/ProjetoEngenharia-SoftwareControlador-MedidorDeBancadaAz-pH-mV-ORP-Cond-TDS-SALT</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Equipamentos de laboratório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge60f553" class="outline-3">
+<h3 id="orge60f553"><span class="section-number-3">13.33.</span> Título: rojetoEngenharia-SoftwareDeComunicacao-MedidorLCR</h3>
+<div class="outline-text-3" id="text-13-33">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareDeComunicacao-MedidorLCR">https://github.com/ldsc/ProjetoEngenharia-SoftwareDeComunicacao-MedidorLCR</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Equipamentos de laboratório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf17cdb9" class="outline-3">
+<h3 id="orgf17cdb9"><span class="section-number-3">13.34.</span> Título: ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo</h3>
+<div class="outline-text-3" id="text-13-34">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo">https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDeIncrustacaoNaProducaoDePetroleo</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Em desenvolvimento.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgccb193e" class="outline-3">
+<h3 id="orgccb193e"><span class="section-number-3">13.35.</span> Título: ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao</h3>
+<div class="outline-text-3" id="text-13-35">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao">https://github.com/ldsc/ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Faltando esta informação.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de poço.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8730bf3" class="outline-3">
+<h3 id="org8730bf3"><span class="section-number-3">13.36.</span> Título: ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas</h3>
+<div class="outline-text-3" id="text-13-36">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas">https://github.com/ldsc/ProjetoEngenharia-SoftwareParaTratamentosDeDados-FT-ICR-MS-e-Aplica-esGeoquimicas</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Software para tratamentos de dados FT-ICR MS e aplicações geoquímicas.</li>
+<li>Facilitar o uso da petroleômica.</li>
+<li>Calcular o número de carbono, hidrogênio e nitrogênio.</li>
+<li>Calcular a distribuição heteroatômica para cada amostra.</li>
+<li>Calcular o número de DBE e sua distribuição para cada classe heteroatômica.</li>
+<li>Calcular a distribuição do número de carbono por DBE para cada classe hete- roatômica.</li>
+<li>Calcular parâmetros geoquímicos com os dados petroleômicos. – Plotar gráficos e diagramas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geoquímica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org43f22b5" class="outline-3">
+<h3 id="org43f22b5"><span class="section-number-3">13.37.</span> Título: ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica</h3>
+<div class="outline-text-3" id="text-13-37">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica">https://github.com/ldsc/ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>ProjetoEngenharia-SoftwareQueCalculaPropriedadesPetrofisicasPocoAPartirEquacoesDaFisica.</li>
+<li>Plotar os perfis.</li>
+<li>Calcular a porosidade.</li>
+<li>Calcular a argilosidade.</li>
+<li>Calcular a saturação de óleo e água.</li>
+<li>Plotar as propriedades calculadas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Petrofísica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org50f846a" class="outline-3">
+<h3 id="org50f846a"><span class="section-number-3">13.38.</span> Título: ProjetoEngenharia-SPTSP-Helmholtz</h3>
+<div class="outline-text-3" id="text-13-38">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SPTSP-Helmholtz">https://github.com/ldsc/ProjetoEngenharia-SPTSP-Helmholtz</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>SIMULADOR DE PROPRIEDADES TERMODINÂMICAS DE SUBSTÂNCIAS PURAS A PARTIR DE DENSIDADE E TEMPERATURA.</li>
+<li>A correta previsão das propriedades termodinâmicas e cálculo do equilíbrio de fases constitui-se num ponto fundamental do projeto de qualquer processo da industria química, como sistemas de refrigeração. A exploração e produção de reservas naturais de hidrocarbonetos não foge a essa regra, com a dificuldade adicional de tratar complexas misturas de hidrocarbonetos, muitas vezes não bem caracterizadas, além da presença de compostos não orgânicos, como água e dióxido de carbono, empregados em técnicas para aumentar o fator de recuperação das jazidas. Na simulação numérica computacional, que usa o modelo composicional de reservatórios de hidro- carbonetos, um dos conjuntos de equações utilizado para a solução é composto pelos coeficientes de distribuição dos componentes entre as fases presentes no meio poroso. Em varios momentos da simulação uma ou mais fases podem ser constituídas de compostos puros. Nesse caso, ao invés de utilizar equações de estado, são utilizadas correlações para prever as propriedades termodinâmicas, bem como as suas derivadas (necessárias para o cálculo do jacobiano do método de Newton).</li>
+<li>Objetivo geral: – Deselvolver um software que calcula as propriedades termodinâmicas de uma substância pura a partir de equações experimentais.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Engenharia de reservatório.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org318b25f" class="outline-3">
+<h3 id="org318b25f"><span class="section-number-3">13.39.</span> Título: ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</h3>
+<div class="outline-text-3" id="text-13-39">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D">https://github.com/ldsc/ProjetoEngenharia-STC-3D-SimuladorDeTransferenciaDeCalor-3D</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Projeto de engenharia - Simulador de condução térmica em objetos 3D com perfis genéricos.</li>
+<li>O seguinte projeto de engenharia deve simular a difusão térmica de qualquer objeto tridimensional, onde o usuário desenha a superfície de alguns perfis e escolhe as temperaturas e suas propriedades termofísicas.</li>
+<li>A equação do Calor será modelada por diferenças finitas pelo modelo BTCS, utilizando fronteiras de Neumann, e a programação utilizará paralelismo e multithreading para acelerar as simulações.</li>
+<li>No quesito prático, o usuário poderá desenhar a superfície a ser simulada, escolher sua temperatura, propriedades termofísicas e se é fonte/sumidouro ou não. Também terá a liberdade de escolher um ponto para analisar os gráficos da evolução térmica no tempo e espaço, salvar as superfícies dos perfis e carregar essas camadas com todas as suas propriedades e modificá-las. Por fim, o projeto será utilizado para estudar a injeção de calor em reservatórios 2D e 3D, e avaliar a distribuição da temperatura ao longo do tempo no reservatório.</li>
+<li>Nota: Também foi o TCC do aluno Nikolas.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Transferência de calor.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org664367e" class="outline-3">
+<h3 id="org664367e"><span class="section-number-3">13.40.</span> Título: ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos</h3>
+<div class="outline-text-3" id="text-13-40">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos">https://github.com/ldsc/ProjetoEngenharia-TratamentoEstatisticoDadosGeoquimicos</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Os métodos estatísticos estão associados ao tratamento de informações. Seu emprego tem por objetivo explorar uma certa quantidade de números e extrair dos mesmos, valiosas conclusões.</li>
+<li>O objetivo geral do software é propor uma série de tratamentos estatísticos como a regressão linear e os testes de hipóteses, bem como alguns testes que identificam valores anômalos (outliers).Este trabalho implementa alguns testes que identificam valores anômalos (outliers), que são: Teste do escore z modificado, Teste de Grubbs, Teste de Dixon, Teste de Cochran e Teste de Doerffel , além de testes de hipóteses e regressão linear que são aplicados em dados geoquímicos.</li>
+</ul></li>
+<li>Área:
+<ul class="org-ul">
+<li>Geoquímica.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7cc6a0" class="outline-2">
+<h2 id="orga7cc6a0"><span class="section-number-2">14.</span> <a id="org49930bf"></a>Repositórios com projetos didáticos</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-orge5b99f5" class="outline-3">
+<h3 id="orge5b99f5"><span class="section-number-3">14.1.</span> Título: ProjetoEngenharia-SistemaAcademico (didático)</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>Link no github:
+<ul class="org-ul">
+<li><a href="https://github.com/ldsc/ProjetoEngenharia-SistemaAcademico">https://github.com/ldsc/ProjetoEngenharia-SistemaAcademico</a></li>
+</ul></li>
+<li>Resumo:
+<ul class="org-ul">
+<li>Mostrar o desenvolvimento de modelos UML com um exemplo administrativo conhecido dos alunos, o sistema acadêmico.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: &lt;André Duarte Bueno&gt;</p>
+<p class="date">Created: 2024-03-05 ter 14:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
