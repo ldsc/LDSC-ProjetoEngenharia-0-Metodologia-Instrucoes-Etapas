@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -85,11 +85,11 @@
 %\noindent
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -97,7 +97,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -124,7 +126,7 @@
 \pdf_colorlinks false
 \pdf_backref false
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -145,7 +147,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -167,11 +171,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -204,8 +213,7 @@ pagenumbering{arabic}
 \end_layout
 
 \begin_layout Standard
-Apresenta-se aqui a metodologia a ser utilizada no desenvolvimento do projeto
- de engenharia.
+Apresenta-se aqui a metodologia a ser utilizada no desenvolvimento do projeto de engenharia.
 \end_layout
 
 \begin_layout Standard
@@ -236,6 +244,8 @@ name "sec:  Introdução a Metodologia Utilizada"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -248,12 +258,12 @@ Metodologia utilizada
 \end_layout
 
 \begin_layout Standard
-O software a ser desenvolvido utiliza a metodologia de engenharia de software
- apresentada na disciplina de introdução ao projeto de engenharia, ilustrado
- de forma compacta na Figura 
+O software a ser desenvolvido utiliza a metodologia de engenharia de software apresentada na disciplina de introdução ao projeto de engenharia,
+ ilustrado de forma compacta na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo"
+nolink "false"
 
 \end_inset
 
@@ -263,6 +273,7 @@ reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-res
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -273,8 +284,7 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral-Resumido.png
 	lyxscale 50
 	width 100text%
-	height 90theight%
-	keepAspectRatio
+	special height=0.9\textheight
 
 \end_inset
 
@@ -345,29 +355,52 @@ Introdução a modelagem e projeto de engenharia (conceitos e definições);
 \end_layout
 
 \begin_layout Itemize
-Introdução à metodologia científica e a pesquisa científica e tecnológica
- (inovação);
+Introdução à metodologia científica e a pesquisa científica e tecnológica (inovação);
 \end_layout
 
 \begin_layout Itemize
-O ciclo do projeto de engenharia e do método científico e tecnológico;
+TRL/CRL,
+ O ciclo do projeto de engenharia e do método científico e tecnológico;
 \end_layout
 
 \begin_layout Itemize
-Administração e gestão de projeto (planejamento, execução, controle);
+Administração e gestão de projeto (planejamento,
+ execução,
+ controle);
 \end_layout
 
 \begin_layout Itemize
-Administração – uso de metodologias ágeis; ferramentas git, github, github
- projects;
+Administração – uso de metodologias ágeis;
+ ferramentas git,
+ github,
+ github projects (kanbam);
 \end_layout
 
 \begin_layout Itemize
-Exemplos aplicados ao TCC, engenharia de software e a engenharia de petróleo.
+Exemplos aplicados ao TCC,
+ engenharia de software e a engenharia de petróleo.
 \end_layout
 
 \begin_layout Itemize
-Desenvolvimento das etapas: 0,1,2,3.
+Ciclo Planejamento e Detalhamento (concepção - especificação e requisitos,
+ elaboração,
+ análise,
+ projeto) e Ciclos de Construção (do software,
+ testes do funcionamento do software;
+ manutenção e documentação do software desenvolvido).
+ 
+\end_layout
+
+\begin_layout Itemize
+Desenvolvimento das etapas:
+ 0,1,2,3 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo"
+
+\end_inset
+
+).
 \end_layout
 
 \end_deeper
@@ -385,7 +418,8 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-Conceitos de algoritmos e programação, sintaxe de C++.
+Conceitos de algoritmos e programação,
+ sintaxe de C++.
 \end_layout
 
 \begin_layout Itemize
@@ -393,7 +427,15 @@ Aprender a programar vendo a teoria e a prática com exemplos aplicados.
 \end_layout
 
 \begin_layout Itemize
-É possível dar desenvolvimento a partes da etapa: 4.
+É possível dar desenvolvimento a partes da etapa:
+ 4 (detalhamento e construção - ciclo 1) (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia-resumo"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -434,23 +476,126 @@ Desenvolvimento prático de um projeto de engenharia completo.
 
 \begin_layout Itemize
 Ciclo Planejamento e Detalhamento (concepção - especificação e requisitos,
- elaboração, análise, projeto) e Ciclos de Construção (do software usando
- C++, testes do funcionamento do software; manutenção e documentação do
- software desenvolvido).
+ elaboração,
+ análise,
+ projeto) e Ciclos de Construção (do software usando C++,
+ testes do funcionamento do software;
+ manutenção e documentação do software desenvolvido).
  
 \end_layout
 
 \begin_layout Itemize
-Uso de softwares: modeladores (dia, umbrello), editores (kate, gedit), compilado
-res (gcc/g++), montadores (make, cmake).
- IDEs (DEVC++, kdevelop, QtCreator).
- Sistemas de Controle de Versões (git, github).
+Uso de softwares:
+ modeladores (
+\begin_inset CommandInset href
+LatexCommand href
+name "dia"
+target "https://dia-installer.de/"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "umbrello"
+target "https://uml.sourceforge.io/"
+literal "false"
+
+\end_inset
+
+),
+ editores (
+\begin_inset CommandInset href
+LatexCommand href
+name "kate"
+target "https://kate-editor.org/pt-br/"
+literal "false"
+
+\end_inset
+
+,
+ gedit,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "emacs"
+target "https://www.gnu.org/software/emacs/"
+literal "false"
+
+\end_inset
+
+),
+ compiladores (
+\begin_inset CommandInset href
+LatexCommand href
+name "gcc/g++"
+target "https://gcc.gnu.org/"
+literal "false"
+
+\end_inset
+
+),
+ montadores (
+\begin_inset CommandInset href
+LatexCommand href
+name "make"
+target "https://www.gnu.org/software/make/"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "cmake"
+target "https://cmake.org/"
+literal "false"
+
+\end_inset
+
+).
+ IDEs (DEVC++,
+ kdevelop,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "QtCreator"
+target "https://www.qt.io/product/development-tools"
+literal "false"
+
+\end_inset
+
+).
+ Sistemas de Controle de Versões (
+\begin_inset CommandInset href
+LatexCommand href
+name "git"
+target "https://git-scm.com/"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "github"
+target "https://github.com/"
+literal "false"
+
+\end_inset
+
+).
  Entre outras ferramentas usadas no desenvolvimento de softwares de engenharia.
  
 \end_layout
 
 \begin_layout Itemize
-Desenvolvimento das etapas: 4,5.
+Desenvolvimento das etapas:
+ 4,5.
 \end_layout
 
 \end_deeper
@@ -459,6 +604,7 @@ A Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia"
+nolink "false"
 
 \end_inset
 
@@ -468,6 +614,7 @@ reference "fig: Etapas de gestão e desenvolvimento do projeto de engenharia"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -491,8 +638,8 @@ iftoggle{FormatoApresentacaoTRUE}{
 	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral-wide.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -516,8 +663,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapas-Geral.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -564,10 +711,11 @@ Entre as referências utilizadas podemos citar:
 \end_layout
 
 \begin_layout Itemize
-UML: 
+UML:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "prog-UML-blaha,prog-UML-Rumbaugh"
+key "prog-UML-MartimFowler,prog-UML-Rumbaugh,prog-UML-blaha,prog-UML-Sonerville"
 literal "false"
 
 \end_inset
@@ -576,7 +724,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Projetos: 
+Projetos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-introducao,projetos-pmi,projetos-projetoeletrico1,projetos-Woiler"
@@ -588,7 +737,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Gestão de Projetos: 
+Gestão de Projetos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-Abrantes,projetos-gestao,projetos-Heldman,projetos-Menezes,projetos-Pahl,projetos-Valeriano,projetos-Rosa"
@@ -600,7 +750,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Produtos: 
+Produtos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-Abrantes"
@@ -612,8 +763,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Note que existe uma relação direta com o conceito de Nível de Maturidade
- Tecnológica ou TRL (
+Note que existe uma relação direta com o conceito de Nível de Maturidade Tecnológica ou TRL (
 \emph on
 Technology Readiness Level
 \emph default
@@ -621,6 +771,7 @@ Technology Readiness Level
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Nível de Maturidade Tecnológica ou TRL (Technology Readiness Level) "
+nolink "false"
 
 \end_inset
 
@@ -630,6 +781,7 @@ reference "fig: Nível de Maturidade Tecnológica ou TRL (Technology Readiness L
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -640,8 +792,8 @@ status open
 	filename imagens/Etapas/trl-wide-circular.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -706,14 +858,18 @@ name "sec: Etapa 0 - Definição do desafio tecnológico"
 \end_layout
 
 \begin_layout Itemize
-A primeira etapa do processo de desenvolvimento do produto tecnológico é
- a definição, pelo cliente (um professor, um engenheiro de empresa), do
- problema a ser resolvido, o escopo do problema de engenharia.
- Deve apresentar o desafio tecnológico, o objetivo geral e a solução esperada.
+A primeira etapa do processo de desenvolvimento do produto tecnológico é a definição,
+ pelo cliente (um professor,
+ um engenheiro de empresa),
+ do problema a ser resolvido,
+ o escopo do problema de engenharia.
+ Deve apresentar o desafio tecnológico,
+ o objetivo geral e a solução esperada.
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 0 - Definicação do desafio tecnológico"
+nolink "false"
 
 \end_inset
 
@@ -726,8 +882,7 @@ Veja a seguir as sub-etapas associadas:
 \end_layout
 
 \begin_layout Itemize
-O cliente interessado lê as informações da metodologia de desenvolvimento
- adotada na disciplina de "Introdução ao Projeto de Engenharia".
+O cliente interessado lê as informações da metodologia de desenvolvimento adotada na disciplina de "Introdução ao Projeto de Engenharia".
 \end_layout
 
 \begin_deeper
@@ -775,8 +930,7 @@ target "https://github.com/ldsc/LDSC-ProjetoEngenharia-1-PropostaDeDesafio-Titul
 \end_layout
 
 \begin_layout Itemize
-"Modelo para o desenvolvimento do software de engenharia" disponibilizado
- em 
+"Modelo para o desenvolvimento do software de engenharia" disponibilizado em 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto"
@@ -784,18 +938,17 @@ literal "false"
 
 \end_inset
 
- (inclui diretórios e documentos de suporte para desenvolvimento de todo
- projeto de engenharia incluindo códigos e testes).
+ (inclui diretórios e documentos de suporte para desenvolvimento de todo projeto de engenharia incluindo códigos e testes).
 \end_layout
 
 \begin_layout Itemize
-Se ainda tiver dúvidas sobre a metodologia contactar o professor coordenador
- da disciplina
+Se ainda tiver dúvidas sobre a metodologia contactar o professor coordenador da disciplina
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-e-mail: 
+e-mail:
+ 
 \begin_inset CommandInset href
 LatexCommand href
 name "bueno@lenep.uenf.br"
@@ -810,8 +963,7 @@ literal "false"
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Estando em acordo com a metodologia empregada o cliente deve informar o
- interesse em montar um desafio tecnológico.
+Estando em acordo com a metodologia empregada o cliente deve informar o interesse em montar um desafio tecnológico.
  Neste caso enviar a proposta de desafio usando este 
 \begin_inset CommandInset href
 LatexCommand href
@@ -832,7 +984,8 @@ Proposta de Desafio Tecnológico
 
 \begin_deeper
 \begin_layout Itemize
-Título do desafio tecnológico: 
+Título do desafio tecnológico:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -848,7 +1001,8 @@ E-mail:
 \end_layout
 
 \begin_layout Itemize
-Login cadastrado no sit github (se já tiver; vai precisar!).
+Login cadastrado no sit github (se já tiver;
+ vai precisar se quiser acompanhar o desenvolvimento do produto!).
 \end_layout
 
 \begin_layout Itemize
@@ -856,21 +1010,23 @@ Breve resumo/rascunho tecnológico [até 500 palavras]:
 \end_layout
 
 \begin_layout Itemize
-Caso já tenha um ou mais alunos interessados informar o(s) dado(s) do(s)
- mesmo(s)
+Caso já tenha um ou mais alunos interessados informar o(s) dado(s) do(s) mesmo(s)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Nome do aluno: 
+Nome do aluno:
+ 
 \end_layout
 
 \begin_layout Itemize
-Telefone: 
+Telefone:
+ 
 \end_layout
 
 \begin_layout Itemize
-E-mail: 
+E-mail:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -879,56 +1035,62 @@ Informar login do aluno no
 github
 \emph default
 :
+
 \emph on
  
 \end_layout
 
 \end_deeper
 \begin_layout Description
-Nota: limite padrão de até 3 alunos por projeto.
+Nota:
+ limite padrão de até 3 alunos por projeto.
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-O coordenador da disciplina de introdução ao projeto de engenharia analisa
- os dados e dá um retorno.
+O coordenador da disciplina de introdução ao projeto de engenharia analisa os dados e dá um retorno.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Toda proposta deve incluir o desenvolvimento de um software em C++, podendo
- ser um software educativo (simuladores didáticos), um software que resolva
- algoritmos de engenharia (algotritmos computacionais), desenvolvimento
- de uma biblioteca computacional que dê suporte a problemas típicos de engenhari
-a, simuladores de problemas relacionados a engenharia de petróleo, simuladores
- relacionados a problemas de geologia, geoquímica, geofísica, petrofísica,
- engenharia de poço, engenharia de elevação e escoamento, engenharia de
- reservatório; simuladores que tratem de problemas numéricos utilizando
- volumes finitos, diferenças finitas ou elementos finitos.
+Toda proposta deve incluir o desenvolvimento de um software em C++,
+ podendo ser um software educativo (simuladores didáticos),
+ um software que resolva algoritmos de engenharia (algotritmos computacionais),
+ desenvolvimento de uma biblioteca computacional que dê suporte a problemas típicos de engenharia,
+ simuladores de problemas relacionados a engenharia de petróleo,
+ simuladores relacionados a problemas de geologia,
+ geoquímica,
+ geofísica,
+ petrofísica,
+ engenharia de poço,
+ engenharia de elevação e escoamento,
+ engenharia de reservatório;
+ simuladores que tratem de problemas numéricos utilizando volumes finitos,
+ diferenças finitas ou elementos finitos.
  Simuladores que envolvam o uso de IA - Inteligência Artificial e aplicações.
- Em resumo, devem tratar da solução de problemas de engenharia de petróleo
- e/ou modelagem computacional aplicada à engenharia.
+ Em resumo,
+ devem tratar da solução de problemas de engenharia de petróleo e/ou modelagem computacional aplicada à engenharia.
 \end_layout
 
 \begin_layout Itemize
-Uma proposta que esteja fora do escopo das disciplinas de modelagem computaciona
-l será rejeitado.
- Por exemplo, uma proposta que envolva apenas a parte de experimentos de
- laboratório sem o desenvolvimento dos softwares associados será rejeitada.
+Uma proposta que esteja fora do escopo das disciplinas de modelagem computacional será rejeitado.
+ Por exemplo,
+ uma proposta que envolva apenas a parte de experimentos de laboratório sem o desenvolvimento dos softwares associados será rejeitada.
 \end_layout
 
 \begin_layout Itemize
-Caso o rascunho da proposta de desafio tecnológico seja rejeitado, explica
- os motivos, possibilitando correções e reenvio da proposta
+Caso o rascunho da proposta de desafio tecnológico seja rejeitado,
+ explica os motivos,
+ possibilitando correções e reenvio da proposta
 \begin_inset Foot
 status open
 
 \begin_layout Itemize
-Note que esta metodologia pode ser aproveitada para desenvolver projetos
- de engenharia que não sejam de software, mas, neste caso, precisa encontrar
- professores para acompanhar as atividades e não será valido para a disciplina
- 
+Note que esta metodologia pode ser aproveitada para desenvolver projetos de engenharia que não sejam de software,
+ mas,
+ neste caso,
+ precisa encontrar professores para acompanhar as atividades e não será valido para a disciplina 
 \begin_inset CommandInset href
 LatexCommand href
 name "Projeto de Software Aplicado à Engenharia"
@@ -947,13 +1109,14 @@ literal "false"
 
 \begin_deeper
 \begin_layout Description
-Nota: No PPC - Projeto Pedagógico do Curso de Engenharia de Petróleo, o
- TCC - Trabalho de Conclusão de Curso, pode ser desenvolvido de diferentes
- formas: Monografia (indivídual) ou Projeto de Engenharia (indivídual ou
- grupo).
+Nota:
+ No PPC - Projeto Pedagógico do Curso de Engenharia de Petróleo,
+ o TCC - Trabalho de Conclusão de Curso,
+ pode ser desenvolvido de diferentes formas:
+ Monografia (individual) ou Projeto de Engenharia (individual ou grupo).
  Este documento trata apenas do projeto de engenharia.
- Se estiver interessado em desenvolver sua IC - Iniciação Científica no
- formato tradicional de monografia, veja o modelo 
+ Se estiver interessado em desenvolver sua IC - Iniciação Científica no formato tradicional de monografia,
+ veja o modelo 
 \begin_inset Newline newline
 \end_inset
 
@@ -970,15 +1133,16 @@ target "https://github.com/ldsc/ModeloDiretorio-Aluno-Bolsista-TCC-IC-MSC-DSC-Pr
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Caso a proposta de desafio tecnológico seja aprovada, o coordenador da disciplin
-a informa o cliente (e alunos caso já tenha).
+Caso a proposta de desafio tecnológico seja aprovada,
+ o coordenador da disciplina informa o cliente (e alunos caso já tenha).
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 O cliente e alunos que ainda não tem cadastro no 
 \emph on
-github, 
+github,
+ 
 \emph default
 devem se cadastrar
 \emph on
@@ -994,11 +1158,14 @@ Enviar email:
 
 \begin_deeper
 \begin_layout Itemize
-Assunto: Título do projeto.
+Assunto:
+ Título do desafio tecnológico (Título do projeto).
 \end_layout
 
 \begin_layout Itemize
-Conteúdo: nome e login no 
+Conteúdo:
+ nome,
+ email e login no 
 \emph on
 github
 \emph default
@@ -1014,8 +1181,9 @@ O coordenador da disciplina
 
 \begin_deeper
 \begin_layout Itemize
-Clona o modelo de projeto da disciplina, criando um projeto novo, com o
- título do projeto informado (armazenado no site 
+Clona o modelo de projeto da disciplina,
+ criando um projeto novo,
+ com o título do projeto informado (armazenado no site 
 \begin_inset CommandInset href
 LatexCommand href
 name "https://github.com/ldsc"
@@ -1028,14 +1196,12 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Adiciona no projeto o cliente (professor/engenheiro) e alunos (caso já tenha
- os alunos).
+Adiciona no projeto o cliente (professor/engenheiro) e alunos (caso já tenha os alunos).
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Note que para adicionar o cliente e alunos no projeto é necessário o cadastro
- prévio dos mesmos no 
+Note que para adicionar o cliente e alunos no projeto é necessário o cadastro prévio dos mesmos no 
 \emph on
 github
 \emph default
@@ -1048,12 +1214,13 @@ Envia para o cliente e alunos o link do
 \emph on
 github
 \emph default
-, de forma que todos poderão acessar o projeto no modo leitura e escrita.
+,
+ de forma que todos poderão acessar o projeto no modo leitura e escrita.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-O cliente 
+O cliente
 \end_layout
 
 \begin_deeper
@@ -1071,17 +1238,26 @@ Acessa o modelo de documento com a descrição do desafio tecnológico.
 
 \begin_deeper
 \begin_layout Itemize
-Se ainda não tem o LyX instalado deve fazer a instalação.
+Se ainda não tem o LyX instalado deve fazer a instalação (veja 
+\begin_inset CommandInset href
+LatexCommand href
+name "LyX"
+target "https://www.lyx.org/"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
-Caso não saiba usar o LyX pode gerar a proposta de desafio tecnológico usando
- outro editor (como word ou 
+Caso não saiba usar o LyX pode gerar a proposta de desafio tecnológico usando outro editor (como word ou 
 \emph on
 google docs
 \emph default
 ) e repassar para o aluno para que coloque no formato do LyX.
- Os alunos sabem usar o LyX, vem o mesmo na disciplina de projeto.
+ Os alunos sabem usar o LyX,
+ vem o mesmo na disciplina de projeto.
 \end_layout
 
 \end_deeper
@@ -1103,7 +1279,8 @@ github
 
 \begin_deeper
 \begin_layout Itemize
-Comandos: 
+Comandos:
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -1116,7 +1293,8 @@ git add .
 \end_layout
 
 \begin_layout LyX-Code
-git commit -m "Gerado o desafio tecnológico: titulo"
+git commit -m "Gerado o desafio tecnológico:
+ titulo"
 \end_layout
 
 \begin_layout LyX-Code
@@ -1128,7 +1306,8 @@ git push
 status collapsed
 
 \begin_layout Description
-Nota: Se não tiver nenhum conhecimento de 
+Nota:
+ Se não tiver nenhum conhecimento de 
 \emph on
 git/github 
 \emph default
@@ -1136,8 +1315,8 @@ e
 \emph on
 lyx
 \emph default
-, pode acessar diretamente o documento 1-DesafioTecnologico-2-DescricaoDaPropost
-a.lyx e editar o mesmo.
+,
+ pode acessar diretamente o documento 1-DesafioTecnologico-2-DescricaoDaProposta.lyx e editar o mesmo.
  Após concluir a descrição da proposta enviar para o coordenador da disciplina.
 \end_layout
 
@@ -1147,16 +1326,15 @@ a.lyx e editar o mesmo.
 \end_layout
 
 \begin_layout Itemize
-Note que as propostas de desafios tecnológicos podem ser submetidas sem
- que tenhamos alunos interessados, neste caso ficam num banco de dados disponibi
-lizado aos alunos no site do 
+Note que as propostas de desafios tecnológicos podem ser submetidas sem que tenhamos alunos interessados,
+ neste caso ficam num banco de dados disponibilizado aos alunos no site do 
 \emph on
 github
 \emph default
 .
- Na prática a intenção é termos a disposição dos alunos uma série de desafios
- tecnológicos a serem resolvidos, assim a equipe de alunos escolhe um desafio
- que lhe interessa (semelhante a feira de ideias usada na pós-graduação).
+ Na prática a intenção é termos a disposição dos alunos uma série de desafios tecnológicos a serem resolvidos,
+ assim a equipe de alunos escolhe um desafio que lhe interessa (semelhante a feira de ideias criada pelo Prof.
+ Carlos Dias e usada na pós-graduação).
 \end_layout
 
 \end_deeper
@@ -1176,30 +1354,30 @@ Prazo:
 
 \begin_deeper
 \begin_layout Itemize
-O prazo total para execução do projeto é de 18 a 24 meses se estiver limitado
- ao conjunto de disciplinas de modelagem computacional.
+O prazo total para execução do projeto é de 18 a 24 meses se estiver limitado ao conjunto de disciplinas de modelagem computacional.
  
 \end_layout
 
 \begin_layout Itemize
-Projetos de até 36 meses podem ser desenvolvidos se for o trabalho de TCC
- na forma de projeto de engenharia.
+Projetos de até 36 meses podem ser desenvolvidos se for o trabalho de TCC na forma de projeto de engenharia.
  Neste caso teremos mais "ciclos de desenvolvimento" (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+nolink "false"
 
 \end_inset
 
 ).
- Ou seja, um projeto de engenharia desenvolvido nas disciplinas de programação
- poderá ser um TCC se atender as exigencias, normalmente o projeto da disciplina
- é ampliado e melhorado.
+ Ou seja,
+ um projeto de engenharia desenvolvido nas disciplinas de programação poderá ser um TCC se atender as exigências,
+ normalmente o projeto da disciplina é ampliado e melhorado.
  
 \end_layout
 
 \begin_layout Itemize
-Por exemplo, o projeto de engenharia de 
+Por exemplo,
+ os projetos de engenharia dos alunos 
 \begin_inset CommandInset href
 LatexCommand href
 name "Guilherme"
@@ -1208,7 +1386,8 @@ literal "false"
 
 \end_inset
 
- e 
+,
+ 
 \begin_inset CommandInset href
 LatexCommand href
 name "Nikolas"
@@ -1217,7 +1396,18 @@ literal "false"
 
 \end_inset
 
- posteriormente virou o TCC deles.
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Nathan"
+target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
+literal "false"
+
+\end_inset
+
+,
+ posteriormente viraram o TCC deles.
  Adicionaram novas funcionalidades e interface gráfica em Qt.
 \end_layout
 
@@ -1228,10 +1418,10 @@ Escopo:
 
 \begin_deeper
 \begin_layout Itemize
-O projeto deve estar no escopo do curso, competências e habilidades listadas
- no PPC (para ter uma ideia rápida olhe a lista de disciplinas da grade,
- olhe os projetos desenvolvidos pelos professores, olhe as atividades de
- empresas de engenharia que trabalham com inovação científica e tecnológica).
+O projeto deve estar no escopo do curso,
+ competências e habilidades listadas no PPC (para ter uma ideia rápida olhe a lista de disciplinas da grade,
+ olhe os projetos desenvolvidos pelos professores,
+ olhe as atividades de empresas de engenharia que trabalham com inovação científica e tecnológica).
 \end_layout
 
 \begin_layout Itemize
@@ -1239,7 +1429,7 @@ O projeto deve ter orientador ou co-orientador do LENEP.
 \end_layout
 
 \begin_layout Itemize
-O projeto deve envolver o desenvolvimento de um software.
+O projeto deve envolver o desenvolvimento de um software em C++.
 \end_layout
 
 \end_deeper
@@ -1249,8 +1439,8 @@ Softwares utilizados:
 
 \begin_deeper
 \begin_layout Itemize
-LyX: Os documentos do projeto seguem um modelo pré estabelecido que usa
- o editor de texto 
+LyX:
+ Os documentos do projeto seguem um modelo pré estabelecido que usa o editor de texto 
 \begin_inset CommandInset href
 LatexCommand href
 name "LyX"
@@ -1264,8 +1454,7 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-O software editor LyX é apresentado aos alunos em sala de aula e temos manuais
- e vídeos disponibilizadas na internet e 
+O software editor LyX é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibilizadas na internet e 
 \emph on
 google classroom
 \emph default
@@ -1274,14 +1463,13 @@ google classroom
 
 \begin_layout Itemize
 O software editor LyX tem sido usado pelos nossos alunos desde 2004.
- Seu uso requer leitura e aprendizado do uso do LyX (e conceitos básicos
- de TeX/LaTeX).
+ Seu uso requer leitura e aprendizado do uso do LyX (e conceitos básicos de TeX/LaTeX).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Git/Github: Requer o conhecimento do mecanismo de trabalho em equipe usando
- os softwares 
+Git/Github:
+ Requer o conhecimento do mecanismo de trabalho em equipe usando os softwares 
 \emph on
 git
 \emph default
@@ -1308,8 +1496,7 @@ literal "false"
 
  
 \emph default
-é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibilizad
-as na internet e google classroom.
+é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibilizadas na internet e google classroom.
  
 \end_layout
 
@@ -1327,8 +1514,7 @@ literal "false"
 
 
 \emph default
- é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibiliza
-das na internet e 
+ é apresentado aos alunos em sala de aula e temos manuais e vídeos disponibilizadas na internet e 
 \emph on
 google classroom
 \emph default
@@ -1337,7 +1523,8 @@ google classroom
 
 \end_deeper
 \begin_layout Itemize
-Umbrello: A parte de modelagem envolve o uso do modelador 
+Umbrello:
+ A parte de modelagem envolve o uso do modelador 
 \emph on
 
 \begin_inset CommandInset href
@@ -1354,8 +1541,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Compilador: A parte de desenvolvimento do software requer conhecimentos
- de 
+Compilador:
+ A parte de desenvolvimento do software requer conhecimentos de 
 \begin_inset CommandInset href
 LatexCommand href
 name "C++"
@@ -1364,7 +1551,8 @@ literal "false"
 
 \end_inset
 
-, da 
+,
+ da 
 \begin_inset CommandInset href
 LatexCommand href
 name "biblioteca padrão de C++"
@@ -1382,7 +1570,8 @@ literal "false"
 
 \end_inset
 
-, 
+,
+ 
 \begin_inset CommandInset href
 LatexCommand href
 name "clang"
@@ -1391,15 +1580,37 @@ literal "false"
 
 \end_inset
 
-), editores específicos (
-\emph on
-emacs
-\emph default
-, 
-\emph on
-vscode
-\emph default
-), IDEs.
+),
+ editores específicos (
+\begin_inset CommandInset href
+LatexCommand href
+name "emacs"
+target "https://www.gnu.org/software/emacs/"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "vscode"
+target "https://code.visualstudio.com/"
+literal "false"
+
+\end_inset
+
+),
+ IDEs (
+\begin_inset CommandInset href
+LatexCommand href
+name "Qt-Creator"
+target "https://www.qt.io/product/development-tools"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -1407,6 +1618,7 @@ Uma lista com todos os softwares é apresentada na seção
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lista-softwares-utilizados"
+nolink "false"
 
 \end_inset
 
@@ -1415,19 +1627,24 @@ reference "sec:Lista-softwares-utilizados"
 
 \end_deeper
 \begin_layout Itemize
-Modelagem física-matemática, modelagem química-matemática, modelagem numérica-co
-mputacional, modelagem de engenharia
+Modelagem física-matemática,
+ modelagem química-matemática,
+ modelagem numérica-computacional,
+ modelagem de engenharia
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Os membros da equipe devem compreender os conceitos de matemática, física,
- química, algoritmos e de engenharia associados ao desafio tecnológico escolhido.
+Os membros da equipe devem compreender os conceitos de matemática,
+ física,
+ química,
+ algoritmos e de engenharia associados ao desafio tecnológico escolhido.
 \end_layout
 
 \begin_layout Itemize
-No Capítulo de Elaboração os alunos devem desenvolver todo o raciocínio
- lógico, apresentar as ideias, as equações e modelos.
+No Capítulo de Elaboração os alunos devem desenvolver todo o raciocínio lógico,
+ apresentar as ideias,
+ as equações e modelos.
 \end_layout
 
 \end_deeper
@@ -1451,9 +1668,11 @@ O tema do projeto deve ser de interesse dos membros da equipe.
 \end_layout
 
 \begin_layout Itemize
-Fujam de temas que parecem fáceis mas não são interessantes (escolha algo
- que gosta, que tem interesse efetivo, pois como é um trabalho de longo
- prazo, para se manter motivado, o tema tem de ser de seu interesse).
+Fujam de temas que parecem fáceis mas não são interessantes (escolha algo que gosta,
+ que tem interesse efetivo,
+ pois como é um trabalho de longo prazo,
+ para se manter motivado,
+ o tema tem de ser de seu interesse).
 \end_layout
 
 \begin_layout Itemize
@@ -1461,20 +1680,17 @@ Os membros da equipe devem conseguir se reunir fisicamente e na forma
 \emph on
 online
 \emph default
- para esclarecimento das atividades desenvolvidas e apoio mútuo no esclareciment
-o de dúvidas dos problemas associados (teóricos e práticos).
+ para esclarecimento das atividades desenvolvidas e apoio mútuo no esclarecimento de dúvidas dos problemas associados (teóricos e práticos).
 \end_layout
 
 \begin_layout Itemize
-Um aluno que tenha reprovado numa das disciplinas poderá continuar na mesma
- equipe e projeto (mas a defesa final individual só ocorre quando matriculado
- oficialmente na disciplina).
+Um aluno que tenha reprovado numa das disciplinas poderá continuar na mesma equipe e projeto (mas a defesa final individual só ocorre quando matriculado oficialmente na disciplina).
  
 \end_layout
 
 \begin_layout Itemize
-O aluno também poderá mudar de equipe e tema, mas isso deve ser evitado
- pois usualmente gera atrasos.
+O aluno também poderá mudar de equipe e tema,
+ mas isso deve ser evitado pois usualmente gera atrasos.
 \end_layout
 
 \end_deeper
@@ -1485,9 +1701,7 @@ Defesas:
 
 \begin_deeper
 \begin_layout Itemize
-O projeto tem defesa em equipe (ideia geral) e defesas individuais (para
- confirmar a efetiva participação e a capacidade de desenvolver novas coisas
- solicitadas pelo professor).
+O projeto tem defesa em equipe (ideia geral) e defesas individuais (para confirmar a efetiva participação e a capacidade de desenvolver novas coisas solicitadas pelo professor).
 \end_layout
 
 \end_deeper
@@ -1495,6 +1709,7 @@ O projeto tem defesa em equipe (ideia geral) e defesas individuais (para
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1505,8 +1720,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo.png
 	lyxscale 50
 	width 100text%
-	height 80theight%
 	keepAspectRatio
+	special height=0.8\textheight
 
 \end_inset
 
@@ -1538,7 +1753,9 @@ name "fig: Etapa 0 - Definicação do desafio tecnológico"
 \end_layout
 
 \begin_layout Description
-Nota: é possível dar continuidade a um projeto antigo, já desenvolvido,
+Nota:
+ é possível dar continuidade a um projeto antigo,
+ já desenvolvido,
  neste caso consulte a página 
 \begin_inset CommandInset href
 LatexCommand href
@@ -1586,15 +1803,18 @@ name "sec: Etapa 1 - Elaboração do Pré-Projeto - esboço"
 \end_layout
 
 \begin_layout Standard
-Após aprovação do desafio tecnológico, criação do projeto no 
+Após aprovação do desafio tecnológico,
+ criação do projeto no 
 \emph on
 github
 \emph default
- e adição dos membros, a equipe deve elaborar o pré-projeto.
+ e adição dos membros,
+ a equipe deve elaborar o pré-projeto.
  A sequência é apresentada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 1 - Elaboração do Pré-Projeto"
+nolink "false"
 
 \end_inset
 
@@ -1602,13 +1822,14 @@ reference "fig: Etapa 1 - Elaboração do Pré-Projeto"
 \end_layout
 
 \begin_layout Description
-Nota: este modelo segue como exemplo o modelo de desafio tecnológico adotado
- pela Petrobras.
+Nota:
+ este modelo segue como exemplo o modelo de desafio tecnológico adotado pela Petrobras.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1619,8 +1840,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-0-ClienteDefineEscopo-Etapa-1-Elaboracao-Pre-Projeto.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -1652,6 +1873,16 @@ name "fig: Etapa 1 - Elaboração do Pré-Projeto"
 \end_layout
 
 \begin_layout Itemize
+Comunicação
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Após aprovação do desafio tecnológico montamos um grupo de telegram que é usado para troca de informações exclusivas do projeto.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 A equipe elabora o pré-projeto.
 \end_layout
 
@@ -1665,19 +1896,17 @@ Os encaminhamentos são sempre pelo
 \emph on
 github
 \emph default
-.
+ seguidos de comunicado pelo telegram (e/ou email).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-O pré-projeto deve ser aprovado pelo cliente que elaborou o desafio e pelo
- coordenador da disciplina.
+O pré-projeto deve ser aprovado pelo cliente que elaborou o desafio e pelo coordenador da disciplina.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Note que temos um desafio tecnológico definido pelo cliente e pré-aprovado
- pelo professor e um projeto no 
+Note que temos um desafio tecnológico definido pelo cliente e pré-aprovado pelo professor e um projeto no 
 \emph on
 github 
 \emph default
@@ -1687,8 +1916,7 @@ github
 
 \begin_layout Itemize
 Note que os alunos elaboraram um pré-projeto (rascunho de solução preliminar),
- tendo como base o desafio tecnológico e seu entendimento do que deve ser
- feito.
+ tendo como base o desafio tecnológico e seu entendimento do que deve ser feito.
 \end_layout
 
 \begin_layout Itemize
@@ -1696,20 +1924,18 @@ Note que este pré-projeto deve ser aprovado pelo cliente.
 \end_layout
 
 \begin_layout Itemize
-Esta análise é necessária para evitarmos problemas de entendimento do que
- deve ser feito.
+Esta análise é necessária para evitarmos problemas de entendimento do que deve ser feito.
  
 \end_layout
 
 \begin_layout Itemize
-Tanto o cliente quando a equipe de alunos devem estar de acordo com o que
- será realizado antes da elaboração do projeto detalhado/executivo
+Tanto o cliente quando a equipe de alunos devem estar de acordo com o que será realizado antes da elaboração do projeto detalhado/executivo
 \begin_inset Foot
 status open
 
 \begin_layout Itemize
-Em engenharia um projeto detalhado é chamado de projeto executivo, o mesmo
- requer muito trabalho para ser elaborado e normalmente é cobrado.
+Em engenharia um projeto detalhado é chamado de projeto executivo,
+ o mesmo requer muito trabalho para ser elaborado e normalmente é cobrado.
 \end_layout
 
 \end_inset
@@ -1720,19 +1946,16 @@ Em engenharia um projeto detalhado é chamado de projeto executivo, o mesmo
 
 \begin_deeper
 \begin_layout Itemize
-Notem que esta sequência é a sequência adotada pela Petrobras no seu sistema
- de desafios.
- Somente depois de aprovado o pré-projeto é que temos acesso ao sigitec
- para montagem do projeto com definição de equipamentos, pessoal, orçamentos
- e cronogramas.
+Notem que esta sequência é a sequência adotada pela Petrobras no seu sistema de desafios.
+ Somente depois de aprovado o pré-projeto é que temos acesso ao sigitec para montagem do projeto com definição de equipamentos,
+ pessoal,
+ orçamentos e cronogramas.
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Standard
-Notem que temos alguns requisitos que devem ser aprimorados nas disciplinas
- e ao longo do desenvolvimento do projeto para efetivo aprendizado das competênc
-ias e habilidades associadas ao desenvolvimento de projetos de engenharia.
+Notem que temos alguns requisitos que devem ser aprimorados nas disciplinas e ao longo do desenvolvimento do projeto para efetivo aprendizado das competências e habilidades associadas ao desenvolvimento de projetos de engenharia.
 \end_layout
 
 \begin_layout Itemize
@@ -1781,8 +2004,7 @@ github
 \end_layout
 
 \begin_layout Itemize
-Sugere-se que criem seu próprio repositório e pratiquem os comandos e ações
- de uso do 
+Sugere-se que criem seu próprio repositório e pratiquem os comandos e ações de uso do 
 \emph on
 git 
 \emph default
@@ -1794,16 +2016,17 @@ antes de executar os comandos diretamente no projeto.
 \end_layout
 
 \begin_layout Itemize
-Matenham 
+Matenha
 \emph on
-backups 
+ backups 
 \emph default
 dos arquivos.
 \end_layout
 
 \begin_layout Itemize
-Importante executar os comandos com calma, prestando atenção, lendo as mensagens
- apresentadas.
+Importante executar os comandos com calma,
+ prestando atenção,
+ lendo as mensagens apresentadas.
 \end_layout
 
 \end_deeper
@@ -1863,13 +2086,16 @@ name "sec: Etapa 2 - Elaboração do contrato - detalhamento do pré-projeto"
 \end_layout
 
 \begin_layout Standard
-Aprovado o pré-projeto podemos escrever o projeto em sí, o mesmo inclui
- mais detalhes das instituições envolvidas, objetivos específicos, justificativa
- e resultados esperados, além de cronograma e orçamento.
+Aprovado o pré-projeto podemos escrever o projeto em sí,
+ o mesmo inclui mais detalhes das instituições envolvidas,
+ objetivos específicos,
+ justificativa e resultados esperados,
+ além de cronograma e orçamento.
  A sequência é detalhada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Elaboração do contrato - detalhamento do pré-projeto"
+nolink "false"
 
 \end_inset
 
@@ -1879,6 +2105,7 @@ reference "fig: Elaboração do contrato - detalhamento do pré-projeto"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1889,8 +2116,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-2-ElaboracaoDocumentoProjetoEContrato.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -1944,14 +2171,14 @@ O cronograma deve ser realista.
 
 \begin_layout Itemize
 O orçamento deve ser bem realizado.
- Por exemplo, para realização do projeto serão necessários computadores
- com determinada configuração, os mesmos devem ser orçados
+ Por exemplo,
+ para realização do projeto serão necessários computadores com determinada configuração,
+ os mesmos devem ser orçados
 \begin_inset Foot
 status open
 
 \begin_layout Itemize
-Esta etapa cobre requisitos da grade associados a temas de administração
- que foram exigidos para aprovação do projeto pedagógico.
+Esta etapa cobre requisitos da grade associados a temas de administração que foram exigidos para aprovação do projeto pedagógico.
 \end_layout
 
 \end_inset
@@ -1961,8 +2188,12 @@ Esta etapa cobre requisitos da grade associados a temas de administração
 \end_layout
 
 \begin_layout Itemize
-Toda parte conceitual precisa ser melhor detalhada, não pode haver dúvida
- sobre o que de fato vai ser feito.
+Toda parte conceitual precisa ser melhor detalhada,
+ não pode haver dúvida sobre o que de fato vai ser feito.
+\end_layout
+
+\begin_layout Itemize
+Havendo possibilidade a empresa interessada poderá pagar bolsas aos alunos durante o período de execução do projeto (modelo de empresa júnior).
 \end_layout
 
 \end_deeper
@@ -1996,8 +2227,7 @@ name "sec: Etapa 3 - Modelagem de Engenharia"
 \end_layout
 
 \begin_layout Standard
-A etapa de modelagem de engenharia é apresentada em detalhes na disciplina
- 
+A etapa de modelagem de engenharia é apresentada em detalhes na disciplina 
 \emph on
 
 \begin_inset CommandInset href
@@ -2010,8 +2240,8 @@ literal "false"
 
 
 \emph default
-, os alunos aprendem os conceitos associados e colocam em prática fazendo
- modelos e diagramas.
+,
+ os alunos aprendem os conceitos associados e colocam em prática fazendo modelos e diagramas.
  Também é material de trabalhos entregues via 
 \emph on
 google classroom 
@@ -2038,13 +2268,13 @@ literal "false"
 \emph on
 Unified Modeling Language
 \emph default
-, em português 
+,
+ em português 
 \emph on
 Linguagem de Modelagem Unificada
 \emph default
 .
- Detalhas da UML consulte o site da organização internacional que a regulamenta
- 
+ Para maiores detalhas consulte o site da organização internacional que a regulamenta a UML - 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.uml.org/"
@@ -2059,6 +2289,7 @@ A sequência desta etapa é detalhada na Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 3 - Modelagem de Engenharia"
+nolink "false"
 
 \end_inset
 
@@ -2068,6 +2299,7 @@ reference "fig: Etapa 3 - Modelagem de Engenharia"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -2078,8 +2310,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-3-ModelagemDeEngenharia.png
 	lyxscale 50
 	width 100text%
-	height 80theight%
 	keepAspectRatio
+	special height=0.8\textheight
 
 \end_inset
 
@@ -2129,48 +2361,92 @@ newpage}{}
 \end_layout
 
 \begin_layout Itemize
-Nesta etapa os alunos devem desenvolver um modelo abrangente do sistema
- de software a ser desenvolvido.
+Nesta etapa os alunos devem desenvolver um modelo abrangente do sistema de software a ser desenvolvido.
  Passa pelas etapas de:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Concepção: especificação, requisitos e diagramas de caso de uso.
+
+\series bold
+Concepção
+\series default
+:
+ especificação,
+ requisitos e diagramas de caso de uso.
 \end_layout
 
 \begin_layout Itemize
-Elaboração: estudo do problema em livros de engenharia.
+
+\series bold
+Elaboração
+\series default
+:
+ estudo do problema em livros de engenharia.
 \end_layout
 
 \begin_layout Itemize
-Análise Orientada a Objeto: desenvolvimento dos modelos.
+
+\series bold
+Análise Orientada a Objeto
+\series default
+:
+ desenvolvimento dos modelos.
 \end_layout
 
 \begin_layout Itemize
-Projeto do Sistema: definição de protocolos, recursos, controle e plataformas,
+
+\series bold
+Projeto do Sistema
+\series default
+:
+ definição de protocolos,
+ recursos,
+ controle e plataformas,
  padrões e ferramentas.
 \end_layout
 
 \begin_layout Itemize
-Projeto Orientado a Objeto: revisão dos modelos considerando as decisões
- do projeto do sistema.
+
+\series bold
+Projeto Orientado a Objeto
+\series default
+:
+ revisão dos modelos considerando as decisões do projeto do sistema.
 \end_layout
 
 \begin_layout Itemize
-Realização de Testes Lógicos: testar logicamente os modelos desenvolvidos.
+
+\series bold
+Realização de Testes Lógicos
+\series default
+:
+ testar logicamente os modelos desenvolvidos.
 \end_layout
 
 \begin_layout Itemize
-Documentação: geração dos documentos de modelagem e diagramas associados.
+
+\series bold
+Documentação
+\series default
+:
+ geração dos documentos de modelagem e diagramas associados.
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Geração da Lista de Características ou 
 \emph on
 features
+\series default
 \emph default
-: lista das funcionalidades que serão implementados.
+ (
+\series bold
+BACKLOG
+\series default
+):
+ lista das funcionalidades que serão implementados.
 \end_layout
 
 \end_deeper
@@ -2198,19 +2474,21 @@ Observações:
 
 \begin_deeper
 \begin_layout Itemize
-Um dos objetivos desta modelagem é o aluno, futuro engenheiro, aprender
- a lidar com o todo e suas partes, com a separação da estrutura (partes
- estáticas), e a parte dinâmica (objetos se relacionando).
+Um dos objetivos desta modelagem é o aluno,
+ futuro engenheiro,
+ aprender a lidar com o todo e suas partes,
+ com a separação da estrutura (partes estáticas),
+ e a parte dinâmica (objetos se relacionando).
  Identificar e ver o sistema dos pontos de vista macro e micro.
 \end_layout
 
 \begin_layout Itemize
-O modelo repassado aos alunos facilita este trabalho, pois além de já estar
- formatado contém dicas e sugestões práticas.
+O modelo repassado aos alunos facilita este trabalho,
+ pois além de já estar formatado contém dicas e sugestões práticas.
 \end_layout
 
 \begin_layout Itemize
-Temos mais de 40 projetos disponibilizadas no site do 
+Temos mais de 50 projetos disponibilizadas no site do 
 \begin_inset CommandInset href
 LatexCommand href
 name "https://github.com/ldsc"
@@ -2219,14 +2497,17 @@ literal "false"
 
 \end_inset
 
-, a grande maioria desenvolvida por ex-alunos.
+,
+ a grande maioria desenvolvida por ex-alunos.
 \end_layout
 
 \begin_layout Itemize
 É fundamental gerar uma documentação que dê uma visão clara de todo o sistema,
- mas, nesta etapa, não é necessário pormenorizar tanto.
- Por exemplo, os diagramas de máquina de estado e diagramas de atividades
- aparecem pouco aqui.
+ mas,
+ nesta etapa,
+ não é necessário pormenorizar tanto.
+ Por exemplo,
+ os diagramas de máquina de estado e diagramas de atividades aparecem pouco aqui.
  O detalhamento da parte micro será feita nos ciclos de desenvolvimento.
  
 \end_layout
@@ -2264,7 +2545,8 @@ newpage}{}
 \end_layout
 
 \begin_layout Section
-Etapa 4 - Ciclos de planejamento, detalhamento e construção/implementação
+Etapa 4 - Ciclos de planejamento,
+ detalhamento e construção/implementação
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
@@ -2279,6 +2561,7 @@ Esta etapa é apresentada na Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
+nolink "false"
 
 \end_inset
 
@@ -2308,17 +2591,16 @@ literal "false"
 
 
 \emph default
- para desenvolver os modelos micro do software (ex.: diagramas de atividades).
+ para desenvolver os modelos micro do software (ex.:
+ diagramas de atividades).
 \end_layout
 
 \begin_layout Itemize
-É neste momento que os algorítmos de cálculo são detalhados através dos
- diagramas de atividade (nome classe::NomeMétodo).
+É neste momento que os algoritmos de cálculo são detalhados através dos diagramas de atividade (nome classe::NomeMétodo).
 \end_layout
 
 \begin_layout Itemize
-Havendo necessidade detalhe o comportamento dos objetos usando diagramas
- de máquina de estado (nome classe).
+Havendo necessidade detalhe o comportamento dos objetos usando diagramas de máquina de estado (nome classe).
 \end_layout
 
 \end_deeper
@@ -2328,8 +2610,8 @@ Ciclo de construção:
 
 \begin_deeper
 \begin_layout Itemize
-Usa-se o modelador UML para gerar uma casca inicial do software para diferentes
- linguagens de programação, incluindo C++.
+Use o modelador UML para gerar uma casca inicial do software para diferentes linguagens de programação,
+ incluindo C++.
 \end_layout
 
 \begin_deeper
@@ -2338,17 +2620,19 @@ Note que o
 \emph on
 umbrello
 \emph default
- pode exportar e importar códigos, sendo possível atualizar os diagramas
- após alterações nos códigos.
+ pode exportar e importar códigos,
+ sendo possível atualizar os diagramas após alterações nos códigos.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Usa-se uma IDE ou editor de texto para implementar os códigos (ex: 
+Use uma IDE ou editor de texto para implementar os códigos (ex:
+ 
 \emph on
 vscode
 \emph default
-, 
+,
+ 
 \emph on
 emacs
 \emph default
@@ -2356,7 +2640,7 @@ emacs
 \end_layout
 
 \begin_layout Itemize
-Usa-se um compilador.
+Use um compilador.
 \end_layout
 
 \begin_layout Itemize
@@ -2364,6 +2648,7 @@ Uma lista completa dos softwares utilizados é encontrada na seção
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lista-softwares-utilizados"
+nolink "false"
 
 \end_inset
 
@@ -2374,6 +2659,7 @@ reference "sec:Lista-softwares-utilizados"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -2384,8 +2670,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-4-DesenvolvimentoDoProjeto-ConstrucaoFeaturesEmCiclos.png
 	lyxscale 50
 	width 100text%
-	height 95theight%
 	keepAspectRatio
+	special height=0.95\textheight
 
 \end_inset
 
@@ -2396,7 +2682,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Etapa 4 - Ciclos de planejamento, detalhamento e construção
+Etapa 4 - Ciclos de planejamento,
+ detalhamento e construção
 \begin_inset CommandInset label
 LatexCommand label
 name "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
@@ -2417,8 +2704,9 @@ name "fig: Etapa 4 - Ciclos de planejamento, detalhamento e construção"
 \end_layout
 
 \begin_layout Itemize
-A cada ciclo de planejamento, detalhamento e construção, a equipe seleciona
- um grupo de funcionalidades/
+A cada ciclo de planejamento,
+ detalhamento e construção,
+ a equipe seleciona um grupo de funcionalidades/
 \emph on
 features
 \emph default
@@ -2426,36 +2714,35 @@ features
 \end_layout
 
 \begin_layout Itemize
-O conjunto de funcionalidades a serem implementadas devem "caber" dentro
- do prazo do ciclo e estar de acordo com o cronograma.
+O conjunto de funcionalidades a serem implementadas devem "caber" dentro do prazo do ciclo e estar de acordo com o cronograma.
 \end_layout
 
 \begin_layout Itemize
-A seguir é feito um planejamento detalhado das características a serem implement
-adas, refinando os diagramas e adicionando novos diagramas, como exemplo
- diagramas de máquina de estado mais detalhados e diagramas de atividades.
+A seguir é feito um planejamento detalhado das características a serem implementadas,
+ refinando os diagramas e adicionando novos diagramas,
+ como exemplo diagramas de máquina de estado mais detalhados e diagramas de atividades.
  É neste momento que diversos detalhes micros aparecem e devem ser escritos,
- tanto a estrutura (diagrama de classes), como a dinâmica (diagramas de
- comunicação, máquina de estado e atividades) são revistos.
+ tanto a estrutura (diagrama de classes),
+ como a dinâmica (diagramas de comunicação,
+ máquina de estado e atividades) são revistos.
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-Nota: Lembre-se que os diagramas visam dar aos membros da equipe de engenharia
- uma visão clara dos conceitos/classes/funcionalidades a serem implementadas.
- Não é necessário exagerar, criando diagramas para conceitos simples ou
- algoritmos e rotinas amplamente conhecidos.
- Uma forma de identificar se determinado diagrama é necessário é verificar
- se todos os membros da equipe entendem determinado conceito sem os diagramas,
- caso afirmativo, o diagrama é desnecessário.
- Faça diagramas para partes mais complexas e que requeiram algoritmos mais
- exigentes.
+Nota:
+ Lembre-se que os diagramas visam dar aos membros da equipe de engenharia uma visão clara dos conceitos/classes/funcionalidades a serem implementadas.
+ Não é necessário exagerar,
+ criando diagramas para conceitos simples ou algoritmos e rotinas amplamente conhecidos.
+ Uma forma de identificar se determinado diagrama é necessário é verificar se todos os membros da equipe entendem determinado conceito sem os diagramas,
+ caso afirmativo,
+ o diagrama é desnecessário.
+ Faça diagramas para partes mais complexas e que requeiram algoritmos mais exigentes.
+ Na documentação você pode acrescentar link para sites que incluem informações detalhadas sobre determinado ponto do projeto.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-A construção ou implementação dos códigos deve ser feita seguindo-se as
- normas e procedimentos padrões usando as melhores práticas:
+A construção ou implementação dos códigos deve ser feita seguindo-se as normas e procedimentos padrões usando as melhores práticas:
 \end_layout
 
 \begin_deeper
@@ -2469,7 +2756,8 @@ literal "false"
 
 \end_inset
 
-, 
+,
+ 
 \begin_inset CommandInset href
 LatexCommand href
 name "vscode"
@@ -2478,16 +2766,16 @@ literal "false"
 
 \end_inset
 
-, com plugins e funcionalidades adequadas instaladas.
- Escolha um editor, a seguir leia os manuais e tutoriais de uso para um
- melhor rendimento.
+,
+ com plugins e funcionalidades adequadas instaladas.
+ Escolha um editor,
+ a seguir leia os manuais e tutoriais de uso para um melhor rendimento.
 \end_layout
 
 \begin_layout Itemize
-Existem centenas de IDEs, só podemos dar ajuda nos padrões utilizados na
- disciplina.
- Isto significa que se a equipe/aluno usar outras ferramentas faz isso por
- sua conta e risco pois não terá nenhum tipo de suporte.
+Existem centenas de IDEs,
+ só podemos dar ajuda nos padrões utilizados na disciplina.
+ Isto significa que se a equipe/aluno usar outras ferramentas faz isso por sua conta e risco pois não terá nenhum tipo de suporte.
 \end_layout
 
 \begin_layout Itemize
@@ -2502,14 +2790,12 @@ Visa ensinar a usar editores profissionais.
 
 \end_deeper
 \begin_layout Itemize
-Os modelos UML devem ser gerados em plataforma que permita que alunos que
- venham a fazer a disciplina no futuro possam manipular os arquivos.
+Os modelos UML devem ser gerados em plataforma que permita que alunos que venham a fazer a disciplina no futuro possam manipular os arquivos.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-A ideia é que teremos diversas versões do software desenvolvidas de forma
- incremental por diferentes equipes.
+A ideia é que teremos diversas versões do software desenvolvidas de forma incremental por diferentes equipes.
 \end_layout
 
 \begin_layout Itemize
@@ -2520,6 +2806,10 @@ umbrello
  é necessária para permitir a continuidade do projeto por outras equipes.
 \end_layout
 
+\begin_layout Itemize
+O umbrello é software livre e existe a muitos anos.
+\end_layout
+
 \end_deeper
 \end_deeper
 \begin_layout Itemize
@@ -2528,11 +2818,75 @@ Após implementar os códigos é preciso realizar os testes.
 
 \begin_deeper
 \begin_layout Itemize
-Implemente os testes de unidade (teste das classes desenvolvidas).
+Implemente os testes de unidade (teste das funções e classes desenvolvidas).
+ Veja 
+\begin_inset CommandInset href
+LatexCommand href
+name "este vídeo"
+target "https://www.youtube.com/watch?v=GGPxyjQ9dug"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ferramentas usadas para teste:
 \end_layout
 
 \begin_layout Itemize
-Implemente os testes de integração.
+Catch2 (arquivo único,
+ simples e expressiva,
+ boa para testes de unidade e comportamente (BDD))
+\end_layout
+
+\begin_layout Itemize
+Google Test (excelente para iniciantes)
+\end_layout
+
+\begin_layout Itemize
+Boost.Test (mais pesada e completa,
+ requer experiência)
+\end_layout
+
+\begin_layout Itemize
+CTest (vinculada ao cmake,
+ é indicada para projetos que já usam o cmake,
+ realizada testes de integração e testes de sistema,
+ não é muito efetiva para testes de unidade;
+ é mais complexa)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www.gnu.org/software/dejagnu/manual/Unit-testing.html
+\end_layout
+
+\begin_layout Plain Layout
+https://github.com/unittest-cpp/unittest-cpp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Implemente os testes de integração (módulos e componentes do sistema,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "ajuda"
+target "https://www.objective.com.br/insights/teste-de-integracao/#:~:text=O%20teste%20de%20integra%C3%A7%C3%A3o%20%C3%A9%20geralmente%20realizado%20em%20fases%2C%20come%C3%A7ando,testadores%20e%20engenheiros%20de%20software."
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -2551,17 +2905,17 @@ Não deixe para fazer os testes do sistema só no final.
 
 \end_deeper
 \begin_layout Itemize
-No final de cada ciclo de planejamento/detalhamento/construção a equipe
- deve realizar uma reunião física para discutir o andamento do projeto.
+No final de cada ciclo de planejamento/detalhamento/construção a equipe deve realizar uma reunião física para discutir o andamento do projeto e realizar a entrega da versão (sub-produto).
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Conversar sobre o que foi feito, o que falta fazer e correções de rumo (ajustes).
+Conversar sobre o que foi feito,
+ o que falta fazer e correções de rumo (ajustes).
 \end_layout
 
 \begin_layout Itemize
-Fazer uma apresentação informal da evolução.
+Fazer uma apresentação informal da evolução do sistema.
 \end_layout
 
 \begin_layout Itemize
@@ -2574,6 +2928,15 @@ literal "false"
 
 \end_inset
 
+,
+ o cliente deve participar.
+\end_layout
+
+\begin_layout Itemize
+Idealmente o cliente deve realizar testes com o software desenvolvido e dar um retorno/
+\emph on
+feedback
+\emph default
 .
 \end_layout
 
@@ -2612,6 +2975,7 @@ A sequência é detalhada na Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Etapa 5 - Entrega do produto"
+nolink "false"
 
 \end_inset
 
@@ -2621,6 +2985,7 @@ reference "fig: Etapa 5 - Entrega do produto"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -2631,8 +2996,8 @@ status open
 	filename imagens/Etapas/ProjetoEngenharia-Etapa-5-EntregaDoProduto.png
 	lyxscale 50
 	width 100text%
-	height 80theight%
 	keepAspectRatio
+	special height=0.8\textheight
 
 \end_inset
 
@@ -2682,8 +3047,7 @@ newpage}{}
 \end_layout
 
 \begin_layout Itemize
-A versão final do sistema de software deve passar por um sistema de testes
- pormenorizados.
+A versão final do sistema de software deve passar por um sistema de testes pormenorizados.
 \end_layout
 
 \begin_deeper
@@ -2696,8 +3060,7 @@ Testar se todas os requisitos foram atendidos.
 \end_layout
 
 \begin_layout Itemize
-Testar se cada uma das classes desenvolvidas atende seus requisitos e esta
- completamente funcional.
+Testar se cada uma das classes desenvolvidas atende seus requisitos e esta completamente funcional.
 \end_layout
 
 \begin_layout Itemize
@@ -2706,14 +3069,11 @@ Testar exemplos reais aplicados a engenharia.
 
 \begin_deeper
 \begin_layout Itemize
-No mundo real a quantidade de dados a serem processados numa simulação de
- engenharia costuma ser enorme.
+No mundo real a quantidade de dados a serem processados numa simulação de engenharia costuma ser enorme.
  Normalmente os alunos não tem em casa computadores para atender esta demanda.
- A solução é criar um conjunto de dados reduzido e que possa ser utilizado
- nos testes.
- Mas para versão final é necessário rodar o simulador desenvolvido com dados
- reais.
- Isto permite verificar a estabilidade do sistema e tempos de procesamento.
+ A solução é criar um conjunto de dados reduzido e que possa ser utilizado nos testes.
+ Mas para versão final é necessário rodar o simulador desenvolvido com dados reais.
+ Isto permite verificar a estabilidade do sistema e tempos de processamento.
 \end_layout
 
 \end_deeper
@@ -2723,16 +3083,17 @@ Testar se os manuais estão completos.
 
 \begin_deeper
 \begin_layout Itemize
-Outras pessoas devem ter acesso ao projeto, realizar a leitura, instalação
- e testes do sistema.
- O ideal é que este teste de instalação e uso seja feito por 3 pessias diferente
-s em sistemas diferentes (ex: Windows, GNU/Linux, Mac OS X).
+Outras pessoas devem ter acesso ao projeto,
+ realizar a leitura,
+ instalação e testes do sistema.
+ O ideal é que este teste de instalação e uso seja feito por 3 pessoas diferentes em sistemas diferentes (ex:
+ Windows,
+ GNU/Linux,
+ Mac OS X).
 \end_layout
 
 \begin_layout Itemize
-Uma equipe A pode passar seu manual do usuário para a equipe B instalar
- e testar o software e a equipe B pode passar seu manual para a equipe A
- instalar e testar.
+Uma equipe A pode passar seu manual do usuário para a equipe B instalar e testar o software e a equipe B pode passar seu manual para a equipe A instalar e testar.
 \end_layout
 
 \end_deeper
@@ -2747,20 +3108,19 @@ literal "false"
 
 \end_inset
 
- a equipe deve entregar a versão final com 15 dias de antecedência e marcar
- a data da defesa.
+ a equipe deve entregar a versão final com 15 dias de antecedência e marcar a data da defesa.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Os 15 dias são necessários pois o professor precisa de tempo para ler, instalar
- e testar o sistema (executar os testes implementados no manual).
+Os 15 dias são necessários pois o professor precisa de tempo para ler,
+ instalar e testar o sistema (executar os testes implementados no manual).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Caso o aluno ou equipe queiram dar continuidade ao projeto para apresentar
- o mesmo como TCC, devem considerar a adição de novas funcionalidades/
+Caso o aluno ou equipe queiram dar continuidade ao projeto para apresentar o mesmo como TCC,
+ devem considerar a adição de novas funcionalidades/
 \emph on
 features
 \emph default
@@ -2770,12 +3130,14 @@ features
 
 \begin_deeper
 \begin_layout Itemize
-Um exemplo que já tivemos foi de alunos que na disciplina de programação
- prática entregaram um sistema totalmente funcional e defenderam.
- Depois adicionaram novas funcionalidades e uma interface gráfica amigável
- em Qt e defenderam como TCC.
- Ou seja, é necessário ampliar o escopo e atingir um nível técnico adequado
- a um TCC.
+Um exemplo que já tivemos foi de alunos que na disciplina de programação prática entregaram um sistema totalmente funcional e defenderam.
+ 
+\end_layout
+
+\begin_layout Itemize
+Depois adicionaram novas funcionalidades e uma interface gráfica amigável em Qt e defenderam como TCC.
+ Ou seja,
+ é necessário ampliar o escopo e atingir um nível técnico adequado a um TCC.
 \end_layout
 
 \end_deeper
@@ -2818,11 +3180,10 @@ A seguir um exemplo de cronograma.
 \end_layout
 
 \begin_layout Itemize
-Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina
- de Introdução ao Projeto de Engenharia.
- As demais etapas estão associadas às demais disciplinas (LEP - 01447: Programaç
-ão Orientada a Objeto em C++ e LEP - 01446: Projeto de Software Aplicado
- à Engenharia).
+Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina de Introdução ao Projeto de Engenharia.
+ As demais etapas estão associadas às demais disciplinas (LEP - 01447:
+ Programação Orientada a Objeto em C++ e LEP - 01446:
+ Projeto de Software Aplicado à Engenharia).
 \end_layout
 
 \begin_layout Standard
@@ -4050,14 +4411,13 @@ A seguir um exemplo de cronograma.
 \end_layout
 
 \begin_layout Itemize
-Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina
- de Introdução ao Projeto de Engenharia.
- As etapas estão associadas às disciplinas (LEP - 01447: Programação Orientada
- a Objeto em C++ e LEP - 01446: Projeto de Software Aplicado à Engenharia)
- podem atingir 24 meses.
+Os primeiros 4 meses estão relacionados as etapas realizadas na disciplina de Introdução ao Projeto de Engenharia.
+ As etapas estão associadas às disciplinas (LEP - 01447:
+ Programação Orientada a Objeto em C++ e LEP - 01446:
+ Projeto de Software Aplicado à Engenharia) podem atingir 24 meses.
  Adicionando as atividades do TCC podemos ter até 36 meses.
- Note que temos duas defesas a associada a disciplina LEP - 01446: Projeto
- de Software Aplicado à Engenharia e a defesa do TCC um ano depois.
+ Note que temos duas defesas a associada a disciplina LEP - 01446:
+ Projeto de Software Aplicado à Engenharia e a defesa do TCC um ano depois.
 \end_layout
 
 \begin_layout Standard
@@ -5662,8 +6022,9 @@ name "sec:Lista-softwares-utilizados"
 \end_layout
 
 \begin_layout Itemize
-Na disciplina usamos softwares livres que os alunos podem acessar, instalar
- e usar, sem problemas com direitos autorais e sem pirataria.
+Na disciplina usamos softwares livres que os alunos podem acessar,
+ instalar e usar,
+ sem problemas com direitos autorais e sem pirataria.
 \end_layout
 
 \begin_layout Itemize
@@ -5710,9 +6071,9 @@ Ambiente de
 \emph on
 shell 
 \emph default
-mais utilizado no mundo todo, coloca disposição do aluno um conjunto de
- aplicativos que permitem melhorar sua produtividade e eficiência na gestão
- de diretórios, arquivos e configurações de sistemas.
+mais utilizado no mundo todo,
+ coloca a disposição do aluno um conjunto de aplicativos que permitem melhorar sua produtividade e eficiência na gestão de diretórios,
+ arquivos e configurações de sistemas.
 \end_layout
 
 \end_deeper
@@ -5773,6 +6134,19 @@ Editor de texto profissional que é utilizado por nossos alunos desde 2004.
 Interface para uso simplificado do TeX/LaTeX.
 \end_layout
 
+\begin_layout Itemize
+O aluno recebe modelos prontos e funcionais,
+ com layout definido,
+ basta preencher o conteúdo.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O aluno se preocupará apenas com o que interessa,
+ o problema de engenharia.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 \begin_inset CommandInset href
@@ -5880,7 +6254,8 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-Conjunto de compiladores da GNU, compilador mais utilizado no mundo.
+Conjunto de compiladores da GNU,
+ compilador mais utilizado no mundo.
 \end_layout
 
 \end_deeper
@@ -5902,19 +6277,18 @@ Fornece um
 \emph on
 front-end 
 \emph default
-de linguagem e infraestrutura de ferramentas para linguagens de programação
- da C/C++/Java, etc.
+de linguagem e infraestrutura de ferramentas para linguagens de programação da C/C++/Java,
+ etc.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Caso o cliente queira usar ferramentas proprietárias deverá fornecer as
- mesmas 
+Caso o cliente queira usar ferramentas proprietárias deverá fornecer as mesmas 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Deve pagar as licenças associadas com instalação nos equipamentos do LENEP.
+Deve pagar as licenças associadas com instalação nos equipamentos do LENEP e casa dos alunos.
 \end_layout
 
 \begin_layout Itemize
@@ -5922,16 +6296,16 @@ Não fornecemos nenhum suporte para estes softwares.
 \end_layout
 
 \begin_layout Itemize
-As versões finais devem ter documentos gerados em formatos compatíveis com
- softwares livres, garantindo a viabilidade de continuidade do projeto.
- Ou seja, temos de garantir que futuras equipes possam modificar/atualizar
- o projeto mesmo sem ter acesso aos softwares proprietários.
+As versões finais devem ter documentos gerados em formatos compatíveis com softwares livres,
+ garantindo a viabilidade da continuidade do projeto.
+ Ou seja,
+ temos de garantir que futuras equipes possam modificar/atualizar o projeto mesmo sem ter acesso aos softwares proprietários.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Nota: Só use software proprietário se o mesmo tiver mecanismos para exportar
- os arquivos em formato que possa ser lido por um software livre.
+Nota:
+ Só use software proprietário se o mesmo tiver mecanismos para exportar os arquivos em formato que possa ser lido por um software livre.
  No caso dos diagramas UML os arquivos devem ser compatíveis com o Umbrello.
  Dê preferencia para imagens no formato png.
 \end_layout
@@ -5961,7 +6335,8 @@ Site com referências
 \end_layout
 
 \begin_layout Itemize
-Referências: 
+Referências:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "prog-UML-blaha,prog-UML-Rumbaugh"
