@@ -1016,7 +1016,7 @@ O cliente interessado lê as informações da metodologia de desenvolvimento ado
 \begin_inset CommandInset href
 LatexCommand href
 name "Metodologia para desenvolvimento do projeto de engenharia (padrão Petrobras)"
-target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas/blob/main/lyx/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-Apresentacao.pdf"
+target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas/blob/main/0-Metodologia-Instrucoes-Etapas/lyx/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas.pdf"
 literal "false"
 
 \end_inset

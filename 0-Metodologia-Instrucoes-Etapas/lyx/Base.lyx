@@ -205,6 +205,103 @@ status open
 
 \begin_layout Plain Layout
 
+% Veja fancyhdr.dvi para detalhes.
+\end_layout
+
+\begin_layout Plain Layout
+
+% O cabeçalho muda de acorda com o lado
+\end_layout
+
+\begin_layout Plain Layout
+
+% L=left,
+ R=right,
+ E=even,
+ O=odd
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+fancyhead[LE,RO]{Metodologia para Desenvolvimento do Projeto de Engenharia}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+fancyhead[LO,RE]{LENEP/CCT/UENF}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[L]{Metodologia para Desenvolvimento do Projeto de Engenharia}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[C]{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[R]{}
+\end_layout
+
+\begin_layout Plain Layout
+
+% o Rodapé 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[L]{} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[C]{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[R]{
+\backslash
+thepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
 
 \backslash
 definecolor{brown}{rgb}{0.59,
